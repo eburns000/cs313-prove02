@@ -13,22 +13,34 @@
     <script type="text/javascript" src="script.js"></script>    
   </head>
   <body>
-    <div id="navbar">
+    <div class="container-fluid main">
       <?php include("navbar.php"); ?>
-    </div>
-    <div class="main">
-      <div id="header">
-        <h1>
-          <img id="mainImage" src="BurnsFamily2018.jpg" alt="Burns Family Picture">Eric Burns
-        </h1>
-        <h3><a id="assignmentLink" href="../assignments.html">CS 313 Assignments</a></h3>
-        <br>
-        <div id="headerLabels">
-          <p><strong>Name:</strong> Eric Burns</p>
-          <p><strong>Major:</strong> Software Engineering</p>
-          <p><strong>Hometown:</strong> Wenatchee, WA</p>
+<!--
+      <div class="btn-group" id="navbar">
+        <button type="button" class="btn btn-primary">
+          <a class="align-middle customLink" href="../index.html">Home</a>
+        </button>
+        <button type="button" class="btn btn-primary">
+          <a class="align-middle customLink" href="../assignments.html">Assignments</a>
+        </button>
+        <button type="button" class="btn btn-primary">Link 2</button>
+        <button type="button" class="btn btn-primary">Link 3</button>
+        <button type="button" class="btn btn-primary">Link 4</button>      
+      </div>
+-->
+      <div class="row">
+        <div class="col-sm-4">
+          <img class="rounded" id="mainImage" src="BurnsFamily2018.jpg" alt="Burns Family Picture">
         </div>
-        <br>
+        <div class="col-sm-8" id="headerName">
+          <h1>Eric Burns</h1>
+          <br>
+          <div id="headerLabels">
+            <p><strong>Name:</strong> Eric Burns</p>
+            <p><strong>Major:</strong> Software Engineering</p>
+            <p><strong>Hometown:</strong> Wenatchee, WA</p>
+          </div>
+        </div>
       </div>
       <div class="mainContent">
         <h4>Home and Family</h4>
@@ -36,7 +48,7 @@
           Although I grew up in Southern California, having lived in Wenatchee, Washington for longer than anywhere else, almost 15 years, this is now where I say I am from.  Nestled on the eastern slopes of the Cascade moutains, Wenatchee is home to just over 60,000 people. I actually live in East Wenatchee, which is on the eastern side of the Columbia river, which separates our town from Wenatchee.
         </p>
         <p>
-          My beautiful wife, Kendra, and I are the parents of eight <em>amazing</em> children, four daughters and four sons. In 2016, our family grew in size with the addition of a naturally born baby boy, and two beautiful girls we adopted from an orphanage in China, just outside of Nanjing. Although going from five to eight children in one year was definately challenging, these two girls and our little boy have brought a wonderful light into our home and we just feel blessed beyond measure.
+          My beautiful wife, Kendra, and I are the parents of eight <em>amazing</em> children, four daughters and four sons. In 2016, our family grew in size with the addition of a naturally born baby boy and two beautiful girls we adopted from an orphanage in China. Although going from five to eight children in one year was definately challenging, these two girls and our little boy have brought a wonderful light into our home and we just feel blessed beyond measure.
         </p>
         <h4>Career</h4>
         <p>

@@ -21,13 +21,8 @@ body {
 }
 
 #mainImage {
-  width:220px;
-  height:200px;
-  float:left;
-  padding-top:10px;
-  padding-right:30px;
-  padding-left:10px;
-  font-size:20px;
+  width:300px;
+  height:300px;
 }
 
 .mainContent {
@@ -57,9 +52,28 @@ tr, th, td {
   padding: 2px 4px;
 }
 
-#header {
+#headerName {
   height:220px;  
   font-family:Verdana, Arial, sans-serif;
+}
+
+#headerName > h1 {
+  text-align: left;
+  margin-top: 80px;
+}
+
+#headerAssignments {
+  height:220px;  
+  font-family:Verdana, Arial, sans-serif;
+  text-align: center;  
+}
+
+#headerAssignments > h3 {
+  vertical-align: middle;
+}
+
+#headerAssignments > h3 > a {
+  font-size: 30px;
 }
 
 #headerLabels {
@@ -71,8 +85,14 @@ tr, th, td {
   margin: 0;
 }
 
-#assignmentLink {
-  font-size:14px;
+.customLink {
+  font-size:18px;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-group {
+  margin: 20px 0px;
 }
 
 
