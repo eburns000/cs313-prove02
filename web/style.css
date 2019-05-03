@@ -29,27 +29,21 @@ body {
   font-family:Lato, Arial, sans-serif;
   font-size:16px;
   font-weight: 400;
+  transition: background-color .6s ease;
 }
 
-h4 {
+.mainContent > h4 {
   font-family:Verdana, Arial, sans-serif;
   font-size:22px;
   margin-top: 20px;
 }
 
-.mainTable {
-  width:50%;
-  font-family:Arial,sans-serif;
-  font-size:12px;
-  border-collapse:collapse;
-  text-align:left;
-  border:1px solid black;
-  margin:10px;
+.mainContent > h4, .mainContent > p {
+  padding: 0px 20px;
 }
 
-tr, th, td {
-  border:1px solid black;
-  padding: 2px 4px;
+.mainContent:hover {
+  background-color: beige;
 }
 
 #headerName {
@@ -59,7 +53,7 @@ tr, th, td {
 
 #headerName > h1 {
   text-align: left;
-  margin-top: 80px;
+  margin-top: 20px;
 }
 
 #headerAssignments {
@@ -85,14 +79,7 @@ tr, th, td {
   margin: 0;
 }
 
-.customLink {
-  font-size:18px;
-  color: white;
-  text-decoration: none;
+.container {
+  height: 50px;
 }
-
-.btn-group {
-  margin: 20px 0px;
-}
-
 

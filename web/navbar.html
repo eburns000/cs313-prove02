@@ -1,18 +1,22 @@
-<!-- 
- *******************************************************
- * File: navbar.html
- * Defines a standard navigation bar for each page
- ******************************************************* 
--->
-<div class="btn-group" id="navbar">
-  <button type="button" class="btn btn-primary">
-    <a class="align-middle customLink" href="../index.php">Home</a>
-  </button>
-  <button type="button" class="btn btn-primary">
-    <a class="align-middle customLink" href="../assign.php">Assignments</a>
-  </button>
-  <button type="button" class="btn btn-primary">Link 2</button>
-  <button type="button" class="btn btn-primary">Link 3</button>
-  <button type="button" class="btn btn-primary">Link 4</button>      
-</div>
-  
+    <!-- Navigation -->
+    <div class="container">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        
+        <!--Toggler/collapsible Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>        
+        </button>
+        
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.php">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../assign.php">Assignments</a>
+            </li>
+          </ul> 
+        </div>
+      </nav>
+    </div>

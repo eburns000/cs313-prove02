@@ -13,36 +13,26 @@
     <script type="text/javascript" src="script.js"></script>    
   </head>
   <body>
+    
+    <?php include("navbar.html"); ?>
+    
+    <!-- Main Content -->
     <div class="container-fluid main">
-      <?php include("navbar.html"); ?>
-<!--
-      <div class="btn-group" id="navbar">
-        <button type="button" class="btn btn-primary">
-          <a class="align-middle customLink" href="../index.html">Home</a>
-        </button>
-        <button type="button" class="btn btn-primary">
-          <a class="align-middle customLink" href="../assignments.html">Assignments</a>
-        </button>
-        <button type="button" class="btn btn-primary">Link 2</button>
-        <button type="button" class="btn btn-primary">Link 3</button>
-        <button type="button" class="btn btn-primary">Link 4</button>      
-      </div>
--->
       <div class="row">
         <div class="col-sm-4">
           <img class="rounded" id="mainImage" src="BurnsFamily2018.jpg" alt="Burns Family Picture">
         </div>
         <div class="col-sm-8" id="headerName">
           <h1>Eric Burns</h1>
-          <br>
           <div id="headerLabels">
-            <p><strong>Name:</strong> Eric Burns</p>
             <p><strong>Major:</strong> Software Engineering</p>
             <p><strong>Hometown:</strong> Wenatchee, WA</p>
           </div>
         </div>
       </div>
-      <div class="mainContent">
+        
+      <!-- Home and Family -->
+      <div class="row mainContent">
         <h4>Home and Family</h4>
         <p>
           Although I grew up in Southern California, having lived in Wenatchee, Washington for longer than anywhere else, almost 15 years, this is now where I say I am from.  Nestled on the eastern slopes of the Cascade moutains, Wenatchee is home to just over 60,000 people. I actually live in East Wenatchee, which is on the eastern side of the Columbia river, which separates our town from Wenatchee.
@@ -50,10 +40,18 @@
         <p>
           My beautiful wife, Kendra, and I are the parents of eight <em>amazing</em> children, four daughters and four sons. In 2016, our family grew in size with the addition of a naturally born baby boy and two beautiful girls we adopted from an orphanage in China. Although going from five to eight children in one year was definately challenging, these two girls and our little boy have brought a wonderful light into our home and we just feel blessed beyond measure.
         </p>
+      </div>
+
+      <!-- Career -->
+      <div class="row mainContent">
         <h4>Career</h4>
         <p>
           I am a co-owner of a pediatric therapy practice with four locations throughout eastern Washington. After graduation from BYU Provo in 2000, I went to New York to persue a career at <strong>Ernst &amp; Young</strong>. Although I enjoyed what I was doing, after four years of experience working in risk management advisory services, I decided to make a signifcant career change in my life and move to Wenatchee, Washington to open a pediatric therapy practice with my brother-in-law, a speech language pathologist. Our family’s move to Wenatchee was inspired by a desire to live in a smaller community, so that I could have more time with our family, and it has been a tremendous blessing.
         </p>
+      </div>
+
+      <!-- Education -->
+      <div class="row mainContent">
         <h4>Education</h4>
         <p>
           I’ve always wanted to learn to program, so two years ago I made the decision to enroll at BYU Idaho and major in software engineering. It’s been a wonderful experience thus far. Some have questioned my sanity for going back to school, but I love it.
@@ -64,15 +62,19 @@
         <p>
           As mentioned earlier, I graduated from BYU Provo in 2000. At BYU Provo, I studied and received both bachelor’s and master’s degrees in accountancy. I love BYU, and I feel privileged to once again be a part of Brigham Young University.
         </p>
+      </div>
+
+      <!-- Personal Interests -->
+      <div class="row mainContent">
         <h4>Personal Interests</h4>
         <p>
           I love anything outdoors. Wenatchee is at the base of the mountains, and as such we have many activities for outdoor enthusiasts at our fintertips, from water sports, snow skiing, fishing, camping, hiking, cycling, kayaking.
         </p>
         <p>          
           I personally enjoy all of those activiities, but also have a special interest in photography. I especially enjoy taking pictures of lanscapes on the hikes and adventures we take as well as pictures of kids and families. It’s a blessing and joy to take a picture of a family, and go to their home and see it hanging on the wall in canvas. 
-        </p>
-        <br>
+        </p>          
       </div>
     </div>
+
   </body>  
 </html>
