@@ -5,11 +5,11 @@
         public $potatoImg;
         public $potatoPrice;
 
-        public function _construct($potatoName, $potatoImg, $potatoPrice) {
-            $this->potatoName = $potatoName;
-            $this->potatoImg = $potatoImg;
-            $this->potatoPrice = $potatoPrice;            
-        }
+        // public function _construct($potatoName, $potatoImg, $potatoPrice) {
+        //     $this->potatoName = $potatoName;
+        //     $this->potatoImg = $potatoImg;
+        //     $this->potatoPrice = $potatoPrice;            
+        // }
 
         public function setPotatoName($potatoName) {
             $this->potatoName = $potatoName;
