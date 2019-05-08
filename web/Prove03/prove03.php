@@ -14,6 +14,62 @@
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
+
+    <?php
+
+      class Potato {
+        public $potatoName;
+        public $potatoImg;
+        public $potatoPrice;
+
+        public function _construct($potatoName, $potatoImg, $potatoPrice) {
+            $this->potatoName = $potatoName;
+            $this->potatoImg = $potatoImg;
+            $this->potatoPrice = $potatoPrice;            
+        }
+
+        public function setPotatoName($potatoName) {
+            $this->potatoName = $potatoName;
+        }
+
+        public function setPotatoImg($potatoImg) {
+            $this->potatoImg = $potatoImg;
+        }
+
+        public function setPotatoPrice($potatoPrice) {
+            $this->potatoPrice = $potatoPrice;
+        }
+
+
+        public function getPotatoName {
+            return $this->potatoName;
+        }
+
+        public function getPotatoImg {
+            return $this->potatoImg;
+        }
+
+        public function getPotatoPrice {
+            return $this->potatoPrice;
+        }
+
+      }
+
+      $potatoes = array("Bintje", "Dore", "Duke of York", "Gunda", "Kennebeck", "Kerr Pink", "King Edwards", "Laura", "Melody", "Russet", "Vitelot", "Yukon Gold");
+
+      $potatoImageNames = array("bintje.jpg", "dore.jpg", "dukeofyork.jpg", "gunda.jpg", "kennebeck.jpg", "kerrpink.jpg", "kingedward.jpg", "laura.jpg", "melody.jpg", "russet.jpg", "vitelot.jpg", "yukongold.jpg");
+
+      $potatoePrice = array(5, 7, 4, 3, 8, 7, 9, 8, 2, 5, 7, 4);
+
+      $temp = new Potato("Bintje", "bintje.jpg", 5);
+
+      print_r($temp);
+
+
+
+    ?>
+
+
     <!-- NAV BAR -->
 
 
@@ -37,10 +93,10 @@
                 <table class="products-table">
 
                     <tr class="table-header">
-                        <th>Product</th>
-                        <th>Description</th>
+                        <th></th>
+                        <th>Potato</th>
+                        <th>Price</th>                        
                         <th>Quantity</th>
-                        <th>Price</th>
                     </tr>
 
                     <tr class="table-row">
@@ -49,13 +105,13 @@
                         </td>
                         <td class="description">
                             Russet Potatoes
-                        </td>
-                        <td>
-                            <input type="number" class="quanity" min="0" max="10" step="1" inputmode="number">
-                        </td>
+                        </td>                        
                         <td class="price">
                             100 
                             <!-- have this come from php array -->
+                        </td>
+                        <td>
+                            <input type="number" class="quanity" min="0" max="10" step="1" inputmode="number">
                         </td>
                     </tr>
 
