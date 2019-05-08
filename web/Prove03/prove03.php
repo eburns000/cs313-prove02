@@ -71,23 +71,22 @@
 
                     <?php 
 
-
                         echo '<tr class="table-row">
                         <td>
                             <img src="images/';
 
-                        $potatoes[0][1];
+                        echo $potatoes[0][1];
 
                         echo '">
                         </td>
                         <td class="description">';
 
-                        $potatoes[0][0];
+                        echo $potatoes[0][0];
                         
                         echo '</td>                        
                         <td class="price">';
 
-                        $potatoes[0][2]; 
+                        echo $potatoes[0][2]; 
                         
                         echo '</td>
                         <td>
