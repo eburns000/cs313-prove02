@@ -44,7 +44,7 @@
 
       $potatoePrice = array(5, 7, 4, 3, 8, 7, 9, 8, 2, 5, 7, 4);
 
-      $temp = new Potato("Bintje", "bintje.jpg", 5);
+      // $temp = new Potato("Bintje", "bintje.jpg", 5);
 
       // print_r($temp);
 
