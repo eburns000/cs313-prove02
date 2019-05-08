@@ -71,28 +71,34 @@
 
                     <?php 
 
+                    $length = count($potatoes);
+
+                    for ($row = 0; $row < $length; $row++) {
+
                         echo '<tr class="table-row">
                         <td>
                             <img src="images/';
 
-                        echo $potatoes[0][1];
+                        echo $potatoes[$row][1];
 
                         echo '">
                         </td>
                         <td class="description">';
 
-                        echo $potatoes[0][0];
+                        echo $potatoes[$row][0];
                         
                         echo '</td>                        
-                        <td class="price">';
+                        <td class="price">$';
 
-                        echo $potatoes[0][2]; 
+                        echo $potatoes[$row][2]; 
                         
                         echo '</td>
                         <td>
                             <input type="number" class="quanity" min="0" max="10" step="1" inputmode="number">
                         </td>
-                    </tr>';
+                        </tr>';
+
+                    }
 
 
 
