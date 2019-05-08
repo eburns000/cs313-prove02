@@ -51,7 +51,7 @@
                             Russet Potatoes
                         </td>
                         <td>
-                            <input type="number" class="quanity" min="0">
+                            <input type="number" class="quanity" min="0" max="10" step="1" inputmode="number">
                         </td>
                         <td class="price">
                             100 
