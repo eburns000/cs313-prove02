@@ -1,51 +1,20 @@
-<?php  
+<?php        
 
-      class Potato {
-        public $potatoName;
-        public $potatoImg;
-        public $potatoPrice;
-
-        public function __construct($potatoName, $potatoImg, $potatoPrice) {
-            $this->potatoName = $potatoName;
-            $this->potatoImg = $potatoImg;
-            $this->potatoPrice = $potatoPrice;            
-        }
-
-        public function setPotatoName($potatoName) {
-            $this->potatoName = $potatoName;
-        }
-
-        public function setPotatoImg($potatoImg) {
-            $this->potatoImg = $potatoImg;
-        }
-
-        public function setPotatoPrice($potatoPrice) {
-            $this->potatoPrice = $potatoPrice;
-        }
-
-        public function getPotatoName {
-            return $this->potatoName;
-        }
-
-        public function getPotatoImg {
-            return $this->potatoImg;
-        }
-
-        public function getPotatoPrice {
-            return $this->potatoPrice;
-        }
-
-      } // end of class Potato
-
-      $potatoes = array("Bintje", "Dore", "Duke of York", "Gunda", "Kennebeck", "Kerr Pink", "King Edwards", "Laura", "Melody", "Russet", "Vitelot", "Yukon Gold");
-
-      $potatoImageNames = array("bintje.jpg", "dore.jpg", "dukeofyork.jpg", "gunda.jpg", "kennebeck.jpg", "kerrpink.jpg", "kingedward.jpg", "laura.jpg", "melody.jpg", "russet.jpg", "vitelot.jpg", "yukongold.jpg");
-
-      $potatoePrice = array(5, 7, 4, 3, 8, 7, 9, 8, 2, 5, 7, 4);
-
-      // $temp = new Potato("Bintje", "bintje.jpg", 5);
-
-      // print_r($temp);
+      $potatoes = array 
+        (
+            array("Bintje", "bintje.jpg", 5),
+            array("Dore", "dore.jpg", 7),
+            array("Duke of York", "dukeofyork.jpg", 4),
+            array("Gunda", "gunda.jpg", 3),
+            array("Kennebeck", "kennebeck.jpg", 8),
+            array("Kerr Pink", "kerrpink.jpg", 7),
+            array("King Edwards", "kingedward.jpg", 9),
+            array("Laura", "laura.jpg", 8),
+            array("Melody", "melody.jpg", 5),
+            array("Russet", "russet.jpg", 2),
+            array("Vitelot", "vitelot.jpg", 5),
+            array("Yukon Gold", "yukongold.jpg", 4)    
+        );
 
 ?>
 
@@ -82,7 +51,12 @@
         <div class="container-fluid main">
 
             <!-- Consider using PHP to loop through an array of product inventory to display on different rows -->
+            
+
+
             <!-- You can do this with the tr tags - just loop through these tags for each item you have -->
+            
+
             <div class="row products">
 
                 <table class="products-table">
@@ -94,21 +68,38 @@
                         <th>Quantity</th>
                     </tr>
 
-                    <tr class="table-row">
+
+                    <?php 
+
+
+                        echo '<tr class="table-row">
                         <td>
-                            <img src="images/russet.jpg">
+                            <img src="images/';
+
+                        $potatoes[0][1];
+
+                        echo '">
                         </td>
-                        <td class="description">
-                            Russet Potatoes
-                        </td>                        
-                        <td class="price">
-                            100 
-                            <!-- have this come from php array -->
-                        </td>
+                        <td class="description">';
+
+                        $potatoes[0][0];
+                        
+                        echo '</td>                        
+                        <td class="price">';
+
+                        $potatoes[0][2]; 
+                        
+                        echo '</td>
                         <td>
                             <input type="number" class="quanity" min="0" max="10" step="1" inputmode="number">
                         </td>
-                    </tr>
+                    </tr>';
+
+
+
+                    ?>
+
+                    
 
                 </table>
 
