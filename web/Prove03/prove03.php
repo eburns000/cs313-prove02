@@ -1,42 +1,42 @@
 <?php  
 
-      class Potato {
-        public $potatoName;
-        public $potatoImg;
-        public $potatoPrice;
+      // class Potato {
+      //   public $potatoName;
+      //   public $potatoImg;
+      //   public $potatoPrice;
 
-        // public function _construct($potatoName, $potatoImg, $potatoPrice) {
-        //     $this->potatoName = $potatoName;
-        //     $this->potatoImg = $potatoImg;
-        //     $this->potatoPrice = $potatoPrice;            
-        // }
+      //   // public function _construct($potatoName, $potatoImg, $potatoPrice) {
+      //   //     $this->potatoName = $potatoName;
+      //   //     $this->potatoImg = $potatoImg;
+      //   //     $this->potatoPrice = $potatoPrice;            
+      //   // }
 
-        public function setPotatoName($potatoName) {
-            $this->potatoName = $potatoName;
-        }
+      //   public function setPotatoName($potatoName) {
+      //       $this->potatoName = $potatoName;
+      //   }
 
-        public function setPotatoImg($potatoImg) {
-            $this->potatoImg = $potatoImg;
-        }
+      //   public function setPotatoImg($potatoImg) {
+      //       $this->potatoImg = $potatoImg;
+      //   }
 
-        public function setPotatoPrice($potatoPrice) {
-            $this->potatoPrice = $potatoPrice;
-        }
+      //   public function setPotatoPrice($potatoPrice) {
+      //       $this->potatoPrice = $potatoPrice;
+      //   }
 
 
-        public function getPotatoName {
-            return $this->potatoName;
-        }
+      //   public function getPotatoName {
+      //       return $this->potatoName;
+      //   }
 
-        public function getPotatoImg {
-            return $this->potatoImg;
-        }
+      //   public function getPotatoImg {
+      //       return $this->potatoImg;
+      //   }
 
-        public function getPotatoPrice {
-            return $this->potatoPrice;
-        }
+      //   public function getPotatoPrice {
+      //       return $this->potatoPrice;
+      //   }
 
-      }
+      // }
 
       $potatoes = array("Bintje", "Dore", "Duke of York", "Gunda", "Kennebeck", "Kerr Pink", "King Edwards", "Laura", "Melody", "Russet", "Vitelot", "Yukon Gold");
 
