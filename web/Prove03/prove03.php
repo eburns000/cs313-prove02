@@ -39,7 +39,8 @@
 
     <!-- Intro Paragraph or heading information on products -->
     <div class="intro">
-        <h4>Products</h4>
+        <h4>Premium Potatoes</h4>
+        <p>We only slect premium grade potatoes from our co-op of organic farmers. All of our potatoes come to you fresh from the farm.</p>
     </div>
 
     <!-- Make your site about potatoes and different kinds of potatoes -->
@@ -50,21 +51,14 @@
 
         <div class="container-fluid main">
 
-            <!-- Consider using PHP to loop through an array of product inventory to display on different rows -->
-            
-
-
-            <!-- You can do this with the tr tags - just loop through these tags for each item you have -->
-            
-
             <div class="row products">
 
                 <table class="products-table">
 
                     <tr class="table-header">
                         <th></th>
-                        <th>Potato</th>
-                        <th>Price</th>                        
+                        <th>Variety</th>
+                        <th>Price (lb)</th>                        
                         <th>Quantity</th>
                     </tr>
 
@@ -95,6 +89,9 @@
                         echo '</td>
                         <td>
                             <input type="number" class="quanity" min="0" max="10" step="1" inputmode="number">
+                        </td>
+                        <td>
+                            <button class="add-button" type="submit">Add to Cart</button>
                         </td>
                         </tr>';
 

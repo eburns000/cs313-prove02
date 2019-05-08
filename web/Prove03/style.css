@@ -24,3 +24,7 @@ input[type=number] {
 	padding: 20px;
 }
 
+.table-header > th {
+	text-align: center;
+}
+
