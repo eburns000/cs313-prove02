@@ -45,7 +45,7 @@
 
                     <tr class="table-row">
                         <td>
-                            <img src="images/item1.jpeg">
+                            <img src="images/russet.jpg">
                         </td>
                         <td class="description">
                             Russet Potatoes
