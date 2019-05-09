@@ -110,7 +110,9 @@
 			 
 		<?php
 
-			echo 'Address: ' . $address1 . '<br>';
+			$address = $address1 . (!emtpy($address2) ? ', ' . $address2 : '');
+
+			echo 'Address: ' . $address . '<br>';
 			echo 'City: ' . $city . '<br>';
 			echo 'State: ' . $state . '<br>';
 			echo 'Zip: ' . $zip . '<br';
