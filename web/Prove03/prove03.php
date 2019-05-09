@@ -107,11 +107,11 @@
                         
                         echo '</td>
                         <td>
-                            <input class="quanity" type="number" name="qty';
+                            <input class="quantity" type="number" name="qty';
 
                         echo $row;
 
-                        echo 'min="0" max="10" step="1" inputmode="number">
+                        echo '" min="0" max="10" step="1" inputmode="number">
                         </td>
                         <td>
                             <input class="add-button" type="submit" name="item';
