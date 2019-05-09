@@ -29,7 +29,7 @@ input[type=number] {
 }
 
 .quantity {
-	width: 10px;
+	width: 40px;
 }
 
 .table-header > th {
@@ -40,7 +40,40 @@ nav > h2, nav > h5 {
 	color: white;
 }
 
+.add-button {
+  width: 250px;
+  height: 40px;
+  margin: 10px 0px 10px 20px;
+  padding: 10px 15px;
+  text-align: center;
+  border: 1px solid #ccc;
+  color: #d51e00;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: lighter;
+  background: #fff;
+  text-transform: uppercase;
+  font-family: Helvetica, Arial, sans-serif;
+}
 
+.add-button:hover {
+  background-color: #d51e00;
+  border: 1px solid #d51e00;
+  color: #fff;
+}
+
+input[type="text"] {
+  margin: 0 20px 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #262626;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-align: left;
+  line-height: 1.2;
+  width: 250px;
+}
 
 
 /*****************************************************

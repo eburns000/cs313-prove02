@@ -29,6 +29,15 @@
 </head>
 <body>
 
+	<!-- Navigation -->
+    <div class="container">
+      <nav class="navbar navbar-expand-md bg-dark fixed-top">
+        <h2>Potato Emporium</h2><br>
+        <h5>Premium, Organic Potatoes Delivered Fresh to Your Door</h5> 
+      </nav>
+    </div>
+
+    <!-- Main Content -->
 	<div class="container-fluid main">
 
 		<h4>Purchase Confirmation</h4>	
