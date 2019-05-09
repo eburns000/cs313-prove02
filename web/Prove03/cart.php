@@ -35,11 +35,7 @@
 
 				<?php
 
-				echo $_SESSION["numItems"];
-
 				$length = intval($_SESSION["numItems"]);
-
-				echo "length: " . $length;
 
 				for ($i = 0; $i < $length; $i++) {
 
