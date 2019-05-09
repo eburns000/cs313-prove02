@@ -26,7 +26,15 @@
 
             $tmpqty = intval($_POST['qty' . $i]);
 
-            $_SESSION["cart" . $i] = array($potatoes[$i][0], $tmpqty, $potatoes[$i][2], $tmpqty * $potatoes[$i][2]);
+            $existingQty = 0;
+
+            if(array_key_exists("cart" . $i, $_SESSION)) {
+                $existingQty = $_SESSION["cart" . $i][1];
+            }
+
+            $existingQty += $tmpqty;
+
+            $_SESSION["cart" . $i] = array($potatoes[$i][0], $existingQty, $potatoes[$i][2], $existingQty * $potatoes[$i][2]);
         }
 
         print_r($_SESSION["cart" . $i]);
