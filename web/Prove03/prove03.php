@@ -26,17 +26,17 @@
 
         if(isset($_POST['item' . $i])) {
 
-            $tmpqty = intval($_POST['qty' . $i]);
+            $qtyAdd = intval(htmlspecialchars($_POST['qty' . $i]));
 
-            $existingQty = 0;
+            $qtyCurrent = 0;
 
             if(array_key_exists("cart" . $i, $_SESSION)) {
-                $existingQty = $_SESSION["cart" . $i][1];
+                $qtyCurrent = $_SESSION["cart" . $i][1];
             }
 
-            $existingQty += $tmpqty;
+            $qtyCurrent += $qtyAdd;
 
-            $_SESSION["cart" . $i] = array($potatoes[$i][0], $existingQty, $potatoes[$i][2], $existingQty * $potatoes[$i][2]);
+            $_SESSION["cart" . $i] = array($potatoes[$i][0], $qtyCurrent, $potatoes[$i][2], $qtyCurrent * $potatoes[$i][2]);
         }
 
     }

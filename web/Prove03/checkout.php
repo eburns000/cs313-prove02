@@ -20,21 +20,22 @@
 	<br><br>
 	<form action="confirm.php" method="post" class="form-checkout">
 
-	<div class="container-fluid main">
+		<label for="address1">Address 1</label>
+		<input class="field-checkout" type="text" placeholder="Address 1" name="address1"><br>
 
-		Address 1: <input class="field-checkout" type="text" name="address1"><br><br>
+		<label for="address2">Address 2</label>		
+		<input class="field-checkout" type="text" placeholder="Address 2" name="address2"><br>
+
+		<label for="city">City</label>		
+		<input class="field-checkout" type="text" placeholder="City" name="city"><br>
 		
-		Address 2: <input class="field-checkout" type="text" name="address2"><br><br>
+		<label for="state">State</label>
+		<input class="field-checkout" type="text" placeholder="State" name="state"><br>
 		
-		City: <input class="field-checkout" type="text" name="city"><br><br>
-		
-		State: <input class="field-checkout" type="text" name="state"><br><br>
-		
-		Zip: <input class="field-checkout" type="text" name="zip"><br><br>
+		<label for="zip">Zip</label>
+		<input class="field-checkout" type="text" placeholder="Zip" name="zip"><br>
 
 		<input class="complete-purchase" type="submit" value="Complete Purchase">
-
-	</div>
 
 	</form>
 

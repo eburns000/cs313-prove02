@@ -2,11 +2,11 @@
 
 	session_start();
 
-	$address1 = $_POST["address1"];
-	$address2 = $_POST["address2"];
-	$city = $_POST["city"];
-	$state = $_POST["state"];
-	$zip = $_POST["zip"];
+	$address1 = htmlspecialchars($_POST["address1"]);
+	$address2 = htmlspecialchars($_POST["address2"]);
+	$city = htmlspecialchars($_POST["city"]);
+	$state = htmlspecialchars($_POST["state"]);
+	$zip = htmlspecialchars($_POST["zip"]);
 
 	$address = empty($address2) ? $address1 : $address1 . ", " . $address2;
 
@@ -104,7 +104,7 @@
 
 		<h6>Shipping Information</h6>
 		<p>
-			Your items will be shipped within 24 hours to the address below. If the address is incorrect, please contact customer service immediatly so your shipment can be re-routed. Additional text.
+			Your items will be shipped within 24 hours to the address below. If the address is incorrect, please contact customer service immediatly so your shipment can be re-routed.
 		</p>
 
 		<!-- Address Summary -->

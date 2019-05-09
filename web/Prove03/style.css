@@ -28,3 +28,85 @@ input[type=number] {
 	text-align: center;
 }
 
+/*****************************************************
+ * File: Style.css
+ *****************************************************/
+
+body {
+  width:100%;
+  max-width:960px;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding:0px;
+  margin-left:auto;
+  margin-right:auto;
+  background:#644040;  
+}
+
+.main {
+  background:white;
+  margin:0px;
+  padding:20px;
+  padding-bottom:40px;
+}
+
+.mainContent {
+  font-family:Lato, Arial, sans-serif;
+  font-size:16px;
+  font-weight: 400;
+  transition: background-color .6s ease;
+}
+
+.mainContent > h4 {
+  font-family:Verdana, Arial, sans-serif;
+  font-size:22px;
+  margin-top: 20px;
+}
+
+.mainContent > h4, .mainContent > p {
+  padding: 0px 20px;
+}
+
+.mainContent:hover {
+  background-color: beige;
+}
+
+#headerName {
+  height:220px;  
+  font-family:Verdana, Arial, sans-serif;
+}
+
+#headerName > h1 {
+  text-align: left;
+  margin-top: 20px;
+}
+
+#headerAssignments {
+  height:220px;  
+  font-family:Verdana, Arial, sans-serif;
+  text-align: center;  
+}
+
+#headerAssignments > h3 {
+  vertical-align: middle;
+}
+
+#headerAssignments > h3 > a {
+  font-size: 30px;
+}
+
+#headerLabels {
+  font-family:Verdana, Arial, sans-serif;
+  font-size:18px
+}
+
+#headerLabels > p {
+  margin: 0;
+}
+
+.container {
+  height: 50px;
+}
+
+
+
