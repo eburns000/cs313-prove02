@@ -39,6 +39,8 @@
 
 				$length = intval($_SESSION["numItems"]);
 
+				echo "length: " . $length;
+
 				for ($i = 0; $i < $length; $i++) {
 
 					if(array_key_exists("cart" . $i, $_SESSION)) {
