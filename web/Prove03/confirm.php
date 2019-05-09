@@ -107,12 +107,14 @@
 
 		<!-- Address Summary -->
 		<p>
-			Test 
+			 
 		<?php
-			echo 'Address: ' . $address1 . (!emtpy($address2) ? ', ' . $address2 : '') . '<br>';
+
+			echo 'Address: ' . $address1 . '<br>';
 			echo 'City: ' . $city . '<br>';
 			echo 'State: ' . $state . '<br>';
 			echo 'Zip: ' . $zip . '<br';
+
 		?>
 		</p>
 
