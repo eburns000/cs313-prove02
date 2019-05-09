@@ -39,10 +39,7 @@
 
         print_r($_SESSION["cart" . $i]);
 
-    }    
-
-
-
+    }
 
 ?>
 
@@ -133,10 +130,7 @@
 
                     }
 
-
-                    ?>
-
-                    
+                    ?>                    
 
                 </table>
 
@@ -144,10 +138,10 @@
 
         </div>
 
-        <div>
-            <input type="submit" value="View Cart">
-        </div>
-
+    </form>
+    <br><br>
+    <form action="cart.php" method="post" class="form-submit">
+        <input class="view-cart" type="submit" value="View Cart">
     </form>	
 
 </body>
