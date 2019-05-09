@@ -98,22 +98,22 @@
 
 		</table>
 
-		<br><br>
+<!-- 		<br><br> -->
 
 		<h6>Shipping Information</h6>
 		<p>
 			Your items will be shipped within 24 hours to the address below. If the address is incorrect, please contact customer service immediatly so your shipment can be re-routed.
 		</p>
-		<br>
+<!-- 		<br> -->
 
 		<!-- Address Summary -->
 		<p>
-			<?php
-				echo 'Address: ' . $address1 . (!emtpy($address2) ? ', ' . $address2 : '') . '<br>';
-				echo 'City: ' . $city . '<br>';
-				echo 'State: ' . $state . '<br>';
-				echo 'Zip: ' . $zip . '<br';
-			?>
+<!-- 		<?php
+			echo 'Address: ' . $address1 . (!emtpy($address2) ? ', ' . $address2 : '') . '<br>';
+			echo 'City: ' . $city . '<br>';
+			// echo 'State: ' . $state . '<br>';
+			echo 'Zip: ' . $zip . '<br';
+		?> -->
 		</p>
 
 		<h6>Thank you for shopping at Potatoes Emporium</h6>
