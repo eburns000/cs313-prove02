@@ -1,4 +1,24 @@
-<? php ?>
+<?php 
+
+	session_start();
+
+	$length = count($_SESSION);
+
+	for ($i = 0; $i < $length; $i++) {
+
+		if(array_key_exists("cart" . $i, $_SESSION)) {
+
+			print_r($_SESSION["cart" . $i]);
+		}
+
+	}
+
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +35,8 @@
 </head>
 <body>
 	<h4>Shopping Cart</h4>
+
+
 
 </body>
 </html>
