@@ -2,22 +2,6 @@
 
 	session_start();
 
-	$length = count($_SESSION);
-
-	for ($i = 0; $i < $length; $i++) {
-
-		if(array_key_exists("cart" . $i, $_SESSION)) {
-
-			print_r($_SESSION["cart" . $i]);
-		}
-
-	}
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,8 +19,64 @@
 </head>
 <body>
 	<h4>Shopping Cart</h4>
+	<br><br>
+	<div class="container-fluid main">
+
+		<div class="row shopping-cart">
+
+			<table class="shopping-cart-table">
+
+				<tr class="cart-table-header">
+					<th>Item</th>
+					<th>Quantity (lbs)</th>
+					<th>Price (lb)</th>
+					<th>Total Price</th>
+				</tr>
+
+				<?php
+
+				$length = count($_SESSION);
+
+				for ($i = 0; $i < $length; $i++) {
+
+					if(array_key_exists("cart" . $i, $_SESSION)) {
+
+						echo '
+						<tr class="cart-table-row">
+							<td>';
+
+						echo $_SESSION["cart" . $i][0];
+
+						echo '</td>
+							<td>';
+
+						echo $_SESSION["cart" . $i][1];	
+
+						echo '</td>
+							<td>';
+
+						echo $_SESSION["cart" . $i][2];
 
 
+						echo '</td>
+							<td>';
+
+						echo $_SESSION["cart" . $i][3];
+
+						echo '</td>
+						</tr>';
+
+					}
+
+				}
+
+				?>
+
+			</table>
+
+		</div>
+
+	</div>
 
 </body>
 </html>
