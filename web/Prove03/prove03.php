@@ -18,6 +18,8 @@
         array("Yukon Gold", "yukongold.jpg", 4)    
         );
 
+        echo 'qty text before with single: ' . $_POST['qty0'];
+        echo 'qty text with double: ' . $_POST["qty0"];
 
     if(isset($_POST['item0'])) {
 
