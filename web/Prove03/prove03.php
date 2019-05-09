@@ -62,7 +62,7 @@
     <!-- Navigation -->
     <div class="container">
       <nav class="navbar navbar-expand-md bg-dark fixed-top">
-        <h2>Potato Emporium</h2>
+        <h2>Potato Emporium</h2><br>
         <h5>Premium, Organic Potatoes Delivered Fresh to Your Door</h5> 
       </nav>
     </div>

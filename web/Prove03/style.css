@@ -12,6 +12,14 @@ input[type=number] {
 	padding: 20px;
 }
 
+.table-row > td {
+	text-align: center;
+}
+
+.potatoImages {
+	margin: 10px;
+}
+
 .description {
 	padding: 20px;
 }
@@ -21,12 +29,19 @@ input[type=number] {
 }
 
 .quantity {
-	padding: 2px;
+	width: 10px;
 }
 
 .table-header > th {
 	text-align: center;
 }
+
+nav > h2, nav > h5 {
+	color: white;
+}
+
+
+
 
 /*****************************************************
  * File: Style.css
