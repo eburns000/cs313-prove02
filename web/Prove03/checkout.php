@@ -22,19 +22,17 @@
 
 	<div class="container-fluid main">
 
-		<div class="row row-checkout">
+		Address 1: <input class="field-checkout" type="text" name="address1"><br><br>
+		
+		Address 2: <input class="field-checkout" type="text" name="address2"><br><br>
+		
+		City: <input class="field-checkout" type="text" name="city"><br><br>
+		
+		State: <input class="field-checkout" type="text" name="state"><br><br>
+		
+		Zip: <input class="field-checkout" type="text" name="zip"><br><br>
 
-			Address 1: <input class="field-checkout" type="text" name="address1"><br><br>
-			Address 2: <input class="field-checkout" type="text" name="address2"><br><br>
-			City: <input class="field-checkout" type="text" name="city"><br><br>
-			State: <input class="field-checkout" type="text" name="state"><br><br>
-			Zip: <input class="field-checkout" type="text" name="zip"><br><br>
-
-		</div>
-
-		<div class="row row-checkout">
-			<input class="complete-purchase" type="submit" value="Complete Purchase">
-		</div>
+		<input class="complete-purchase" type="submit" value="Complete Purchase">
 
 	</div>
 

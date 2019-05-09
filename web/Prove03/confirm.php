@@ -10,6 +10,8 @@
 
 	$address = empty($address2) ? $address1 : $address1 . ", " . $address2;
 
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -120,7 +122,17 @@
 
 		<h6>Thank you for shopping at Potatoes Emporium</h6>
 
-		<!-- Include here a button to return to home page and if so, reset the session information -->
+		<?php
+			// remove all session variables
+			session_unset();
+
+			// destroy the session
+			session_destroy();
+		?>
+
+		<form action="prove03.php" method="post" class="form-submit">
+        	<input class="return-shopping" type="submit" value="Return to Home">
+    	</form>	
 
 	</div>
 

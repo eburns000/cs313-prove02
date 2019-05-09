@@ -39,8 +39,6 @@
             $_SESSION["cart" . $i] = array($potatoes[$i][0], $existingQty, $potatoes[$i][2], $existingQty * $potatoes[$i][2]);
         }
 
-        print_r($_SESSION["cart" . $i]);
-
     }
 
 ?>
