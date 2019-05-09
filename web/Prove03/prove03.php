@@ -1,19 +1,30 @@
-<?php        
+<?php
 
-      $potatoes = array 
+    session_start();
+
+    $_SESSION["temp"] = "one";
+
+    if(isset($_POST['item0'])) {
+        echo 'item1 set';
+    }
+
+
+
+
+    $potatoes = array 
         (
-            array("Bintje", "bintje.jpg", 5),
-            array("Dore", "dore.jpg", 7),
-            array("Duke of York", "dukeofyork.jpg", 4),
-            array("Gunda", "gunda.jpg", 3),
-            array("Kennebeck", "kennebeck.jpg", 8),
-            array("Kerr Pink", "kerrpink.jpg", 7),
-            array("King Edwards", "kingedward.jpg", 9),
-            array("Laura", "laura.jpg", 8),
-            array("Melody", "melody.jpg", 5),
-            array("Russet", "russet.jpg", 2),
-            array("Vitelot", "vitelot.jpg", 5),
-            array("Yukon Gold", "yukongold.jpg", 4)    
+        array("Bintje", "bintje.jpg", 5),
+        array("Dore", "dore.jpg", 7),
+        array("Duke of York", "dukeofyork.jpg", 4),
+        array("Gunda", "gunda.jpg", 3),
+        array("Kennebeck", "kennebeck.jpg", 8),
+        array("Kerr Pink", "kerrpink.jpg", 7),
+        array("King Edwards", "kingedward.jpg", 9),
+        array("Laura", "laura.jpg", 8),
+        array("Melody", "melody.jpg", 5),
+        array("Russet", "russet.jpg", 2),
+        array("Vitelot", "vitelot.jpg", 5),
+        array("Yukon Gold", "yukongold.jpg", 4)    
         );
 
 ?>
@@ -47,7 +58,7 @@
 
 
     <!-- Products Form -->
-    <form action="cart.php" method="post" class="form-potatoes">   
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form-potatoes">   
 
         <div class="container-fluid main">
 
@@ -91,12 +102,15 @@
                             <input type="number" class="quanity" min="0" max="10" step="1" inputmode="number">
                         </td>
                         <td>
-                            <button class="add-button" type="submit">Add to Cart</button>
+                            <input class="add-button" type="submit" name="item';
+
+                        echo $row;    
+
+                        echo '" value="Add to Cart">
                         </td>
                         </tr>';
 
                     }
-
 
 
                     ?>
