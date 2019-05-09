@@ -8,6 +8,8 @@
 	$state = $_POST["state"];
 	$zip = $_POST["zip"];
 
+	echo $address1 . $address2 . $city . $state . $zip;
+
 ?>
 <!DOCTYPE html>
 <html>
