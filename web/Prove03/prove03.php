@@ -129,7 +129,7 @@
 
                         echo '" value="Add to Cart">
                             </td>
-                            </tr>';
+                        </tr>';
 
                     }
 

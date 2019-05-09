@@ -7,7 +7,8 @@
 	for ($i = 0; $i < $length; $i++) {
 
 		if(isset($_POST['remove' . $i]) && array_key_exists("cart" . $i, $_SESSION)) {
-			$_SESSION["cart" . $i][1] = 0; 
+			$_SESSION["cart" . $i][1] = 0;
+			$_SESSION["cart" . $i][3] = 0;
 			// TODO: set keys in prove03php file for session array to be QTY vs 1
 		}
 
@@ -42,17 +43,21 @@
 					<tr class="cart-table-header">
 						<th>Item</th>
 						<th>Quantity (lbs)</th>
-						<th>Price (lb)</th>
-						<th>Total Price</th>
+						<th>Price/lb</th>
+						<th>Price</th>
 					</tr>
 
 					<?php
 
 					$length = intval($_SESSION["numItems"]);
 
+					$totalCost = 0;
+
 					for ($i = 0; $i < $length; $i++) {
 
 						if(array_key_exists("cart" . $i, $_SESSION) && $_SESSION["cart" . $i][1] > 0) {
+
+							$totalCost += $_SESSION["cart" . $i][3];
 
 							echo '
 							<tr class="cart-table-row">
@@ -84,13 +89,20 @@
 
 							echo '" value="Remove Item">
 								</td>
-								</tr>';
+							</tr>';
 
 						}
 
 					}
 
 					?>
+
+					<tr class="cart-table-row">
+						<td>Total</td>
+						<td></td>
+						<td></td>
+						<td><?php echo '$' . $totalCost; ?></td>
+					</tr>
 
 				</table>
 
