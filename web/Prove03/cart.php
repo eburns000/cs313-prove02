@@ -114,7 +114,10 @@
 	<br><br>
     <form action="prove03.php" method="post" class="form-submit">
         <input class="view-cart" type="submit" value="Continue Shopping">
-    </form>	
+    </form>
+    <form action="checkout.php" method="post" class="form-submit">
+        <input class="view-cart" type="submit" value="Checkout Now">
+    </form>		
 
 </body>
 </html>
