@@ -8,7 +8,7 @@
 	$state = $_POST["state"];
 	$zip = $_POST["zip"];
 
-	echo $address1 . $address2 . $city . $state . $zip;
+	$address = isset($address2) ? $address1 . ", " . $address2 : $address1;
 
 ?>
 <!DOCTYPE html>
@@ -109,8 +109,6 @@
 		<p>
 			 
 		<?php
-
-			$address = $address1 . (!emtpy($address2) ? ', ' . $address2 : '');
 
 			echo 'Address: ' . $address . '<br>';
 			echo 'City: ' . $city . '<br>';
