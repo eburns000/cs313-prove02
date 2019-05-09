@@ -74,7 +74,7 @@
 
 
     <!-- Products Form -->
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form-potatoes">   
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-potatoes">   
 
         <div class="container-fluid main">
 
@@ -137,7 +137,7 @@
 
                 </table>
 
-            </div>
+            </div> 
 
         </div>
 

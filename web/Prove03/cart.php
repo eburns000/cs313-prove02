@@ -99,6 +99,10 @@
 		</div>
 
 	</form>
+	<br><br>
+    <form action="prove03.php" method="post" class="form-submit">
+        <input class="view-cart" type="submit" value="Continue Shopping">
+    </form>	
 
 </body>
 </html>
