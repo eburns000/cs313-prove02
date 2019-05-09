@@ -2,15 +2,6 @@
 
     session_start();
 
-    $_SESSION["temp"] = "one";
-
-    if(isset($_POST['item0'])) {
-        echo 'item1 set';
-    }
-
-
-
-
     $potatoes = array 
         (
         array("Bintje", "bintje.jpg", 5),
@@ -26,6 +17,17 @@
         array("Vitelot", "vitelot.jpg", 5),
         array("Yukon Gold", "yukongold.jpg", 4)    
         );
+
+
+    if(isset($_POST['item0'])) {
+
+        $tmpqty = intval($_POST["qty0"]);
+
+        $_SESSION["cart0"] = array($potatoes[0][0], $tmpqty, $potatoes[0][2], $tmpqty * $potatoes[0][2]);
+
+        print_r($_SESSION["cart0"]);
+    }
+
 
 ?>
 
@@ -99,7 +101,11 @@
                         
                         echo '</td>
                         <td>
-                            <input type="number" class="quanity" min="0" max="10" step="1" inputmode="number">
+                            <input class="quanity" type="number" name="qty';
+
+                        echo $row;
+
+                        echo 'min="0" max="10" step="1" inputmode="number">
                         </td>
                         <td>
                             <input class="add-button" type="submit" name="item';
