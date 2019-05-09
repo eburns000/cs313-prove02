@@ -20,11 +20,7 @@
 
     $length = count($potatoes);
 
-    echo "Length: " . $length;
-
     $_SESSION["numItems"] = $length;
-
-    echo $_SESSION["numItems"];
     
     for ($i = 0; $i < $length; $i++) {
 
