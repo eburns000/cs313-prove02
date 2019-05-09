@@ -8,7 +8,7 @@
 	$state = $_POST["state"];
 	$zip = $_POST["zip"];
 
-	$address = isset($address2) ? $address1 . ", " . $address2 : $address1;
+	$address = empty($address2) ? $address1 : $address1 . ", " . $address2;
 
 ?>
 <!DOCTYPE html>
