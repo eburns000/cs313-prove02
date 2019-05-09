@@ -19,6 +19,12 @@
         );
 
     $length = count($potatoes);
+
+    echo "Length: " . $length;
+
+    $_SESSION["numItems"] = $length;
+
+    echo $_SESSION["numItems"];
     
     for ($i = 0; $i < $length; $i++) {
 
@@ -94,39 +100,40 @@
 
                     for ($row = 0; $row < $length; $row++) {
 
-                        echo '<tr class="table-row">
-                        <td>
-                            <img src="images/';
+                        echo '
+                        <tr class="table-row">
+                            <td>
+                                <img src="images/';
 
                         echo $potatoes[$row][1];
 
                         echo '">
-                        </td>
-                        <td class="description">';
+                            </td>
+                            <td class="description">';
 
                         echo $potatoes[$row][0];
                         
                         echo '</td>                        
-                        <td class="price">$';
+                            <td class="price">$';
 
                         echo $potatoes[$row][2]; 
                         
                         echo '</td>
-                        <td>
-                            <input class="quantity" type="number" name="qty';
+                            <td>
+                                <input class="quantity" type="number" name="qty';
 
                         echo $row;
 
                         echo '" min="0" max="10" step="1" inputmode="number">
-                        </td>
-                        <td>
-                            <input class="add-button" type="submit" name="item';
+                            </td>
+                            <td>
+                                <input class="add-button" type="submit" name="item';
 
                         echo $row;    
 
                         echo '" value="Add to Cart">
-                        </td>
-                        </tr>';
+                            </td>
+                            </tr>';
 
                     }
 
