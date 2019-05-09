@@ -21,7 +21,11 @@
 
     if(isset($_POST['item0'])) {
 
+        echo 'qty text: ' . $_POST['qty0'];
+
         $tmpqty = intval($_POST['qty0']);
+
+        echo 'quantity int: ' . $tmpqty;
 
         $_SESSION["cart0"] = array($potatoes[0][0], $tmpqty, $potatoes[0][2], $tmpqty * $potatoes[0][2]);
 
