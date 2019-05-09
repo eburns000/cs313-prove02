@@ -59,22 +59,17 @@
 </head>
 <body>
 
-    <!-- NAV BAR -->
-
-
-    <!-- Intro Paragraph or heading information on products -->
-    <div class="intro">
-        <h4>Premium Potatoes</h4>
-        <p>We only slect premium grade potatoes from our co-op of organic farmers. All of our potatoes come to you fresh from the farm.</p>
+    <!-- Navigation -->
+    <div class="container">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <h2>Potato Emporium</h2>
+        <h5>Premium, Organic Potatoes Delivered Fresh to Your Door</h5> 
+      </nav>
     </div>
 
-    <!-- Make your site about potatoes and different kinds of potatoes -->
-
-
-    <!-- Products Form -->
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-potatoes">   
-
-        <div class="container-fluid main">
+    <div class="container-fluid main">
+        <!-- Products Form -->
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-potatoes">
 
             <div class="row products">
 
@@ -96,7 +91,7 @@
 
                         echo '
                         <tr class="table-row">
-                            <td>
+                            <td class="potatoImages">
                                 <img src="images/';
 
                         echo $potatoes[$row][1];
@@ -135,15 +130,15 @@
 
                 </table>
 
-            </div> 
+            </div>
 
-        </div>
+        </form>
+        <br><br>
+        <form action="cart.php" method="post" class="form-submit">
+            <input class="view-cart" type="submit" value="View Cart">
+        </form>	
 
-    </form>
-    <br><br>
-    <form action="cart.php" method="post" class="form-submit">
-        <input class="view-cart" type="submit" value="View Cart">
-    </form>	
+    </div>
 
 </body>
 </html>
