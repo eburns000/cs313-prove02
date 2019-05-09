@@ -35,7 +35,7 @@
 
 				<?php
 
-				$length = count($_SESSION);
+				$length = $_SESSION["numItems"];
 
 				for ($i = 0; $i < $length; $i++) {
 
