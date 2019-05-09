@@ -16,18 +16,19 @@
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-
+	<h4>Checkout</h4>
+	<br><br>
 	<form action="confirm.php" method="post" class="form-checkout">
 
 	<div class="container-fluid main">
 
 		<div class="row row-checkout">
 
-			Address 1: <input class="field-checkout" type="text" name="address1"><br>
-			Address 2: <input class="field-checkout" type="text" name="address2"><br>
-			City: <input class="field-checkout" type="text" name="city"><br>
-			State: <input class="field-checkout" type="text" name="state"><br>
-			Zip: <input class="field-checkout" type="text" name="zip"><br>
+			Address 1: <input class="field-checkout" type="text" name="address1"><br><br>
+			Address 2: <input class="field-checkout" type="text" name="address2"><br><br>
+			City: <input class="field-checkout" type="text" name="city"><br><br>
+			State: <input class="field-checkout" type="text" name="state"><br><br>
+			Zip: <input class="field-checkout" type="text" name="zip"><br><br>
 
 		</div>
 

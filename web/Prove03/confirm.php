@@ -35,66 +35,68 @@
 
 		<h6>Order Summary</h6>
 
-			<table class="order-confirm-table">
+		<table class="order-confirm-table">
 
-				<tr class="order-confirm-table-header">
-					<th>Item</th>
-					<th>Quantity (lbs)</th>
-					<th>Price/lb</th>
-					<th>Price</th>
-				</tr>
+			<tr class="order-confirm-table-header">
+				<th>Item</th>
+				<th>Quantity (lbs)</th>
+				<th>Price/lb</th>
+				<th>Price</th>
+			</tr>
 
-				<?php
+			<?php
 
-				$length = intval($_SESSION["numItems"]);
+			$length = intval($_SESSION["numItems"]);
 
-				$totalCost = 0;
+			$totalCost = 0;
 
-				for ($i = 0; $i < $length; $i++) {
+			for ($i = 0; $i < $length; $i++) {
 
-					if(array_key_exists("cart" . $i, $_SESSION) && $_SESSION["cart" . $i][1] > 0) {
+				if(array_key_exists("cart" . $i, $_SESSION) && $_SESSION["cart" . $i][1] > 0) {
 
-						$totalCost += $_SESSION["cart" . $i][3];
+					$totalCost += $_SESSION["cart" . $i][3];
 
-						echo '
-						<tr class="order-confirm-table-row">
-							<td>';
+					echo '
+					<tr class="order-confirm-table-row">
+						<td>';
 
-						echo $_SESSION["cart" . $i][0];
+					echo $_SESSION["cart" . $i][0];
 
-						echo '</td>
-							<td>';
+					echo '</td>
+						<td>';
 
-						echo $_SESSION["cart" . $i][1];	
+					echo $_SESSION["cart" . $i][1];	
 
-						echo '</td>
-							<td>';
+					echo '</td>
+						<td>';
 
-						echo $_SESSION["cart" . $i][2];
+					echo $_SESSION["cart" . $i][2];
 
 
-						echo '</td>
-							<td>';
+					echo '</td>
+						<td>';
 
-						echo $_SESSION["cart" . $i][3];
+					echo $_SESSION["cart" . $i][3];
 
-						echo '</td>							
-						</tr>';
-
-					}
+					echo '</td>							
+					</tr>';
 
 				}
 
-				?>
+			}
 
-				<tr class="order-confirm-table-row">
-					<td>Total</td>
-					<td></td>
-					<td></td>
-					<td><?php echo '$' . $totalCost; ?></td>
-				</tr>
+			?>
 
-			</table>
+			<tr class="order-confirm-table-row">
+				<td>Total</td>
+				<td></td>
+				<td></td>
+				<td><?php echo '$' . $totalCost; ?></td>
+			</tr>
+
+		</table>
+
+		<br><br>
 
 		<h6>Shipping Information</h6>
 		<p>
@@ -103,12 +105,14 @@
 		<br>
 
 		<!-- Address Summary -->
-		<?php
-			echo 'Address: ' . $address1 . (!emtpy($address2) ? ', ' . $address2 : '') . '<br>';
-			echo 'City: ' . $city . '<br>';
-			echo 'State: ' . $state . '<br>';
-			echo 'Zip: ' . $zip . '<br';
-		?>
+		<p>
+			<?php
+				echo 'Address: ' . $address1 . (!emtpy($address2) ? ', ' . $address2 : '') . '<br>';
+				echo 'City: ' . $city . '<br>';
+				echo 'State: ' . $state . '<br>';
+				echo 'Zip: ' . $zip . '<br';
+			?>
+		</p>
 
 		<h6>Thank you for shopping at Potatoes Emporium</h6>
 
