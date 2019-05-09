@@ -2,6 +2,17 @@
 
 	session_start();
 
+	$length = intval($_SESSION["numItems"]);
+
+	for ($i = 0; $i < $length; $i++) {
+
+		if(isset($_POST['remove' . $i]) && array_key_exists("cart" . $i, $_SESSION)) {
+			$_SESSION["cart" . $i][1] = 0; 
+			// TODO: set keys in prove03php file for session array to be QTY vs 1
+		}
+
+	}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,63 +31,74 @@
 <body>
 	<h4>Shopping Cart</h4>
 	<br><br>
-	<div class="container-fluid main">
+	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-cart">
+	
+		<div class="container-fluid main">
 
-		<div class="row shopping-cart">
+			<div class="row shopping-cart">
 
-			<table class="shopping-cart-table">
+				<table class="shopping-cart-table">
 
-				<tr class="cart-table-header">
-					<th>Item</th>
-					<th>Quantity (lbs)</th>
-					<th>Price (lb)</th>
-					<th>Total Price</th>
-				</tr>
+					<tr class="cart-table-header">
+						<th>Item</th>
+						<th>Quantity (lbs)</th>
+						<th>Price (lb)</th>
+						<th>Total Price</th>
+					</tr>
 
-				<?php
+					<?php
 
-				$length = intval($_SESSION["numItems"]);
+					$length = intval($_SESSION["numItems"]);
 
-				for ($i = 0; $i < $length; $i++) {
+					for ($i = 0; $i < $length; $i++) {
 
-					if(array_key_exists("cart" . $i, $_SESSION)) {
+						if(array_key_exists("cart" . $i, $_SESSION) && $_SESSION["cart" . $i][1] > 0) {
 
-						echo '
-						<tr class="cart-table-row">
-							<td>';
+							echo '
+							<tr class="cart-table-row">
+								<td>';
 
-						echo $_SESSION["cart" . $i][0];
+							echo $_SESSION["cart" . $i][0];
 
-						echo '</td>
-							<td>';
+							echo '</td>
+								<td>';
 
-						echo $_SESSION["cart" . $i][1];	
+							echo $_SESSION["cart" . $i][1];	
 
-						echo '</td>
-							<td>';
+							echo '</td>
+								<td>';
 
-						echo $_SESSION["cart" . $i][2];
+							echo $_SESSION["cart" . $i][2];
 
 
-						echo '</td>
-							<td>';
+							echo '</td>
+								<td>';
 
-						echo $_SESSION["cart" . $i][3];
+							echo $_SESSION["cart" . $i][3];
 
-						echo '</td>
-						</tr>';
+							echo '</td>
+								<td>
+								<input class="remove-button" type="submit" name="remove';
+
+							echo $i;
+
+							echo '" value="Remove Item">
+								</td>
+								</tr>';
+
+						}
 
 					}
 
-				}
+					?>
 
-				?>
+				</table>
 
-			</table>
+			</div>
 
 		</div>
 
-	</div>
+	</form>
 
 </body>
 </html>
