@@ -16,6 +16,16 @@
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
+
+    <!-- Navigation -->
+    <div class="container">
+      <nav class="navbar navbar-expand-md bg-dark fixed-top">
+        <h2>Potato Emporium</h2><br>
+        <h5>Premium, Organic Potatoes Delivered Fresh to Your Door</h5> 
+      </nav>
+    </div>
+
+    <!-- Main Content -->	
 	<h4>Checkout</h4>
 	<br><br>
 	<form action="confirm.php" method="post" class="form-checkout">

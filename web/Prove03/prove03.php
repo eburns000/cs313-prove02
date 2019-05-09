@@ -67,6 +67,7 @@
       </nav>
     </div>
 
+    <!-- Main Content -->
     <div class="container-fluid main">
         <!-- Products Form -->
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-potatoes">
