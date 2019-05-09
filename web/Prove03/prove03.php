@@ -18,21 +18,23 @@
         array("Yukon Gold", "yukongold.jpg", 4)    
         );
 
-        echo 'qty text before with single: ' . $_POST['qty0'];
-        echo 'qty text with double: ' . $_POST["qty0"];
+    $length = count($potatoes);
+    
+    for ($i = 0; $i < $length; $i++) {
 
-    if(isset($_POST['item0'])) {
+        if(isset($_POST['item' . $i])) {
 
-        echo 'qty text: ' . $_POST['qty0'];
+            $tmpqty = intval($_POST['qty' . $i]);
 
-        $tmpqty = intval($_POST['qty0']);
+            $_SESSION["cart" . $i] = array($potatoes[$i][0], $tmpqty, $potatoes[$i][2], $tmpqty * $potatoes[$i][2]);
 
-        echo 'quantity int: ' . $tmpqty;
+            print_r($_SESSION["cart" . $i]);
 
-        $_SESSION["cart0"] = array($potatoes[0][0], $tmpqty, $potatoes[0][2], $tmpqty * $potatoes[0][2]);
+        }
 
-        print_r($_SESSION["cart0"]);
-    }
+    }    
+
+
 
 
 ?>
