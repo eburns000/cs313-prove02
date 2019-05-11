@@ -9,7 +9,16 @@
 		if(isset($_POST['remove' . $i]) && array_key_exists("cart" . $i, $_SESSION)) {
 			$_SESSION["cart" . $i][1] = 0;
 			$_SESSION["cart" . $i][3] = 0;
-			// TODO: set keys in prove03php file for session array to be QTY vs 1
+		}
+
+		if(isset($_POST['qtyAdd' . $i]) && array_key_exists("cart" . $i, $_SESSION)) {
+			$_SESSION["cart" . $i][1] += 1;
+			$_SESSION["cart" . $i][3] = $_SESSION["cart" . $i][1] * $_SESSION["cart" . $i][2];
+		}
+
+		if(isset($_POST['qtySubtract' . $i]) && array_key_exists("cart" . $i, $_SESSION)) {
+			$_SESSION["cart" . $i][1] -= 1;
+			$_SESSION["cart" . $i][3] = $_SESSION["cart" . $i][1] * $_SESSION["cart" . $i][2];
 		}
 
 	}
