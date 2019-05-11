@@ -39,7 +39,7 @@
 
 		<h4>Purchase Confirmation</h4>	
 		<p>
-			Thank you for your purchase today from Potatoes Emporium. Your complete satisfaction is our Number 1 concern. If you are not satisfied for any reason, you any unused potatoes for a full refund.
+			Thank you for your purchase today from Potatoes Emporium. Your complete satisfaction is our Number One concern. If you are not satisfied for any reason, you any unused potatoes for a full refund.
 		</p>
 		<br>
 
