@@ -137,7 +137,7 @@
 		?>
 
 		<form action="prove03.php" method="post" class="form-submit">
-        	<input class="return-shopping" type="submit" value="Return to Home">
+        	<input class="add-button" type="submit" value="Return to Home">
     	</form>	
 
 	</div>

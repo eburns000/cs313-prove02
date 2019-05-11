@@ -24,33 +24,37 @@
       </nav>
     </div>
 
-    <!-- Main Content -->	
-	<h4>Checkout</h4>
-	<br><br>
-	<form action="confirm.php" method="post" class="form-checkout">
+    <div class="container-fluid main">
 
-		<label for="address1">Address 1</label>
-		<input class="field-checkout" type="text" placeholder="Address 1" name="address1"><br>
+	    <!-- Main Content -->	
+		<h4>Checkout</h4>
+		<br><br>
+		<form action="confirm.php" method="post" class="form-checkout">
 
-		<label for="address2">Address 2</label>		
-		<input class="field-checkout" type="text" placeholder="Address 2" name="address2"><br>
+			<label for="address1">Address 1</label><br>
+			<input class="field-checkout" type="text" placeholder="Address 1" name="address1"><br>
 
-		<label for="city">City</label>		
-		<input class="field-checkout" type="text" placeholder="City" name="city"><br>
-		
-		<label for="state">State</label>
-		<input class="field-checkout" type="text" placeholder="State" name="state"><br>
-		
-		<label for="zip">Zip</label>
-		<input class="field-checkout" type="text" placeholder="Zip" name="zip"><br>
+			<label for="address2">Address 2</label><br>		
+			<input class="field-checkout" type="text" placeholder="Address 2" name="address2"><br>
 
-		<input class="complete-purchase" type="submit" value="Complete Purchase">
+			<label for="city">City</label><br>		
+			<input class="field-checkout" type="text" placeholder="City" name="city"><br>
+			
+			<label for="state">State</label><br>
+			<input class="field-checkout" type="text" placeholder="State" name="state"><br>
+			
+			<label for="zip">Zip</label><br>
+			<input class="field-checkout" type="text" placeholder="Zip" name="zip"><br>
 
-	</form>
+			<input class="add-button" type="submit" value="Complete Purchase">
 
-	<form action="cart.php" method="post" class="form-submit">
-        <input class="view-cart" type="submit" value="Return to Cart">
-    </form>	
+		</form>
+
+		<form action="cart.php" method="post" class="form-submit">
+	        <input class="add-button" type="submit" value="Return to Cart">
+	    </form>
+
+	</div>	
 
 </body>
 </html>

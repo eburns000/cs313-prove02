@@ -39,11 +39,11 @@
     </div>
 
     <!-- Main Content -->
-	<h4>Shopping Cart</h4>
-	<br><br>
-	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-cart">
-	
-		<div class="container-fluid main">
+    <div class="container-fluid main">
+
+		<h4>Shopping Cart</h4>
+		<br><br>
+		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-cart">
 
 			<div class="row shopping-cart">
 
@@ -92,7 +92,7 @@
 
 							echo '</td>
 								<td>
-								<input class="remove-button" type="submit" name="remove';
+								<input class="add-button" type="submit" name="remove';
 
 							echo $i;
 
@@ -115,18 +115,21 @@
 
 				</table>
 
-			</div>
+			</div>		
 
-		</div>
+		</form>
 
-	</form>
-	<br><br>
-    <form action="prove03.php" method="post" class="form-submit">
-        <input class="view-cart" type="submit" value="Continue Shopping">
-    </form>
-    <form action="checkout.php" method="post" class="form-submit">
-        <input class="view-cart" type="submit" value="Checkout Now">
-    </form>		
+		<br><br>
+	    
+	    <form action="prove03.php" method="post" class="form-submit">
+	        <input class="add-button" type="submit" value="Continue Shopping">
+	    </form>
+	    
+	    <form action="checkout.php" method="post" class="form-submit">
+	        <input class="add-button" type="submit" value="Checkout Now">
+	    </form>
+
+    </div>		
 
 </body>
 </html>

@@ -135,7 +135,7 @@
         </form>
         <br><br>
         <form action="cart.php" method="post" class="form-submit">
-            <input class="view-cart" type="submit" value="View Cart">
+            <input class="add-button" type="submit" value="View Cart">
         </form>	
 
     </div>
