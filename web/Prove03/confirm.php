@@ -97,7 +97,7 @@
 
 			?>
 
-			<tr class="cart-table-row">
+			<tr class="cart-table-row-footer">
 				<td>Total</td>
 				<td></td>
 				<td></td>

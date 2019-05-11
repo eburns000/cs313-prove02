@@ -43,7 +43,7 @@
 
 		<h4>Shopping Cart</h4>
 		<br>
-		
+
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-cart">
 
 			<div class="row shopping-cart">
@@ -107,7 +107,7 @@
 
 					?>
 
-					<tr class="cart-table-row">
+					<tr class="cart-table-row-footer">
 						<td>Total</td>
 						<td></td>
 						<td></td>
@@ -125,7 +125,6 @@
 	    <form action="prove03.php" method="post" class="form-submit">
 	        <input class="add-button" type="submit" value="Keep Shopping">
 	    </form>
-	    <br>
 	    
 	    <form action="checkout.php" method="post" class="form-submit">
 	        <input class="add-button" type="submit" value="Checkout Now">

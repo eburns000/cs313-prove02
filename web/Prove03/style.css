@@ -29,19 +29,31 @@ input[type=number] {
 }
 
 .cart-table-row > td {
-	text-align: center;
-	margin: 10px;
-	padding: 10px;
+	text-align: left;
+	margin: 0px 10px;
+	padding: 0px 10px;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 14px;
 }
 
 .cart-table-header > th {
-	text-align: center;
-	margin: 10px;
-	padding: 10px;
+	text-align: left;
+	margin: 0px 10px;
+	padding: 0px 10px;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 14px;
+}
+
+.cart-table-row-footer {
+	text-align: left;
+	margin: 0px 10px;
+	padding: 0px 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+.cart-table-row-footer > td {
+	border-bottom: 1pt solid black;
 }
 
 .shopping-cart-table {
@@ -71,7 +83,7 @@ nav > h2 {
 .add-button {
   width: 150px;
   height: 30px;
-  margin: 10px 0px;
+  margin: 0px 0px;
   padding: 5px 15px;
   text-align: center;
   border: 1px solid #ccc;
@@ -107,11 +119,6 @@ input[type="text"] {
 	margin: 10px;
 }
 
-h6 {
-	font-family:Verdana, Arial, sans-serif;
-	font-weight: bold;
-}
-
 /*****************************************************
  * File: Style.css
  *****************************************************/
@@ -132,6 +139,7 @@ body {
   margin:0px;
   padding:20px;
   padding-bottom:40px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .mainContent {

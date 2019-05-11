@@ -31,25 +31,24 @@
 		<br><br>
 		<form action="confirm.php" method="post" class="form-checkout">
 
-			<label for="address1">Address 1</label><br>
+<!-- 			<label for="address1">Address 1</label><br> -->
 			<input class="field-checkout" type="text" placeholder="Address 1" name="address1"><br>
 
-			<label for="address2">Address 2</label><br>		
+<!-- 			<label for="address2">Address 2</label><br>		 -->
 			<input class="field-checkout" type="text" placeholder="Address 2" name="address2"><br>
 
-			<label for="city">City</label><br>		
+<!-- 			<label for="city">City</label><br>		 -->
 			<input class="field-checkout" type="text" placeholder="City" name="city"><br>
 			
-			<label for="state">State</label><br>
+<!-- 			<label for="state">State</label><br> -->
 			<input class="field-checkout" type="text" placeholder="State" name="state"><br>
 			
-			<label for="zip">Zip</label><br>
+<!-- 			<label for="zip">Zip</label><br> -->
 			<input class="field-checkout" type="text" placeholder="Zip" name="zip"><br>
 
-			<input class="add-button" type="submit" value="Complete Purchase">
+			<input class="add-button" type="submit" value="Purchase Now">
 
 		</form>
-		<br>
 
 		<form action="cart.php" method="post" class="form-submit">
 	        <input class="add-button" type="submit" value="Return to Cart">
