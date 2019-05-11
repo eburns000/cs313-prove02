@@ -42,7 +42,8 @@
     <div class="container-fluid main">
 
 		<h4>Shopping Cart</h4>
-		<br><br>
+		<br>
+		
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-cart">
 
 			<div class="row shopping-cart">
@@ -122,7 +123,7 @@
 		<br><br>
 	    
 	    <form action="prove03.php" method="post" class="form-submit">
-	        <input class="add-button" type="submit" value="Continue Shopping">
+	        <input class="add-button" type="submit" value="Keep Shopping">
 	    </form>
 	    <br>
 	    

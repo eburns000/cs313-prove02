@@ -45,9 +45,9 @@
 
 		<h6>Order Summary</h6>
 
-		<table class="order-confirm-table">
+		<table class="shopping-cart-table">
 
-			<tr class="order-confirm-table-header">
+			<tr class="cart-table-header">
 				<th>Item</th>
 				<th>Quantity (lbs)</th>
 				<th>Price/lb</th>
@@ -67,7 +67,7 @@
 					$totalCost += $_SESSION["cart" . $i][3];
 
 					echo '
-					<tr class="order-confirm-table-row">
+					<tr class="cart-table-row">
 						<td>';
 
 					echo $_SESSION["cart" . $i][0];
@@ -84,7 +84,7 @@
 
 
 					echo '</td>
-						<td>';
+						<td>$';
 
 					echo $_SESSION["cart" . $i][3];
 
@@ -97,7 +97,7 @@
 
 			?>
 
-			<tr class="order-confirm-table-row">
+			<tr class="cart-table-row">
 				<td>Total</td>
 				<td></td>
 				<td></td>
