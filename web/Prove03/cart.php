@@ -78,7 +78,19 @@
 							echo '</td>
 								<td>';
 
-							echo $_SESSION["cart" . $i][1];	
+							echo $_SESSION["cart" . $i][1];
+
+							echo '<input class="change-qty-button" type="submit" name="qtyAdd';
+
+							echo $i;
+
+							echo '" value="+">';
+
+							echo '<input class="change-qty-button" type="submit" name="qtySubtract';
+
+							echo $i;
+
+							echo '" value="-">';		
 
 							echo '</td>
 								<td>$';
