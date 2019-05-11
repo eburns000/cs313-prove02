@@ -28,7 +28,7 @@
 
 	    <!-- Main Content -->	
 		<h4>Checkout</h4>
-		<br><br>
+		<br>
 		<form action="confirm.php" method="post" class="form-checkout">
 
 <!-- 			<label for="address1">Address 1</label><br> -->
@@ -49,6 +49,7 @@
 			<input class="add-button" type="submit" value="Purchase Now">
 
 		</form>
+		<br>
 
 		<form action="cart.php" method="post" class="form-submit">
 	        <input class="add-button" type="submit" value="Return to Cart">

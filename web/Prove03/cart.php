@@ -125,6 +125,7 @@
 	    <form action="prove03.php" method="post" class="form-submit">
 	        <input class="add-button" type="submit" value="Keep Shopping">
 	    </form>
+	    <br>
 	    
 	    <form action="checkout.php" method="post" class="form-submit">
 	        <input class="add-button" type="submit" value="Checkout Now">
