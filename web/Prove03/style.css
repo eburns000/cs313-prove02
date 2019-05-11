@@ -100,10 +100,10 @@ nav > h2 {
 }
 
 .change-qty-button {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   margin-left: 10px;
-  padding: 2px;
+  padding: 0px;
   text-align: center;
   border: 1px solid #ccc;
   color: #d51e00;
