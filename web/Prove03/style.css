@@ -41,15 +41,15 @@ nav > h2 {
 }
 
 .add-button {
-  width: 200px;
+  width: 180px;
   height: 30px;
-  margin: 10px 0px 10px 20px;
-  padding: 10px 15px;
+  margin: 10px 0px;
+  padding: 5px 15px;
   text-align: center;
   border: 1px solid #ccc;
   color: #d51e00;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: lighter;
   background: #fff;
   text-transform: uppercase;
@@ -76,7 +76,7 @@ input[type="text"] {
 }
 
 .potatoImages {
-	margin: 5px;
+	margin: 10px;
 }
 
 /*****************************************************

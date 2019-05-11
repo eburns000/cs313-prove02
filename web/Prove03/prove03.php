@@ -91,8 +91,8 @@
 
                         echo '
                         <tr class="table-row">
-                            <td class="potatoImages">
-                                <img src="images/';
+                            <td>
+                                <img class="potatoImages" src="images/';
 
                         echo $potatoes[$row][1];
 
