@@ -10,8 +10,6 @@
 
 	$address = empty($address2) ? $address1 : $address1 . ", " . $address2;
 
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,8 +30,7 @@
 	<!-- Navigation -->
     <div class="container">
       <nav class="navbar navbar-expand-md bg-dark fixed-top">
-        <h2>Potato Emporium</h2><br>
-        <h5>Premium, Organic Potatoes Delivered Fresh to Your Door</h5> 
+        <h2>Potato Emporium</h2>
       </nav>
     </div>
 
