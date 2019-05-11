@@ -87,7 +87,7 @@
 
 
 							echo '</td>
-								<td>';
+								<td>$';
 
 							echo $_SESSION["cart" . $i][3];
 
