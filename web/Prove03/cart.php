@@ -80,7 +80,7 @@
 							echo $_SESSION["cart" . $i][1];	
 
 							echo '</td>
-								<td>';
+								<td>$';
 
 							echo $_SESSION["cart" . $i][2];
 
@@ -124,6 +124,7 @@
 	    <form action="prove03.php" method="post" class="form-submit">
 	        <input class="add-button" type="submit" value="Continue Shopping">
 	    </form>
+	    <br>
 	    
 	    <form action="checkout.php" method="post" class="form-submit">
 	        <input class="add-button" type="submit" value="Checkout Now">

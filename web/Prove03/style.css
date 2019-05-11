@@ -14,6 +14,18 @@ input[type=number] {
 
 .table-row > td {
 	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+.table-header > th {
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
 }
 
 .potatoImages {
@@ -32,16 +44,12 @@ input[type=number] {
 	width: 40px;
 }
 
-.table-header > th {
-	text-align: center;
-}
-
 nav > h2 {
 	color: white;
 }
 
 .add-button {
-  width: 180px;
+  width: 150px;
   height: 30px;
   margin: 10px 0px;
   padding: 5px 15px;
@@ -77,6 +85,11 @@ input[type="text"] {
 
 .potatoImages {
 	margin: 10px;
+}
+
+h6 {
+	font-family:Verdana, Arial, sans-serif;
+	font-weight: bold;
 }
 
 /*****************************************************

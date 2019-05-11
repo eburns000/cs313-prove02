@@ -49,6 +49,7 @@
 			<input class="add-button" type="submit" value="Complete Purchase">
 
 		</form>
+		<br>
 
 		<form action="cart.php" method="post" class="form-submit">
 	        <input class="add-button" type="submit" value="Return to Cart">

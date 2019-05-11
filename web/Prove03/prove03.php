@@ -133,7 +133,7 @@
             </div>
 
         </form>
-        <br><br>
+        <br>
         <form action="cart.php" method="post" class="form-submit">
             <input class="add-button" type="submit" value="View Cart">
         </form>	
