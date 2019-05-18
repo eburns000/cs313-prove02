@@ -1,29 +1,32 @@
 -- SQL Statements
+-- Home Therapy Program Database 01
+-- Eric Burns (eburns000)
+-- CS 313, Spring 19, Section 3
 
 CREATE DATABASE htpdb01;
 
 CREATE TABLE clinic (
 	id						serial			PRIMARY KEY,
 	active					boolean			NOT NULL DEFAULT TRUE,
-	clinic_name				varchar(80)		UNIQUE NOT NULL
+	clinic_name				varchar(80)		NOT NULL UNIQUE
 	);
 
 CREATE TABLE account_type (
 	id						serial			PRIMARY KEY,
 	active					boolean			NOT NULL DEFAULT TRUE,
-	account_type_name		varchar(80)		UNIQUE NOT NULL
+	account_type_name		varchar(80)		NOT NULL UNIQUE
 	);
 
 CREATE TABLE discipline (
 	id						serial			PRIMARY KEY,
 	active					boolean			NOT NULL DEFAULT TRUE,
-	discipline_name			varchar(80)		UNIQUE NOT NULL
+	discipline_name			varchar(80)		NOT NULL UNIQUE
 	);
 
 CREATE TABLE modality (
 	id						serial			PRIMARY KEY,
 	active					boolean			NOT NULL DEFAULT TRUE,
-	modality_name			varchar(80)		UNIQUE NOT NULL
+	modality_name			varchar(80)		NOT NULL UNIQUE
 	);
 
 CREATE TABLE account (
@@ -31,9 +34,9 @@ CREATE TABLE account (
 	assigned_clinic_id		int,
 	account_type_id			int,
 	assigned_therapist_id	int,
-	username				varchar(80)		UNIQUE NOT NULL,
+	username				varchar(80)		NOT NULL UNIQUE,
 	password				varchar(80)		NOT NULL,
-	email					varchar(80)		UNIQUE NOT NULL,
+	email					varchar(80)		NOT NULL UNIQUE,
 	first_name				varchar(80),
 	last_name				varchar(80),
 	phone					varchar(80),
