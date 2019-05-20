@@ -30,17 +30,10 @@
 	<title>Team 04 Assignment</title>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 	<!-- Results from Database Test -->
-	<h1>Scripture Resources</h1>
+	<h2>Scripture Resources</h2>
 	<br>
 	<?php 
 
@@ -49,6 +42,36 @@
 		  echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong>' . ' - ' . $row['content'];
 		  echo '<br/>';
 		}
+
+	?>
+	<br>
+
+	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+		
+		<label for="search">Search by Book</label><br>
+		<input class="field-book" type="text" placeholder="enter book name" name="search"><br>
+
+		<input class="search-button" type="submit" value="Search">
+
+	</form>
+	<br>
+
+	<h2>Search Results</h2>
+	<br>
+	<?php 
+
+		$searchValue = $_POST['search'];
+
+		if isset($searchValue) {
+
+			foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book =' . $searchValue) as $row)
+			{
+			  echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong>' . ' - ' . $row['content'];
+			  echo '<br/>';
+			}
+
+		}
+
 
 	?>
 	<br>
