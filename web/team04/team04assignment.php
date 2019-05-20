@@ -58,7 +58,21 @@
 
 	<h2>Search Results</h2>
 	<br>
+	<?php 		
 
+		if ( isset($_POST['search']) ) {
+
+			$searchValue = $_POST['search'];
+
+			foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book ="' . $searchValue . '"') as $row)
+			{
+			  echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'];
+			  echo '<br/>';
+			}
+
+		}
+
+	?>
 	<br>
 
 </body>
