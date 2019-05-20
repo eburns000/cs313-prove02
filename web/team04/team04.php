@@ -66,7 +66,7 @@
 	?>
 	<br>
 
-	<h4>Discipline Table Data</h4>
+	<h4>Modality Table Data</h4>
 	<br>
 	<?php 
 
@@ -79,7 +79,7 @@
 	?>
 	<br>
 
-	<h4>Modality Table Data</h4>
+	<h4>Discipline Table Data</h4>
 	<br>
 	<?php 
 
