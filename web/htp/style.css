@@ -1,0 +1,227 @@
+input::-webkit-outer-spin-button, 
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance:textfield;
+}
+
+.table-row {
+	padding: 20px;
+}
+
+.table-row > td {
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+.table-header > th {
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+.cart-table-row > td {
+	text-align: left;
+	margin: 2px 10px;
+	padding: 0px 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+.cart-table-header > th {
+	text-align: left;
+	margin: 2px 10px;
+	padding: 0px 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+.cart-table-row-footer > td {
+	text-align: left;
+	margin: 2px 10px;
+	padding: 0px 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	border-top: 1pt solid black;
+}
+
+.shopping-cart-table {
+	margin-left: 20px;
+}
+
+.potatoImages {
+	margin: 10px;
+}
+
+.description {
+	padding: 20px;
+}
+
+.price {
+	padding: 20px;
+}
+
+.quantity {
+	width: 40px;
+}
+
+nav > h2 {
+	color: white;
+}
+
+.add-button {
+  width: 150px;
+  height: 28px;
+  margin: 3px 0px;
+  padding: 2px 15px;
+  text-align: center;
+  border: 1px solid #ccc;
+  color: #d51e00;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: lighter;
+  background: #fff;
+  text-transform: uppercase;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.add-button:hover {
+  background-color: #d51e00;
+  border: 1px solid #d51e00;
+  color: #fff;
+}
+
+.change-qty-button {
+  width: 18px;
+  height: 18px;
+  margin-left: 10px;
+  padding: 0px;
+  text-align: center;
+  border: 1px solid #ccc;
+  color: #d51e00;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: lighter;
+  background: #fff;
+  text-transform: uppercase;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.change-qty-button:hover {
+  background-color: #d51e00;
+  border: 1px solid #d51e00;
+  color: #fff;
+}
+
+input[type="text"] {
+  margin: 0 20px 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #262626;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-align: left;
+  line-height: 1.2;
+  width: 250px;
+}
+
+.potatoImages {
+	margin: 10px;
+}
+
+/*****************************************************
+ * File: Style.css
+ *****************************************************/
+
+body {
+  width:100%;
+  max-width:960px;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding:0px;
+  margin-left:auto;
+  margin-right:auto;
+  background:#644040;  
+}
+
+.main {
+  background:white;
+  margin:0px;
+  padding:20px;
+  padding-bottom:40px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.main > h6 {
+	font-weight: bold;
+}
+
+.mainContent {
+  font-family:Lato, Arial, sans-serif;
+  font-size:16px;
+  font-weight: 400;
+  transition: background-color .6s ease;
+}
+
+.mainContent > h4 {
+  font-family:Verdana, Arial, sans-serif;
+  font-size:22px;
+  margin-top: 20px;
+}
+
+.mainContent > h4, .mainContent > p {
+  padding: 0px 20px;
+}
+
+.mainContent:hover {
+  background-color: beige;
+}
+
+#headerName {
+  height:220px;  
+  font-family:Verdana, Arial, sans-serif;
+}
+
+#headerName > h1 {
+  text-align: left;
+  margin-top: 20px;
+}
+
+#headerAssignments {
+  height:220px;  
+  font-family:Verdana, Arial, sans-serif;
+  text-align: center;  
+}
+
+#headerAssignments > h3 {
+  vertical-align: middle;
+}
+
+#headerAssignments > h3 > a {
+  font-size: 30px;
+}
+
+#headerLabels {
+  font-family:Verdana, Arial, sans-serif;
+  font-size:18px
+}
+
+#headerLabels > p {
+  margin: 0;
+}
+
+.container {
+  height: 50px;
+}
+
+
+
