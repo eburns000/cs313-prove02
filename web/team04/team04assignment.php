@@ -62,14 +62,15 @@
 
 		if ( isset($_POST['search']) ) {
 
-			echo 'test';
-
 			$searchValue = $_POST['search'];
 
-			foreach ($db->query("SELECT book, chapter, verse, content FROM scriptures WHERE book = '$searchValue' ") as $row)
+			foreach ($db->query("SELECT id, book, chapter, verse, content FROM scriptures WHERE book = '$searchValue' ") as $row)
 			{
+			  $id = $row['id'];
+
+			  echo '<a href="scripture.php?row_id=$id">';
 			  echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'];
-			  echo '<br/>';
+			  echo '</a><br/>';
 			}
 
 		}
