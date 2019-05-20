@@ -68,7 +68,7 @@
 			{
 			  $id = $row['id'];
 
-			  echo '<a href="scripture.php?row_id=$id">';
+			  echo '<a href="scripture.php?row_id=' . $id . '">';
 			  echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'];
 			  echo '</a><br/>';
 			}
