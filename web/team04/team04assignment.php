@@ -62,9 +62,11 @@
 
 		if ( isset($_POST['search']) ) {
 
+			echo 'test';
+
 			$searchValue = $_POST['search'];
 
-			foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book ="' . $searchValue . '"') as $row)
+			foreach ($db->query("SELECT book, chapter, verse, content FROM scriptures WHERE book = '$searchValue' ") as $row)
 			{
 			  echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'];
 			  echo '<br/>';
