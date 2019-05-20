@@ -109,7 +109,7 @@
       <input class="field-checkout" type="text" name="username"><br>
 
       <label for="password">Password</label><br>    
-      <input class="field-checkout" type="password" name="password"><br>
+      <input class="field-checkout" type="text" name="password"><br>
 
       <input class="add-button" type="submit" value="Login" name="login">
 
