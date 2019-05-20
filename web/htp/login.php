@@ -99,7 +99,7 @@
     <!-- Clinic Data Entry -->  
     <h4>Login</h4>
     <br>
-    <form action="" method="post" class="form-checkout">
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-checkout">
 
       <div class="error-message"><?php if(isset($message)) { echo $message; } ?></div>
 
@@ -120,7 +120,7 @@
         <input class="add-button" type="submit" value="Register">
     </form>
 
-    <form action="" method="post" class="form-submit">
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-submit">
         <input class="add-button" type="submit" value="Logout" name="logout">
     </form>    
 
