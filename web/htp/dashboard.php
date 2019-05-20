@@ -57,19 +57,19 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="../login.php">Home</a>
+            <a class="nav-link" href="../htp/login.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../assign.php">My Profile</a>
+            <a class="nav-link" href="../htp/assign.php">My Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../assign.php">Exercise Library</a>
+            <a class="nav-link" href="../htp/assign.php">Exercise Library</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../assign.php">Dashboard</a>
+            <a class="nav-link" href="../htp/assign.php">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../assign.php">Logout</a>
+            <a class="nav-link" href="../htp/assign.php">Logout</a>
           </li>                                    
         </ul> 
       </div>
