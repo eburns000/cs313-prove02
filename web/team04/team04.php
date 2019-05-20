@@ -51,6 +51,46 @@
 		}
 
 	?>
+	<br>
+
+	<h4>Account Type Table Data</h4>
+	<br>
+	<?php 
+
+		foreach ($db->query('SELECT account_type_name FROM account_type') as $row)
+		{
+		  echo 'Account Type Name: ' . $row['account_type_name'];
+		  echo '<br/>';
+		}
+
+	?>
+	<br>
+
+	<h4>Discipline Table Data</h4>
+	<br>
+	<?php 
+
+		foreach ($db->query('SELECT modality_name FROM modality') as $row)
+		{
+		  echo 'Modality Name: ' . $row['modality_name'];
+		  echo '<br/>';
+		}
+
+	?>
+	<br>
+
+	<h4>Modality Table Data</h4>
+	<br>
+	<?php 
+
+		foreach ($db->query('SELECT discipline_name FROM discipline') as $row)
+		{
+		  echo 'Discipline Name: ' . $row['discipline_name'];
+		  echo '<br/>';
+		}
+
+	?>
+	<br>
 
 	<!-- Clinic Data Entry -->	
 	<h4>Update Static Tables</h4>
