@@ -1,6 +1,6 @@
 <?php
 
-    session_start();
+  session_start();
 
   try
   {
@@ -22,6 +22,26 @@
   {
     echo 'Error!: ' . $ex->getMessage();
     die();
+  }
+
+
+  $message="";
+
+  if(!empty($_POST["login"])) {
+    $statement = $db->query('SELECT id, username, password FROM account WHERE username="' . $_POST['username'] . '" AND password="' . $_POST['password'] . '"');
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
+    if(is_array($row)) {
+      $_SESSION["user_id"] = $row["id"];
+      $message = 'Login Successful';
+    } else {
+      $message = "Invalid Username or Password!";
+    }
+  }
+
+  if(!empty($_POST["logout"])) {
+    $_SESSION["user_id"] = "";
+    session_destroy();
+    $message = 'Logout Successful';
   }
 
 ?>
@@ -79,7 +99,9 @@
     <!-- Clinic Data Entry -->  
     <h4>Login</h4>
     <br>
-    <form action="dashboard.php" method="post" class="form-checkout">
+    <form action="" method="post" class="form-checkout">
+
+      <div class="error-message"><?php if(isset($message)) { echo $message; } ?></div>
 
       <!-- TODO: Depending upon type of user logging in will determine which dashboard it goes to -->
 
@@ -87,9 +109,9 @@
       <input class="field-checkout" type="text" name="username"><br>
 
       <label for="password">Password</label><br>    
-      <input class="field-checkout" type="text" name="password"><br>
+      <input class="field-checkout" type="password" name="password"><br>
 
-      <input class="add-button" type="submit" value="Login">
+      <input class="add-button" type="submit" value="Login" name="login">
 
     </form>
     <br>
@@ -97,6 +119,10 @@
     <form action="register.php" method="post" class="form-submit">
         <input class="add-button" type="submit" value="Register">
     </form>
+
+    <form action="" method="post" class="form-submit">
+        <input class="add-button" type="submit" value="Logout" name="logout">
+    </form>    
 
   </div>
 
