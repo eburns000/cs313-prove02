@@ -27,17 +27,23 @@
 
   $message="";
 
-  if(!empty($_POST["login"])) {
+  if (!empty($_SESSION["user_id"]) && !empty($_SESSION["account_type_id"]) && !empty($_SESSION["new_account"])) {
+    header("Location:htp/dashboard.php");
+    exit;
+
+  } elseif (!empty($_POST["login"])) {
 
     $user = $_POST['username'];
     $pass = $_POST['password'];
 
-    $statement = $db->query("SELECT id, username, password FROM account WHERE username = '$user' AND password = '$pass' ");
-    $message = 'login post check';
+    $statement = $db->query("SELECT id, username, password, account_type_id, new_account FROM account WHERE username = '$user' AND password = '$pass' ");
     $row = $statement->fetch(PDO::FETCH_ASSOC);
     if(is_array($row)) {
       $_SESSION["user_id"] = $row["id"];
-      $message = 'Login Successful for user: ' . $row["username"];
+      $_SESSION["account_type_id"] = $row["account_type_id"];
+      $_SESSION["new_account"] = $row["new_account"];
+      header("Location:htp/dashboard.php");
+      exit;
     } else {
       $message = "Invalid Username or Password!";
     }
@@ -45,8 +51,10 @@
 
   if(!empty($_POST["logout"])) {
     $_SESSION["user_id"] = "";
+    $_SESSION["account_type_id"] = "";
+    $_SESSION["new_account"] = NULL;
     session_destroy();
-    $message = 'Logout Successful';
+    header("Location:htp/login.php");
   }
 
 ?>
