@@ -27,6 +27,14 @@
     die();
   }
 
+  if(!empty($_POST["logout"])) {
+    $_SESSION["user_id"] = "";
+    $_SESSION["account_type_id"] = "";
+    $_SESSION["new_account"] = NULL;
+    session_destroy();
+    header("Location:login.php");
+  }
+
 ?>
 
 <!DOCTYPE html>

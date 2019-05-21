@@ -137,7 +137,7 @@
     </form>
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-submit">
-        <input class="add-button" type="submit" value="Logout" name="logout">
+        <input class="add-button" type="submit" value="Logout" name="logout-2">
     </form>    
 
   </div>
