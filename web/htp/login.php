@@ -34,13 +34,13 @@
 
     $statement = $db->query("SELECT id, username, password FROM account WHERE username = '$user' AND password = '$pass' ");
     $message = 'login post check';
-    // $row = $statement->fetch(PDO::FETCH_ASSOC);
-    // if(is_array($row)) {
-    //   $_SESSION["user_id"] = $row["id"];
-    //   $message = 'Login Successful';
-    // } else {
-    //   $message = "Invalid Username or Password!";
-    // }
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
+    if(is_array($row)) {
+      $_SESSION["user_id"] = $row["id"];
+      $message = 'Login Successful for user: ' . $row["username"];
+    } else {
+      $message = "Invalid Username or Password!";
+    }
   }
 
   // if(!empty($_POST["logout"])) {
