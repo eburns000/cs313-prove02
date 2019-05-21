@@ -27,16 +27,18 @@
 
   $message="";
 
-  // if(!empty($_POST["login"])) {
-  //   $statement = $db->query('SELECT id, username, password FROM account WHERE username="' . $_POST['username'] . '" AND password="' . $_POST['password'] . '"');
-  //   $row = $statement->fetch(PDO::FETCH_ASSOC);
-  //   if(is_array($row)) {
-  //     $_SESSION["user_id"] = $row["id"];
-  //     $message = 'Login Successful';
-  //   } else {
-  //     $message = "Invalid Username or Password!";
-  //   }
-  // }
+  if(!empty($_POST["login"])) {
+
+    echo 'login post check';
+    // $statement = $db->query('SELECT id, username, password FROM account WHERE username="' . $_POST['username'] . '" AND password="' . $_POST['password'] . '"');
+    // $row = $statement->fetch(PDO::FETCH_ASSOC);
+    // if(is_array($row)) {
+    //   $_SESSION["user_id"] = $row["id"];
+    //   $message = 'Login Successful';
+    // } else {
+    //   $message = "Invalid Username or Password!";
+    // }
+  }
 
   // if(!empty($_POST["logout"])) {
   //   $_SESSION["user_id"] = "";
