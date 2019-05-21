@@ -29,7 +29,10 @@
 
   if(!empty($_POST["login"])) {
 
-    $statement = $db->query('SELECT id, username, password FROM account WHERE username="' . $_POST['username'] . '" AND password="' . $_POST['password'] . '"');
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
+
+    $statement = $db->query('SELECT id, username, password FROM account WHERE username="' . $user . '" AND password="' . $pass . '"');
     $message = 'login post check';
     // $row = $statement->fetch(PDO::FETCH_ASSOC);
     // if(is_array($row)) {
