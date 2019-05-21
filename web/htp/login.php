@@ -28,7 +28,7 @@
   $message="";
 
   if (!empty($_SESSION["user_id"]) && !empty($_SESSION["account_type_id"]) && !empty($_SESSION["new_account"])) {
-    header("Location:htp/dashboard.php");
+    header("Location:dashboard.php");
     exit;
 
   } elseif (!empty($_POST["login"])) {
@@ -42,7 +42,7 @@
       $_SESSION["user_id"] = $row["id"];
       $_SESSION["account_type_id"] = $row["account_type_id"];
       $_SESSION["new_account"] = $row["new_account"];
-      header("Location:htp/dashboard.php");
+      header("Location:dashboard.php");
       exit;
     } else {
       $message = "Invalid Username or Password!";
@@ -54,7 +54,7 @@
     $_SESSION["account_type_id"] = "";
     $_SESSION["new_account"] = NULL;
     session_destroy();
-    header("Location:htp/login.php");
+    header("Location:login.php");
   }
 
 ?>
