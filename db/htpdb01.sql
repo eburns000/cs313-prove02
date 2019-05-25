@@ -6,9 +6,9 @@
 CREATE DATABASE htpdb01;
 
 CREATE TABLE clinic (
-	id					 SERIAL			 PRIMARY KEY,
-	active					 BOOLEAN			 NOT NULL DEFAULT TRUE,
-	clinic_name				 VARCHAR(80)		 NOT NULL UNIQUE
+	id              SERIAL         PRIMARY KEY,
+	active          BOOLEAN        NOT NULL DEFAULT TRUE,
+	clinic_name     VARCHAR(80)    NOT NULL UNIQUE
 	);
 
 CREATE TABLE account_type (
