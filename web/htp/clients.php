@@ -23,7 +23,7 @@
     echo '<tr>';
 
     echo '<td>';      
-    echo '<a href="add_edit_user.php?client_id=' . $id . '">';
+    echo '<a href="client_exercises.php?client_id=' . $id . '">';
     echo $row['first_name'];      
     echo '</a>';
     echo '</td>';
