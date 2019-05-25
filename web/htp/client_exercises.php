@@ -97,19 +97,7 @@
 
 
     // get client id passed in from therapist dashboard
-    $current_client_id_str = $_GET['client_id'];
-    $current_client_id = intval($current_exercise_id_str); 
-
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-
-    echo 'client ID' . $current_client_id;
-    echo 'client ID string' . $current_client_id_str;
-
-
+    $current_client_id = $_GET['client_id'];
 
     echo '<!-- Therapist View of Client Exercises -->';
     echo '<h2>My Clients Exercises</h2>';
