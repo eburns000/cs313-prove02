@@ -157,11 +157,11 @@
       echo '</td>'; 
 
       echo '<td>';
-      echo $row['active'];
+      echo ($row['active'] == '1' ? 'True' : 'False');
       echo '</td>';              
 
       echo '<td>';
-      echo $row['new'];
+      echo ($row['new'] == '1' ? 'True' : 'False');
       echo '</td>'; 
 
       echo '<td>';
