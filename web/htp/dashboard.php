@@ -90,15 +90,10 @@
   <!-- Main Content -->
   <div class="container-fluid main">
 
-  <br><br><br><br><br><br><br>
-
-
   <!-- Include Appropriate Dashboard -->
   <?php 
 
     $account_type_id = $_SESSION['account_type_id'];
-    echo 'Account Type: ' . $account_type_id;
-
 
     switch ($account_type_id) {
       case 1: // admin user
