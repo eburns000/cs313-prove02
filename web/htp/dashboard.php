@@ -122,13 +122,9 @@
 
       echo '<td>';
       echo $row['email'];
-      echo '</td>';
-      
+      echo '</td>'; 
 
-      echo ' ' . $row['last_name'] . ':' . $row['email'];
-
-
-      echo '</tr>'
+      echo '</tr>';
 
     }
 
