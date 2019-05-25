@@ -100,7 +100,7 @@
     $login_user_id = $_SESSION['user_id'];
 
     echo '<!-- Therapist View of Client Exercises -->';
-    echo '<h2>My Exercises</h2>';
+    echo '<h2>My Clients Exercises</h2>';
     echo '<br>';
 
     echo '<table>';
