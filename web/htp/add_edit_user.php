@@ -165,7 +165,9 @@
       echo '</td>'; 
 
       echo '<td>';
-      $row['locked'] = '1' ? echo 'True' : echo 'False';
+
+      echo ($row['locked'] == '1' ? 'True' : 'False');
+
       echo '</td>';             
 
       echo '</tr>'; 
