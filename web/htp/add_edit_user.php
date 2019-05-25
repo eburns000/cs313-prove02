@@ -36,7 +36,8 @@
   }
 
   // get current user id passed in from admin dashboard
-  $current_user_id = $_GET['row_id'];
+  $current_user_id_str = $_GET['row_id'];
+  $current_user_id = intval($current_user_id_str);
 
   // get an array of current user data
   $statement = $db->query(' SELECT a.id as user_id, c.clinic_name as clinic, at.account_type_name as account_type, 
