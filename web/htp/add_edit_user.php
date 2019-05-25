@@ -42,9 +42,11 @@
 
   // get an array of current user data
   $statement = $db->query(" SELECT a.id as user_id, c.clinic_name as clinic, at.account_type_name as account_type, 
-                                   a.assigned_therapist_id as assigned_therapist, a.first_name as first, a.last_name as last,
+                                   a.assigned_therapist_id as assigned_therapist, a2.first_name as assigned_first, 
+                                   a2.last_name as assigned_last, a.first_name as first, a.last_name as last,
                                    a.phone as phone, a.active as active, a.new_account as new, a.locked as locked
                             FROM account as a
+                            INNER JOIN account as a2 on a.id = a2.id
                             JOIN clinic as c on c.id = a.assigned_clinic_id
                             JOIN account_type as at on at.id = a.account_type_id 
                             WHERE a.id = '$current_user_id' ");
@@ -107,7 +109,7 @@
   <div class="container-fluid main">
 
   <!-- Admin Dashboard: Show list of Users -->
-  <h2>User Information</h2>
+  <h2>User Account Details</h2>
   <br>
 
   <table>
@@ -118,6 +120,8 @@
       <th>Assigned Therapist</th>
       <th>First Name</th>
       <th>Last Name</th>
+      <th>Assigned First Name</th>
+      <th>Assigned Last Name</th>
       <th>Phone</th>
       <th>Active?</th>
       <th>New Account?</th>
@@ -151,6 +155,14 @@
       echo '<td>';
       echo $row['last'];
       echo '</td>';
+
+      echo '<td>';
+      echo $row['assigned_first'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['assigned_last'];
+      echo '</td>';      
 
       echo '<td>';
       echo $row['phone'];

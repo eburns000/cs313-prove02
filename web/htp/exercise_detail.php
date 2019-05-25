@@ -109,7 +109,7 @@
   <div class="container-fluid main">
 
   <!-- Admin Dashboard: Show list of Users -->
-  <h2>User Information</h2>
+  <h2>Exercise Detail</h2>
   <br>
 
   <table>
