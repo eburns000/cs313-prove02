@@ -99,8 +99,13 @@
     // get client id passed in from therapist dashboard
     $current_client_id = $_GET['client_id'];
 
+    // get client's first name
+    $statement = $db->query("SELECT first_name FROM account WHERE id = '$current_client_id' ");
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
+    $first_name = $row['first_name'];
+
     echo '<!-- Therapist View of Client Exercises -->';
-    echo '<h2>My Clients Exercises</h2>';
+    echo '<h2>' . $first_name . '\'s Assigned Exercises</h2>';
     echo '<br>';
 
     echo '<table>';
