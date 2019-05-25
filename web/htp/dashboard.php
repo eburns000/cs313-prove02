@@ -108,7 +108,7 @@
     {
       $id = $row['id'];
 
-      echo '<tr>'
+      echo '<tr>';
 
       echo '<td>';      
       echo '<a href="scripture.php?row_id=' . $id . '">';
