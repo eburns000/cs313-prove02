@@ -17,7 +17,7 @@
                               a.first_name as first_name, a.last_name as last_name, a.email as email 
                        FROM account as a 
                        WHERE a.assigned_therapist_id = '$login_user_id' AND 
-                       WHERE a.account_type_id = 3 ") as $row)
+                       WHERE a.account_type_id = '3' ") as $row)
   {
     $id = $row['client_id'];
 
