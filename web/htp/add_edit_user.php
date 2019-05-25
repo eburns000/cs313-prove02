@@ -35,6 +35,19 @@
     header("Location:login.php");
   }
 
+  // get current user id passed in from admin dashboard
+  $current_user_id = $_GET['row_id'];
+
+  // get an array of current user data
+  $statement = $db->query(' SELECT a.id as user_id, c.clinic_name as clinic, at.account_type_name as account_type, 
+                                   a.assigned_therapist_id as assigned_therapist, a.first_name as first, a.last_name as last,
+                                   a.phone as phone, a.active as active, a.new_account as new, a.locked as locked
+                            FROM account as a
+                            JOIN clinic as c on c.id = a.assigned_clinic_id
+                            JOIN account_type as at on at.id = a.account_type_id 
+                            WHERE id = $current_user_id ');
+  $row = $statement->fetch(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -91,42 +104,68 @@
   <div class="container-fluid main">
 
   <!-- Admin Dashboard: Show list of Users -->
-  <h2>Users</h2>
+  <h2>User Information</h2>
   <br>
 
   <table>
     <tr>
+      <th>User ID</th>
+      <th>Assigned Clinic</th>
+      <th>Account Type</th>
+      <th>Assigned Therapist</th>
       <th>First Name</th>
       <th>Last Name</th>
-      <th>Email</th>
+      <th>Phone</th>
+      <th>Active?</th>
+      <th>New Account?</th>
+      <th>Locked?</th>
     </tr>
   
   <?php 
 
-
-    foreach ($db->query("SELECT id, first_name, last_name, email FROM account") as $row)
-    {
-      $id = $row['id'];
-
       echo '<tr>';
 
       echo '<td>';      
-      echo '<a href="add_edit_user.php?row_id=' . $id . '">';
-      echo $row['first_name'];      
-      echo '</a>';
+      echo $row['user_id'];      
       echo '</td>';
 
       echo '<td>';
-      echo $row['last_name'];
+      echo $row['clinic'];
       echo '</td>';
 
       echo '<td>';
-      echo $row['email'];
+      echo $row['account_type'];
       echo '</td>'; 
 
-      echo '</tr>';
+      echo '<td>';
+      echo $row['assigned_therapist'];
+      echo '</td>'; 
 
-    }
+      echo '<td>';
+      echo $row['first'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['last'];
+      echo '</td>';
+
+      echo '<td>';
+      echo $row['phone'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['active'];
+      echo '</td>';              
+
+      echo '<td>';
+      echo $row['new'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['locked'];
+      echo '</td>';             
+
+      echo '</tr>';
 
   ?>
   
