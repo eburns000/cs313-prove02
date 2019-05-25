@@ -117,7 +117,7 @@
   <h2>User Account Details</h2>
   <br>
 
-  <table>
+  <table class="table-standard">
     <tr>
       <th>User ID</th>
       <th>First Name</th>

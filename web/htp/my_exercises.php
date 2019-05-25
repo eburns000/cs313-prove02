@@ -6,7 +6,7 @@
   echo '<h2>My Exercises</h2>';
   echo '<br>';
 
-  echo '<table>';
+  echo '<table class="table-standard">';
   echo '<tr>';
   echo '<th>Exercise</th>';
   echo '<th>Discipline</th>';

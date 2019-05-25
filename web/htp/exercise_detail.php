@@ -112,7 +112,7 @@
   <h2>Exercise Detail</h2>
   <br>
 
-  <table>
+  <table class="table-standard">
     <tr>
       <th>Exercise</th>
       <th>Discipline</th>

@@ -108,7 +108,7 @@
     echo '<h2>' . $first_name . '\'s Assigned Exercises</h2>';
     echo '<br>';
 
-    echo '<table>';
+    echo '<table class="table-standard">';
     echo '<tr>';
     echo '<th>Exercise</th>';
     echo '<th>Discipline</th>';

@@ -6,7 +6,7 @@
   echo '<h2>My Clients</h2>';
   echo '<br>';
 
-  echo '<table>';
+  echo '<table class="table-standard">';
   echo '<tr>';
   echo '<th>First Name</th>';
   echo '<th>Last Name</th>';

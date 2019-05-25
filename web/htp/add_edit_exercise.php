@@ -106,10 +106,10 @@
   <div class="container-fluid main">
 
   <!-- Admin Dashboard: Show list of Users -->
-  <h2>User Information</h2>
+  <h2>Edit Exercise</h2>
   <br>
 
-  <table>
+  <table class="table-standard">
     <tr>
       <th>Exercise</th>
       <th>Discipline</th>
