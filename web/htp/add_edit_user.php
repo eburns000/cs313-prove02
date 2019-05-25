@@ -47,13 +47,13 @@
 
   echo 'test3' . $current_user_id;
   // get an array of current user data
-  $statement = $db->query(' SELECT a.id as user_id, c.clinic_name as clinic, at.account_type_name as account_type, 
+  $statement = $db->query(" SELECT a.id as user_id, c.clinic_name as clinic, at.account_type_name as account_type, 
                                    a.assigned_therapist_id as assigned_therapist, a.first_name as first, a.last_name as last,
                                    a.phone as phone, a.active as active, a.new_account as new, a.locked as locked
                             FROM account as a
                             JOIN clinic as c on c.id = a.assigned_clinic_id
                             JOIN account_type as at on at.id = a.account_type_id 
-                            WHERE a.id = $current_user_id ');
+                            WHERE a.id = '$current_user_id' ");
 
   echo 'test4';
   $row = $statement->fetch(PDO::FETCH_ASSOC);
