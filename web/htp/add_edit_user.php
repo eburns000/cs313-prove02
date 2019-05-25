@@ -35,17 +35,11 @@
     header("Location:login.php");
   }
 
-  echo '<br><br><br><br><br><br>';
 
-  echo 'test1';
   // get current user id passed in from admin dashboard
   $current_user_id_str = $_GET['row_id'];
-
-  echo 'test2' . $current_user_id_str;
   $current_user_id = intval($current_user_id_str);
 
-
-  echo 'test3' . $current_user_id;
   // get an array of current user data
   $statement = $db->query(" SELECT a.id as user_id, c.clinic_name as clinic, at.account_type_name as account_type, 
                                    a.assigned_therapist_id as assigned_therapist, a.first_name as first, a.last_name as last,
@@ -55,10 +49,7 @@
                             JOIN account_type as at on at.id = a.account_type_id 
                             WHERE a.id = '$current_user_id' ");
 
-  echo 'test4';
   $row = $statement->fetch(PDO::FETCH_ASSOC);
-
-  echo 'test5';
 
 ?>
 
@@ -135,7 +126,49 @@
   
   <?php 
 
-    echo $row['user_id'];
+      echo '<tr>';
+
+      echo '<td>';      
+      echo $row['user_id'];      
+      echo '</td>';
+
+      echo '<td>';
+      echo $row['clinic'];
+      echo '</td>';
+
+      echo '<td>';
+      echo $row['account_type'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['assigned_therapist'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['first'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['last'];
+      echo '</td>';
+
+      echo '<td>';
+      echo $row['phone'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['active'];
+      echo '</td>';              
+
+      echo '<td>';
+      echo $row['new'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['locked'];
+      echo '</td>';             
+
+      echo '</tr>'; 
 
   ?>
   
