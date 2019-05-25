@@ -90,7 +90,7 @@
   <!-- Main Content -->
   <div class="container-fluid main">
 
-  <!-- Admin Dashboard: Show list of Users -->
+  <!-- Include Appropriate Dashboard -->
   <?php include 'users.php'; ?>
 
   </div>

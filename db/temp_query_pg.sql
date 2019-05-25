@@ -22,6 +22,14 @@ WHERE id = $current_user_id;
 
 	?>
 
+  
+
+
+
+
+
+  
+
 	SELECT a.id as user_id, c.clinic_name as clinic, at.account_type_name as account_type, 
                                    a.assigned_therapist_id as assigned_therapist, a.first_name as first, a.last_name as last,
                                    a.phone as phone, a.active as active, a.new_account as new, a.locked as locked

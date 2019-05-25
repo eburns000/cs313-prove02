@@ -33,11 +33,10 @@
 
     echo '</tr>';
 
-    echo '</table>';
-
-    echo '<br>';
-
   }
+
+  echo '</table>';
+  echo '<br>';
 
 ?>
 
