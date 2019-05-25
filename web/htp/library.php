@@ -35,22 +35,6 @@
     header("Location:login.php");
   }
 
-
-  // get current user id passed in from admin dashboard
-  $current_user_id_str = $_GET['row_id'];
-  $current_user_id = intval($current_user_id_str);
-
-  // get an array of current user data
-  $statement = $db->query(" SELECT a.id as user_id, c.clinic_name as clinic, at.account_type_name as account_type, 
-                                   a.assigned_therapist_id as assigned_therapist, a.first_name as first, a.last_name as last,
-                                   a.phone as phone, a.active as active, a.new_account as new, a.locked as locked
-                            FROM account as a
-                            JOIN clinic as c on c.id = a.assigned_clinic_id
-                            JOIN account_type as at on at.id = a.account_type_id 
-                            WHERE a.id = '$current_user_id' ");
-
-  $row = $statement->fetch(PDO::FETCH_ASSOC);
-
 ?>
 
 <!DOCTYPE html>
@@ -107,70 +91,58 @@
   <div class="container-fluid main">
 
   <!-- Admin Dashboard: Show list of Users -->
-  <h2>User Information</h2>
+  <h2>Users</h2>
   <br>
 
   <table>
     <tr>
-      <th>User ID</th>
-      <th>Assigned Clinic</th>
-      <th>Account Type</th>
-      <th>Assigned Therapist</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Phone</th>
-      <th>Active?</th>
-      <th>New Account?</th>
-      <th>Locked?</th>
+      <th>Exercise</th>
+      <th>Discipline</th>
+      <th>Modality</th>
+      <th>Assignment</th>
+      <th>Link</th>
     </tr>
   
   <?php 
 
+    // get an array of library data
+    $statement = $db->query(" SELECT e.id as exercise_id, e.exercise_name as exercise, d.discipline_name as discipline, 
+                                   m.modality_name as modality,  e.assignment as assignment, e.video_link as link
+                            FROM exercise as e
+                            JOIN discipline as d on d.id = e.discipline_id
+                            JOIN modality as m on m.id = e.modality_id ");
+
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+      $id = $row['exercise_id'];
+
       echo '<tr>';
 
       echo '<td>';      
-      echo $row['user_id'];      
+      echo '<a href="add_edit_user.php?exercise_id=' . $id . '">';
+      echo $row['exercise'];      
+      echo '</a>';
       echo '</td>';
 
       echo '<td>';
-      echo $row['clinic'];
+      echo $row['discipline'];
       echo '</td>';
 
       echo '<td>';
-      echo $row['account_type'];
-      echo '</td>'; 
-
-      echo '<td>';
-      echo $row['assigned_therapist'];
-      echo '</td>'; 
-
-      echo '<td>';
-      echo $row['first'];
-      echo '</td>'; 
-
-      echo '<td>';
-      echo $row['last'];
+      echo $row['modality'];
       echo '</td>';
 
       echo '<td>';
-      echo $row['phone'];
-      echo '</td>'; 
+      echo $row['assignment'];
+      echo '</td>';
 
       echo '<td>';
-      echo ($row['active'] == '1' ? 'True' : 'False');
-      echo '</td>';              
+      echo $row['link'];
+      echo '</td>';
 
-      echo '<td>';
-      echo ($row['new'] == '1' ? 'True' : 'False');
-      echo '</td>'; 
+      echo '</tr>';
 
-      echo '<td>';
-
-      echo ($row['locked'] == '1' ? 'True' : 'False');
-
-      echo '</td>';             
-
-      echo '</tr>'; 
+    }
 
   ?>
   

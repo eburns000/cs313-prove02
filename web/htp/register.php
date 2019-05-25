@@ -60,7 +60,7 @@
             <a class="nav-link" href="../htp/assign.php">My Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../htp/assign.php">Exercise Library</a>
+            <a class="nav-link" href="../htp/library.php">Exercise Library</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../htp/dashboard.php">Dashboard</a>

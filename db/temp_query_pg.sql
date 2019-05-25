@@ -29,3 +29,48 @@ WHERE id = $current_user_id;
                             JOIN clinic as c on c.id = a.assigned_clinic_id
                             JOIN account_type as at on at.id = a.account_type_id 
                             WHERE a.id = $current_user_id 
+
+
+      echo '<tr>';
+
+      echo '<td>';      
+      echo $row['user_id'];      
+      echo '</td>';
+
+      echo '<td>';
+      echo $row['clinic'];
+      echo '</td>';
+
+      echo '<td>';
+      echo $row['account_type'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['assigned_therapist'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['first'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['last'];
+      echo '</td>';
+
+      echo '<td>';
+      echo $row['phone'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['active'];
+      echo '</td>';              
+
+      echo '<td>';
+      echo $row['new'];
+      echo '</td>'; 
+
+      echo '<td>';
+      echo $row['locked'];
+      echo '</td>';             
+
+      echo '</tr>';                            
