@@ -8,15 +8,15 @@
 
   echo '<table>';
   echo '<tr>';
-  echo '<th>First Name</th>';
-  echo '<th>Last Name</th>';
-  echo '<th>Email</th>';
-  echo '<th>Email</th>';
-  echo '<th>Email</th>';
-  echo '<th>Email</th>';
-  echo '<th>Email</th>';
-  echo '<th>Email</th>';
-  echo '<th>Email</th>';
+  echo '<th>Exercise</th>';
+  echo '<th>Discipline</th>';
+  echo '<th>Modality</th>';
+  echo '<th>Assignment</th>';
+  echo '<th>Video</th>';
+  echo '<th>Point Value</th>';
+  echo '<th>Completed?</th>';
+  echo '<th>Assigned</th>';
+  echo '<th>Active</th>';
   echo '</tr>';
 
 
@@ -29,12 +29,13 @@
                               JOIN discipline as d on d.id = e.discipline_id 
                               WHERE ae.account_id = '$login_user_id' ") as $row)
   {
-    $id = $row['account_id'] . $row['exercise_id'];
+    $acct_id = $row['account_id'];
+    $exer_id = $row['exercise_id'];
 
     echo '<tr>';
 
     echo '<td>';      
-    echo '<a href="exercise_detail.php?ae_id=' . $id . '">';
+    echo '<a href="exercise_detail.php?account_id=' . $acct_id . '&exercise_id=' . $exer_id . '">';
     echo $row['exercise_name'];      
     echo '</a>';
     echo '</td>';
