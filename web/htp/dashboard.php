@@ -90,8 +90,31 @@
   <!-- Main Content -->
   <div class="container-fluid main">
 
+  <br><br><br><br><br><br><br>
+
+
   <!-- Include Appropriate Dashboard -->
-  <?php include 'users.php'; ?>
+  <?php 
+
+    $account_type_id = $_SESSION['account_type_id'];
+    echo 'Account Type: ' . $account_type_id;
+
+
+    switch ($account_type_id) {
+      case 1: // admin user
+        include 'users.php';
+        break;
+      case 2: // therapist user
+        include 'clients.php';
+        break;
+      case 3: // client user
+        include 'my_exercises.php';
+        break;
+      default:
+        echo 'Error Message';
+    }
+
+  ?>
 
   </div>
   
