@@ -111,21 +111,17 @@
 
   <table>
     <tr>
-      <th>Exercise ID</th>
       <th>Exercise Name</th>
       <th>Discipline</th>
       <th>Modality</th>
       <th>Assignment</th>
       <th>Video Link</th>
+      <th>Active</th>
     </tr>
   
   <?php 
 
       echo '<tr>';
-
-      echo '<td>';      
-      echo $row['exercise_id'];      
-      echo '</td>';
 
       echo '<td>';
       echo $row['exercise'];
