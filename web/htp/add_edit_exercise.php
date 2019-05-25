@@ -111,11 +111,11 @@
 
   <table>
     <tr>
-      <th>Exercise Name</th>
+      <th>Exercise</th>
       <th>Discipline</th>
       <th>Modality</th>
       <th>Assignment</th>
-      <th>Video Link</th>
+      <th>Video</th>
       <th>Active</th>
     </tr>
   
