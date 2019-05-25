@@ -35,10 +35,6 @@
     header("Location:login.php");
   }
 
-  // get client id passed in from therapist dashboard
-  $current_client_id_str = $_GET['client_id'];
-  $current_client_id = intval($current_exercise_id_str);  
-
 ?>
 
 <!DOCTYPE html>
@@ -98,6 +94,21 @@
   <?php 
 
     $login_user_id = $_SESSION['user_id'];
+
+
+    // get client id passed in from therapist dashboard
+    $current_client_id_str = $_GET['client_id'];
+    $current_client_id = intval($current_exercise_id_str); 
+
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+
+    echo $current_client_id;
+
+
 
     echo '<!-- Therapist View of Client Exercises -->';
     echo '<h2>My Clients Exercises</h2>';
