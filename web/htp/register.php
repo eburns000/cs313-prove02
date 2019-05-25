@@ -63,7 +63,7 @@
             <a class="nav-link" href="../htp/assign.php">Exercise Library</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../htp/assign.php">Dashboard</a>
+            <a class="nav-link" href="../htp/dashboard.php">Dashboard</a>
           </li>
           <li class="nav-item">
             <form id="logout_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
