@@ -106,7 +106,8 @@
     echo '<br>';
     echo '<br>';
 
-    echo $current_client_id;
+    echo 'client ID' . $current_client_id;
+    echo 'client ID string' . $current_client_id_str;
 
 
 
