@@ -119,7 +119,7 @@
       echo '<tr>';
 
       echo '<td>';      
-      echo '<a href="add_edit_user.php?exercise_id=' . $id . '">';
+      echo '<a href="add_edit_exercise.php?exercise_id=' . $id . '">';
       echo $row['exercise'];      
       echo '</a>';
       echo '</td>';
