@@ -106,7 +106,7 @@
   <div class="container-fluid main">
 
   <!-- Admin Dashboard: Show list of Users -->
-  <h2>Edit Exercise</h2>
+  <h2>Add/Edit Exercise</h2>
   <br>
 
   <table class="table-standard">

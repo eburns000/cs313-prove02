@@ -88,22 +88,7 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="../htp/login.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../htp/assign.php">My Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../htp/library.php">Exercise Library</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../htp/dashboard.php">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <form id="logout_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-              <input type="hidden" name="logout" value="Logout">
-              <a class="nav-link" href="#" onclick="logoutsession(); return false;">Logout</a>
-            </form>
-          </li>                                    
+          </li>                                   
         </ul> 
       </div>
     </nav>
@@ -118,8 +103,6 @@
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-checkout">
 
       <div class="error-message"><?php if(isset($message)) { echo $message; } ?></div>
-
-      <!-- TODO: Depending upon type of user logging in will determine which dashboard it goes to -->
 
       <label for="username">Username</label><br>
       <input class="field-checkout" type="text" name="username"><br>

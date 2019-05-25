@@ -35,6 +35,8 @@
     header("Location:login.php");
   }
 
+  $account_type_id = $_SESSION['account_type_id'];
+
 ?>
 
 <!DOCTYPE html>
@@ -68,11 +70,16 @@
             <a class="nav-link" href="../htp/login.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../htp/assign.php">My Profile</a>
+            <a class="nav-link" href="../htp/my_profile.php">My Profile</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../htp/library.php">Exercise Library</a>
-          </li>
+          <?php 
+            if ($account_type_id != '3') {
+
+              echo '<li class="nav-item">';
+              echo '<a class="nav-link" href="../htp/library.php">Exercise Library</a>';
+              echo '</li>';
+            }
+          ?>
           <li class="nav-item">
             <a class="nav-link" href="../htp/dashboard.php">Dashboard</a>
           </li>
@@ -92,8 +99,6 @@
 
   <!-- Include Appropriate Dashboard -->
   <?php 
-
-    $account_type_id = $_SESSION['account_type_id'];
 
     switch ($account_type_id) {
       case 1: // admin user
