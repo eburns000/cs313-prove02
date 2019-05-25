@@ -46,7 +46,7 @@
                                    a2.last_name as assigned_last, a.first_name as first, a.last_name as last,
                                    a.phone as phone, a.active as active, a.new_account as new, a.locked as locked
                             FROM account as a
-                            INNER JOIN account as a2 on a.id = a2.id
+                            INNER JOIN account as a2 on a.assigned_therapist_id = a2.id
                             JOIN clinic as c on c.id = a.assigned_clinic_id
                             JOIN account_type as at on at.id = a.account_type_id 
                             WHERE a.id = '$current_user_id' ");
