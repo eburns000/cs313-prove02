@@ -54,7 +54,8 @@
   $row = $statement->fetch(PDO::FETCH_ASSOC);
 
   if ($row['assigned_therapist_id'] == $current_user_id) {
-    $row['assigned_therapist_id'] = 'n/a';
+    $row['assigned_first'] = 'n/a';
+    $row['assigned_last'] = '';
   }
 
 ?>
