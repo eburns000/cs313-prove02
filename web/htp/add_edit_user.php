@@ -45,7 +45,7 @@
                             FROM account as a
                             JOIN clinic as c on c.id = a.assigned_clinic_id
                             JOIN account_type as at on at.id = a.account_type_id 
-                            WHERE id = $current_user_id ');
+                            WHERE a.id = $current_user_id ');
   $row = $statement->fetch(PDO::FETCH_ASSOC);
 
 ?>
