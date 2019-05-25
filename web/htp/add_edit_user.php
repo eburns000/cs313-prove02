@@ -42,7 +42,7 @@
 
   // get an array of current user data
   $statement = $db->query(" SELECT a.id as user_id, c.clinic_name as clinic, at.account_type_name as account_type, 
-                                   a.assigned_therapist_id as assigned_therapist, a2.first_name as assigned_first, 
+                                   a.assigned_therapist_id, a2.first_name as assigned_first, 
                                    a2.last_name as assigned_last, a.first_name as first, a.last_name as last,
                                    a.phone as phone, a.active as active, a.new_account as new, a.locked as locked
                             FROM account as a
@@ -115,13 +115,11 @@
   <table>
     <tr>
       <th>User ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
       <th>Assigned Clinic</th>
       <th>Account Type</th>
       <th>Assigned Therapist</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Assigned First Name</th>
-      <th>Assigned Last Name</th>
       <th>Phone</th>
       <th>Active?</th>
       <th>New Account?</th>
@@ -137,18 +135,6 @@
       echo '</td>';
 
       echo '<td>';
-      echo $row['clinic'];
-      echo '</td>';
-
-      echo '<td>';
-      echo $row['account_type'];
-      echo '</td>'; 
-
-      echo '<td>';
-      echo $row['assigned_therapist'];
-      echo '</td>'; 
-
-      echo '<td>';
       echo $row['first'];
       echo '</td>'; 
 
@@ -157,12 +143,16 @@
       echo '</td>';
 
       echo '<td>';
-      echo $row['assigned_first'];
+      echo $row['clinic'];
+      echo '</td>';
+
+      echo '<td>';
+      echo $row['account_type'];
       echo '</td>'; 
 
       echo '<td>';
-      echo $row['assigned_last'];
-      echo '</td>';      
+      echo $row['assigned_first'] . ' ' . $row['assigned_last'];
+      echo '</td>'; 
 
       echo '<td>';
       echo $row['phone'];
