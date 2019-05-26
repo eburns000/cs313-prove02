@@ -27,10 +27,12 @@
     echo '<tr>';
     echo '<th>First Name</th>';
     echo '<th>Last Name</th>';
+    echo '<th>User Name</th>';
     echo '<th>Email</th>';
+    echo '<th>Phone</th>';
     echo '</tr>';
 
-    foreach ($db->query("SELECT first_name, last_name, username, email, phone, my_points FROM account WHERE id = '$login_user_id' ") as $row)
+    foreach ($db->query("SELECT first_name, last_name, username, email, phone FROM account WHERE id = '$login_user_id' ") as $row)
     {
 
       echo '<tr>';
@@ -53,11 +55,7 @@
 
       echo '<td>';
       echo $row['phone'];
-      echo '</td>';
-
-      echo '<td>';
-      echo $row['my_points'];
-      echo '</td>';             
+      echo '</td>';        
 
       echo '</tr>';
 
