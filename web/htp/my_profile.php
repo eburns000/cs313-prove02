@@ -4,12 +4,13 @@
   include 'getdb.php';
 
   $account_type_id = $_SESSION['account_type_id'];
+  $login_user_id = $_SESSION['user_id'];
 
 ?>
 
   <!-- Header -->
   <?php include 'head.html'; ?>
-  
+
   <!-- Navigation -->
   <?php include 'nav.php'; ?>
 
@@ -19,7 +20,7 @@
   <?php 
 
     echo '<!-- Individual User Profile Screen -->';
-    echo '<h2>Users</h2>';
+    echo '<h2>My Profile</h2>';
     echo '<br>';
 
     echo '<table class="table-standard">';
@@ -29,16 +30,13 @@
     echo '<th>Email</th>';
     echo '</tr>';
 
-    foreach ($db->query("SELECT id, first_name, last_name, email FROM account") as $row)
+    foreach ($db->query("SELECT first_name, last_name, username, email, phone, my_points FROM account WHERE id = '$login_user_id' ") as $row)
     {
-      $id = $row['id'];
 
       echo '<tr>';
 
       echo '<td>';      
-      echo '<a href="add_edit_user.php?row_id=' . $id . '">';
       echo $row['first_name'];      
-      echo '</a>';
       echo '</td>';
 
       echo '<td>';
@@ -46,8 +44,20 @@
       echo '</td>';
 
       echo '<td>';
+      echo $row['username'];
+      echo '</td>';
+
+      echo '<td>';
       echo $row['email'];
-      echo '</td>'; 
+      echo '</td>';
+
+      echo '<td>';
+      echo $row['phone'];
+      echo '</td>';
+
+      echo '<td>';
+      echo $row['my_points'];
+      echo '</td>';             
 
       echo '</tr>';
 
