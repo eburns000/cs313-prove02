@@ -54,23 +54,29 @@
     // $stmt->bindValue(':content', $content, PDO::PARAM_STR);
     // $stmt->execute();
 
-    $topicsSelected = $_POST['topic'];
+    $nvals = count($_POST['topic']);
 
-    var_dump($topicsSelected);
+    for ($i = 0; $i < $nvals; $i++) {
 
-    if(!empty($topicsSelected)) {
-
-      foreach ($topicsSelected as $topic) {
-        
-        $stmt = $db->prepare('INSERT INTO scriptures_topic (scriptures_id, topic_id) VALUES (1, :topic_id)');
-        // $stmt->bindValue(':scripture_id', $scripture_id, PDO::PARAM_INT);
-        $stmt->bindValue(':topic_id', $topic, PDO::PARAM_INT);
-        $stmt->execute();
-
-      }
-
+      echo 'Topic: ' . $_POST['topic'][$i];
 
     }
+
+    // var_dump($topicsSelected);
+
+    // if(!empty($topicsSelected)) {
+
+    //   foreach ($topicsSelected as $topic) {
+        
+    //     $stmt = $db->prepare('INSERT INTO scriptures_topic (scriptures_id, topic_id) VALUES (1, :topic_id)');
+    //     // $stmt->bindValue(':scripture_id', $scripture_id, PDO::PARAM_INT);
+    //     $stmt->bindValue(':topic_id', $topic, PDO::PARAM_INT);
+    //     $stmt->execute();
+
+    //   }
+
+
+    // }
 
 
   }
