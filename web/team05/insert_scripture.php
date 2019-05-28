@@ -24,7 +24,9 @@
     die();
   }
 
-  // how many topics there are
+  // check if book, chapter, verse, and content were all present, and if so, then cleanse data input first
+  // then insert reference into scriptures table
+  // if topics were selected, then add a record in the scriptures_topic table for each scripture-topic combination
   if(isset($_POST['book']) && isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['content'])) {
 
     $book = htmlspecialchars($_POST['book']);
@@ -38,53 +40,36 @@
     $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
     $stmt->bindValue(':content', $content, PDO::PARAM_STR);
     $stmt->execute();
-    // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $last_id = $db->lastInsertID();
 
-    echo $book;
-    echo $chapter;
-    echo $verse;
-    echo $content;
+    echo $last_id . '<br>';
+    echo $book . '<br>';
+    echo $chapter . '<br>';
+    echo $verse . '<br>';
+    echo $content . '<br>';
 
-    // get id of scripture we just inserted
+    // add value scripture id and topic id to scriptures_topic for each topic selected
+    if (!empty($_POST['topic'])) {
 
-    // $stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
-    // $stmt->bindValue(':book', $book, PDO::PARAM_STR);
-    // $stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
-    // $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
-    // $stmt->bindValue(':content', $content, PDO::PARAM_STR);
-    // $stmt->execute();
+      // determine how many checkboxes were checked
+      $nvals = count($_POST['topic']);
 
-    $nvals = count($_POST['topic']);
+      for ($i = 0; $i < $nvals; $i++) {
 
-    for ($i = 0; $i < $nvals; $i++) {
+        // note that the actual value passed in corresponds to the appropriate topic id from the topic table
+        $stmt = $db->prepare('INSERT INTO scriptures_topic (scriptures_id, topic_id) VALUES (:scriptures_id, :topic_id)');
+        $stmt->bindValue(':scripture_id', $last_id, PDO::PARAM_INT);
+        $stmt->bindValue(':topic_id', $_POST['topic'][$i], PDO::PARAM_INT);
+        $stmt->execute();
 
-      echo 'Topic: ' . $_POST['topic'][$i];
+      }
 
     }
 
-    // var_dump($topicsSelected);
-
-    // if(!empty($topicsSelected)) {
-
-    //   foreach ($topicsSelected as $topic) {
-        
-    //     $stmt = $db->prepare('INSERT INTO scriptures_topic (scriptures_id, topic_id) VALUES (1, :topic_id)');
-    //     // $stmt->bindValue(':scripture_id', $scripture_id, PDO::PARAM_INT);
-    //     $stmt->bindValue(':topic_id', $topic, PDO::PARAM_INT);
-    //     $stmt->execute();
-
-    //   }
-
-
-    // }
-
-
   }
 
-  // header("Location: team05.php");
-
-
-
+  // redirect back to php page with form
+  header('Location: team05.php');
 
 ?>
 <!DOCTYPE html>
