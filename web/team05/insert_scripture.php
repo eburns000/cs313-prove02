@@ -40,8 +40,14 @@
     $stmt->execute();
     // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    
+    echo $book;
+    echo $chapter;
+    echo $verse;
+    echo $content;
 
   }
+
+
+
 
 ?>
