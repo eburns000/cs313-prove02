@@ -24,8 +24,6 @@
     die();
   }
 
-  echo 'test';
-
   // how many topics there are
   if(isset($_POST['book']) && isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['content'])) {
 
@@ -48,6 +46,8 @@
     echo $content;
 
   }
+
+  header("Location: ../team05.php");
 
 
 
