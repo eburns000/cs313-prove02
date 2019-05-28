@@ -26,7 +26,7 @@
 
   // how many topics there are
   if(isset($_POST['book']) && isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['content'])) {
-  	
+
 
   }
 
@@ -44,7 +44,7 @@
 	<h4>Core 02</h4>
 	<br>
 
-	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-checkout">
+	<form action="insert_scripture.php" method="post" class="form-checkout">
 
 	  <label for="book">Book</label><br>
 	  <input type="text" name="book"><br>

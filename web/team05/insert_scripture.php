@@ -24,6 +24,8 @@
     die();
   }
 
+  echo 'test';
+
   // how many topics there are
   if(isset($_POST['book']) && isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['content'])) {
 
@@ -51,3 +53,12 @@
 
 
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test05 insert scripture</title>
+</head>
+<body>
+
+</body>
+</html>
