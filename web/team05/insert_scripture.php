@@ -54,7 +54,9 @@
     // $stmt->bindValue(':content', $content, PDO::PARAM_STR);
     // $stmt->execute();
 
-    $topicsSelected = $_POST['topic'];
+    $topicsSelected = $_POST['topic[]'];
+
+    var_dump($topicsSelected);
 
     if(!empty($topicsSelected)) {
 
@@ -73,7 +75,7 @@
 
   }
 
-  header("Location: team05.php");
+  // header("Location: team05.php");
 
 
 
