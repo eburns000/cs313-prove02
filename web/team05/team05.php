@@ -65,7 +65,7 @@
 	  		$id = $row['id'];
 	  		$topic = $row['name'];
 
-	  		echo '<input type="checkbox" name="topic' . $id . '" value="' . $topic . '">';
+	  		echo '<input type="checkbox" name="topic[]" value="' . $id . '">';
 	  		echo $topic;
 	  		echo '<br>';
 
