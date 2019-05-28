@@ -57,7 +57,7 @@
       for ($i = 0; $i < $nvals; $i++) {
 
         // note that the actual value passed in corresponds to the appropriate topic id from the topic table
-        $stmt = $db->prepare('INSERT INTO scriptures_topic (scriptures_id, topic_id) VALUES (:scriptures_id, :topic_id)');
+        $stmt = $db->prepare('INSERT INTO scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic_id)');
         $stmt->bindValue(':scripture_id', $last_id, PDO::PARAM_INT);
         $stmt->bindValue(':topic_id', $_POST['topic'][$i], PDO::PARAM_INT);
         $stmt->execute();
