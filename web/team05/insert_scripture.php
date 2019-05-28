@@ -47,7 +47,7 @@
 
   }
 
-  header("Location: ../team05.php");
+  header("Location: team05.php");
 
 
 
