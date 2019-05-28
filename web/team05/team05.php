@@ -28,6 +28,7 @@
   if(isset($_POST['book']) && isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['content'])) {
 
 
+
   }
 
 ?>
@@ -65,7 +66,7 @@
 	  		$id = $row['id'];
 	  		$topic = $row['name'];
 
-	  		echo '<input type="checkbox" name="topic' . $id . '" value="' . $topic . '">';
+	  		echo '<input type="checkbox" name="topic$id" value="$topic">';
 	  		echo $topic;
 	  		echo '<br>';
 
