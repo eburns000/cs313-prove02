@@ -45,6 +45,32 @@
     echo $verse;
     echo $content;
 
+    // get id of scripture we just inserted
+
+    // $stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
+    // $stmt->bindValue(':book', $book, PDO::PARAM_STR);
+    // $stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
+    // $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
+    // $stmt->bindValue(':content', $content, PDO::PARAM_STR);
+    // $stmt->execute();
+
+    $topicsSelected = $_POST['topic'];
+
+    if(!empty($topicsSelected)) {
+
+      foreach ($topicsSelected as $topic) {
+        
+        $stmt = $db->prepare('INSERT INTO scriptures_topic (scriptures_id, topic_id) VALUES (1, :topic_id)');
+        // $stmt->bindValue(':scripture_id', $scripture_id, PDO::PARAM_INT);
+        $stmt->bindValue(':topic_id', $topic, PDO::PARAM_INT);
+        $stmt->execute();
+
+      }
+
+
+    }
+
+
   }
 
   header("Location: team05.php");
