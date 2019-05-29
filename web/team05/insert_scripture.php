@@ -24,9 +24,11 @@
     die();
   }
 
+  // CORE 2 - insert values from form (from team05.php) into both scriptures and scriptures_topic tables
   // check if book, chapter, verse, and content were all present, and if so, then cleanse data input first
   // then insert reference into scriptures table
   // if topics were selected, then add a record in the scriptures_topic table for each scripture-topic combination
+  // reference to get last ID: https://www.w3schools.com/php/php_mysql_insert_lastid.asp
   if(isset($_POST['book']) && isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['content'])) {
 
     $book = htmlspecialchars($_POST['book']);
@@ -40,8 +42,9 @@
     $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
     $stmt->bindValue(':content', $content, PDO::PARAM_STR);
     $stmt->execute();
-    $last_id = $db->lastInsertID();
+    $last_id = $db->lastInsertID(); // this gets the id of the last inserted data. Ref: https://www.w3schools.com/php/php_mysql_insert_lastid.asp
 
+    // for testing purposes
     echo $last_id . '<br>';
     echo $book . '<br>';
     echo $chapter . '<br>';
@@ -49,11 +52,17 @@
     echo $content . '<br>';
 
     // add value scripture id and topic id to scriptures_topic for each topic selected
+    // note that $_POST['topic'] will return an array of the values returned from only those boxes which are checked
+    // reference: http://form.guide/php-form/php-form-checkbox.html
     if (!empty($_POST['topic'])) {
 
       // determine how many checkboxes were checked
       $nvals = count($_POST['topic']);
 
+      // loop through the array, inserting into the scriptures_topic table the scripture ID (from $last_id above) and the 
+      // topic ID from the value that was passed into the "checkbox" array 
+      // note that we had to set the "value" of each check box to the ID of each topic, which was retrieved by 
+      // querying the topic table - this was done in team05.php
       for ($i = 0; $i < $nvals; $i++) {
 
         // note that the actual value passed in corresponds to the appropriate topic id from the topic table
@@ -68,8 +77,25 @@
 
   }
 
-  // redirect back to php page with form
-  header('Location: team05.php');
+  // redirect back to php page with form - this was for CORE 02 - comment out for CORE 03
+  // reference: https://stackoverflow.com/questions/4871942/how-to-redirect-to-another-page-using-php
+  // header('Location: team05.php');
+
+
+  // Core 03
+  // After a user submits the form, have the application show a page
+  // that lists all the scriptures in the database, each one with it's associated topics.
+    $stmt2 = $db->prepare('SELECT s.book, s.chapter, s.verse, t.name, s.content 
+                          FROM scriptures as s 
+                          JOIN scriptures_topic as st ON s.id = st.scriptures_id
+                          JOIN topic as t ON t.id = st.topic_id');
+    $stmt2->execute();
+    $rows = $stmt2->fetchALL(PDO::FETCH_ASSOC);
+
+    foreach ($rows as $row) {
+      echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'];
+      echo ' - topic: ' . $row['name'] . ' - note: ' . $row['content'] . '.' . '<br>';
+    }
 
 ?>
 <!DOCTYPE html>

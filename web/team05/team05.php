@@ -40,6 +40,12 @@
     <meta name="viewport" content="width-device-width, initial-scale=1">
 </head>
 <body>
+
+	<!-- Core 2 Requirements -->
+	<!-- 1) Create form to insert scriptures with topics -->
+	<!-- 2) Have PHP generate checkboxes for each topic in the DB table -->
+	<!-- 3) Have a submit button insert the scripture into both the scriptures and scriptures_topic tables -->
+	<!-- See insert_scripture.php for the insert functionality -->
 	<h2>Team 05 examples</h2>
 	<h4>Core 02</h4>
 	<br>
@@ -77,19 +83,6 @@
 
 	</form>
 	<br>
-
-	<?php 
-
-		// topic1... topic2... topic3... array - change value above to increment by 1
-		// then traverse array here in a foreach statement
-
-
-
-
-
-	?>
-
-
 	
 </body>
 </html>
