@@ -44,13 +44,6 @@
     $stmt->execute();
     $last_id = $db->lastInsertID(); // this gets the id of the last inserted data. Ref: https://www.w3schools.com/php/php_mysql_insert_lastid.asp
 
-    // for testing purposes
-    echo $last_id . '<br>';
-    echo $book . '<br>';
-    echo $chapter . '<br>';
-    echo $verse . '<br>';
-    echo $content . '<br>';
-
     // add value scripture id and topic id to scriptures_topic for each topic selected
     // note that $_POST['topic'] will return an array of the values returned from only those boxes which are checked
     // reference: http://form.guide/php-form/php-form-checkbox.html
@@ -81,21 +74,53 @@
   // reference: https://stackoverflow.com/questions/4871942/how-to-redirect-to-another-page-using-php
   // header('Location: team05.php');
 
+  // add a die() statement - see teacher solution - always add die() after re-directs
+  // die();
+
 
   // Core 03
   // After a user submits the form, have the application show a page
   // that lists all the scriptures in the database, each one with it's associated topics.
-    $stmt2 = $db->prepare('SELECT s.book, s.chapter, s.verse, t.name, s.content 
-                          FROM scriptures as s 
-                          JOIN scriptures_topic as st ON s.id = st.scriptures_id
-                          JOIN topic as t ON t.id = st.topic_id');
-    $stmt2->execute();
-    $rows = $stmt2->fetchALL(PDO::FETCH_ASSOC);
 
-    foreach ($rows as $row) {
-      echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'];
-      echo ' - topic: ' . $row['name'] . ' - note: ' . $row['content'] . '.' . '<br>';
+  // first prepare the statement to get the scripture reference
+  $stmtScripture = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
+  $stmtScripture->execute();
+
+  // for each scripture, then loop through the scripture_topic table and pull those related topics
+  while ($row = $stmtScripture->fetch(PDO::FETCH_ASSOC)) {
+
+    echo '<p>';
+    echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong>' . ' - ';
+    echo $row['content'];
+    echo '<br>';
+    echo 'Topics: ';
+
+    // get topics for the given scripture above
+    $stmtTopics = $db->prepare('SELECT name FROM topic t JOIN scriptures_topic st ON st.topic_id = t.id WHERE st.scriptures_id = :scripture_id');
+    $stmtTopics->bindValue(':scripture_id', $row['id']);
+    $stmtTopics->execute();
+
+    // go through each topic
+    while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC)) {
+      echo $topicRow['name'] . ' ';
     }
+
+    echo '</p>';
+
+  }
+
+  // my original way of doing the 3rd part of the CORE challenge
+  // $stmt2 = $db->prepare('SELECT s.book, s.chapter, s.verse, t.name, s.content 
+  //                       FROM scriptures as s 
+  //                       JOIN scriptures_topic as st ON s.id = st.scriptures_id
+  //                       JOIN topic as t ON t.id = st.topic_id');
+  // $stmt2->execute();
+  // $rows = $stmt2->fetchALL(PDO::FETCH_ASSOC);
+
+  // foreach ($rows as $row) {
+  //   echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'];
+  //   echo ' - topic: ' . $row['name'] . ' - scripture: ' . $row['content'] . '.' . '<br>';
+  // }
 
 ?>
 <!DOCTYPE html>
