@@ -91,8 +91,9 @@
 
 	<div id="response"></div>
 
-	<!-- Stretch 02 - post data to same page -->
-	<!-- display.php has code for Stretch 02 -->
+	<!-- Stretch 03 - post data to same page using AJAX -->
+	<!-- Reference: https://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php -->
+	<!-- Reference: https://www.spaceotechnologies.com/jquery-ajax-post-example-php/ -->
 
 	<br>
 
