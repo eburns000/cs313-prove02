@@ -25,9 +25,6 @@
   }
 
 
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -89,37 +86,37 @@
 
 	<?php 
 
-	  // This was copied from Core 03 - this is the display of the scriptures and their topics
+	  // // This was copied from Core 03 - this is the display of the scriptures and their topics
 
-	  // NOTE THAT FOR STRETCH 02, this will essentially be "refreshed" by the fact that we are redirecting 
-	  // back to this page
+	  // // NOTE THAT FOR STRETCH 02, this will essentially be "refreshed" by the fact that we are redirecting 
+	  // // back to this page
 
-	  // first prepare the statement to get the scripture reference
-	  $stmtScripture = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
-	  $stmtScripture->execute();
+	  // // first prepare the statement to get the scripture reference
+	  // $stmtScripture = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
+	  // $stmtScripture->execute();
 
-	  // for each scripture, then loop through the scripture_topic table and pull those related topics
-	  while ($row = $stmtScripture->fetch(PDO::FETCH_ASSOC)) {
+	  // // for each scripture, then loop through the scripture_topic table and pull those related topics
+	  // while ($row = $stmtScripture->fetch(PDO::FETCH_ASSOC)) {
 
-	    echo '<p>';
-	    echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong>' . ' - ';
-	    echo $row['content'];
-	    echo '<br>';
-	    echo 'Topics: ';
+	  //   echo '<p>';
+	  //   echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</strong>' . ' - ';
+	  //   echo $row['content'];
+	  //   echo '<br>';
+	  //   echo 'Topics: ';
 
-	    // get topics for the given scripture above
-	    $stmtTopics = $db->prepare('SELECT name FROM topic t JOIN scriptures_topic st ON st.topic_id = t.id WHERE st.scriptures_id = :scripture_id');
-	    $stmtTopics->bindValue(':scripture_id', $row['id']);
-	    $stmtTopics->execute();
+	  //   // get topics for the given scripture above
+	  //   $stmtTopics = $db->prepare('SELECT name FROM topic t JOIN scriptures_topic st ON st.topic_id = t.id WHERE st.scriptures_id = :scripture_id');
+	  //   $stmtTopics->bindValue(':scripture_id', $row['id']);
+	  //   $stmtTopics->execute();
 
-	    // go through each topic
-	    while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC)) {
-	      echo $topicRow['name'] . ' ';
-	    }
+	  //   // go through each topic
+	  //   while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC)) {
+	  //     echo $topicRow['name'] . ' ';
+	  //   }
 
-	    echo '</p>';
+	  //   echo '</p>';
 
-	  }	
+	  // }	
 
 
 	?>
