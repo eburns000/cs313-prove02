@@ -79,6 +79,10 @@
 
 	  ?>
 
+	  <!-- Stretch 01 - Create empty check box and empty text box next to it -->
+	  <input type="checkbox" name="other" value="other"><span>Other: </span>
+	  <input type="text" name="other_topic" placeholder="Enter custom topic">
+
 	  <input type="submit" value="Insert">
 
 	</form>

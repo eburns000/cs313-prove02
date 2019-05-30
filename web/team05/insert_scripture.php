@@ -42,7 +42,7 @@
     $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
     $stmt->bindValue(':content', $content, PDO::PARAM_STR);
     $stmt->execute();
-    $last_id = $db->lastInsertID(); // this gets the id of the last inserted data. Ref: https://www.w3schools.com/php/php_mysql_insert_lastid.asp
+    $lastScriptureID = $db->lastInsertID("scriptures_id_seq"); // this gets the id of the last inserted data. Ref: https://www.w3schools.com/php/php_mysql_insert_lastid.asp
 
     // add value scripture id and topic id to scriptures_topic for each topic selected
     // note that $_POST['topic'] will return an array of the values returned from only those boxes which are checked
@@ -60,13 +60,33 @@
 
         // note that the actual value passed in corresponds to the appropriate topic id from the topic table
         $stmt = $db->prepare('INSERT INTO scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic_id)');
-        $stmt->bindValue(':scripture_id', $last_id, PDO::PARAM_INT);
+        $stmt->bindValue(':scripture_id', $lastScriptureID, PDO::PARAM_INT);
         $stmt->bindValue(':topic_id', $_POST['topic'][$i], PDO::PARAM_INT);
         $stmt->execute();
 
       }
 
     }
+
+      // STRETCH 01 - get value from other check box
+      if(isset($_POST['other']) && isset($_POST['other_topic'])) {
+
+        // add other topic to topic table first
+        // note should do a try statement and only if it is successful do we move on but for this exercise I will leave it
+        $other_topic = $_POST['other_topic'];
+        $stmtOtherTopic = $db->prepare('INSERT INTO topic (name) VALUES (:other_topic)');
+        $stmtOtherTopic->bindValue(':other_topic', $other_topic, PDO::PARAM_STR);
+        $stmtOtherTopic->execute();
+        $lastTopicID = $db->lastInsertID("topic_id_seq");
+
+        // now add topic to scripture the way we did it above
+        $stmt = $db->prepare('INSERT INTO scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic_id)');
+        $stmt->bindValue(':scripture_id', $lastScriptureID, PDO::PARAM_INT);
+        $stmt->bindValue(':topic_id', $lastTopicID, PDO::PARAM_INT);
+        $stmt->execute();
+    
+      }
+
 
   }
 
