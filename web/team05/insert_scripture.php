@@ -87,15 +87,16 @@
     
       }
 
-
   }
 
   // redirect back to php page with form - this was for CORE 02 - comment out for CORE 03
+  // RECOMMENT BACK IN FOR STRETCH 02 - NOTE - EVEN THOUGH WE ARE REDIRECTING BEFORE THE CODE BELOW
+  // CAN BE EXECUTED, I'M LEAVING IT UNCOMMENTED FOR REFERENCE
   // reference: https://stackoverflow.com/questions/4871942/how-to-redirect-to-another-page-using-php
-  // header('Location: team05.php');
+  header('Location: team05.php');
 
   // add a die() statement - see teacher solution - always add die() after re-directs
-  // die();
+  die();
 
 
   // Core 03
