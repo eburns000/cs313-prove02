@@ -52,7 +52,7 @@
 	<h4>Core 02</h4>
 	<br>
 
-	<form action="insert_scripture.php" method="post" class="form-checkout">
+	<form id="userForm">
 
 	  <label for="book">Book</label><br>
 	  <input type="text" name="book"><br>
@@ -89,46 +89,49 @@
 
 	</form>
 
+	<div id="response"></div>
+
 	<!-- Stretch 02 - post data to same page -->
-
-	<?php 
-
-	  // This was copied from Core 03 - this is the display of the scriptures and their topics
-
-	  // NOTE THAT FOR STRETCH 02, this will essentially be "refreshed" by the fact that we are redirecting 
-	  // back to this page
-
-	  // first prepare the statement to get the scripture reference
-	  $stmtScripture2 = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
-	  $stmtScripture2->execute();
-
-	  // for each scripture, then loop through the scripture_topic table and pull those related topics
-	  while ($row2 = $stmtScripture2->fetch(PDO::FETCH_ASSOC)) {
-
-	    echo '<p>';
-	    echo '<strong>' . $row2['book'] . ' ' . $row2['chapter'] . ':' . $row2['verse'] . '</strong>' . ' - ';
-	    echo $row2['content'];
-	    echo '<br>';
-	    echo 'Topics: ';
-
-	    // get topics for the given scripture above
-	    $stmtTopics2 = $db->prepare('SELECT name FROM topic t JOIN scriptures_topic st ON st.topic_id = t.id WHERE st.scriptures_id = :scripture_id2');
-	    $stmtTopics2->bindValue(':scripture_id2', $row2['id']);
-	    $stmtTopics2->execute();
-
-	    // go through each topic
-	    while ($topicRow2 = $stmtTopics2->fetch(PDO::FETCH_ASSOC)) {
-	      echo $topicRow2['name'] . ' ';
-	    }
-
-	    echo '</p>';
-
-	  }	
-
-
-	?>
+	<!-- display.php has code for Stretch 02 -->
 
 	<br>
+
+	<script>
+
+		$(document).ready(function(){
+
+			$('#userForm').submit(function(){
+
+				// show that something is loading
+				$('#response').html("<b>Loading response...</b>");
+
+				// Call ajax for pass data to other place
+				$.ajax({
+				type: 'POST',
+				url: 'insert_scripture_ajax.php',
+				data: $(this).serialize() // getting filed value in serialize form
+				})
+				.done(function(data){ // if getting done then call.
+
+				// show the response
+				$('#response').html(data);
+
+				})
+				.fail(function() { // if fail then getting message
+
+				// just in case posting your form failed
+				alert( "Posting failed." );
+
+				});
+
+				// to prevent refreshing the whole page page
+				return false;
+
+			});
+
+		});
+
+	</script>
 	
 </body>
 </html>

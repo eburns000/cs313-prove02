@@ -89,16 +89,6 @@
 
   }
 
-  // redirect back to php page with form - this was for CORE 02 - comment out for CORE 03
-  // RECOMMENT BACK IN FOR STRETCH 02 - NOTE - EVEN THOUGH WE ARE REDIRECTING BEFORE THE CODE BELOW
-  // CAN BE EXECUTED, I'M LEAVING IT UNCOMMENTED FOR REFERENCE
-  // reference: https://stackoverflow.com/questions/4871942/how-to-redirect-to-another-page-using-php
-  header('Location: team05.php');
-
-  // add a die() statement - see teacher solution - always add die() after re-directs
-  die();
-
-
   // Core 03
   // After a user submits the form, have the application show a page
   // that lists all the scriptures in the database, each one with it's associated topics.
@@ -130,35 +120,6 @@
 
   }
 
-  // my original way of doing the 3rd part of the CORE challenge
-  // $stmt2 = $db->prepare('SELECT s.book, s.chapter, s.verse, t.name, s.content 
-  //                       FROM scriptures as s 
-  //                       JOIN scriptures_topic as st ON s.id = st.scriptures_id
-  //                       JOIN topic as t ON t.id = st.topic_id');
-  // $stmt2->execute();
-  // $rows = $stmt2->fetchALL(PDO::FETCH_ASSOC);
-
-  // foreach ($rows as $row) {
-  //   echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'];
-  //   echo ' - topic: ' . $row['name'] . ' - scripture: ' . $row['content'] . '.' . '<br>';
-  // }
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Team 05 - Insert Scripture</title>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-</head>
-<body>
 
-</body>
-</html>
