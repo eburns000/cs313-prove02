@@ -116,7 +116,7 @@
         // display options for drop down box from clinic table
         // to make this dynamic, need to add javascript so that as account type is changed, 
         // this option will either gray out and become disabled or be enabled
-        if (!$row['account_type_id'] == 3) {
+        if ($row['account_type_id'] != 3) {
 
           echo "<option value='" . $row['user_id'] . "'>n/a</option>";
 
