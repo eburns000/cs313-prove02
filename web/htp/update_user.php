@@ -70,6 +70,10 @@
     $new    = ( isset($_POST['new_account']) )    ? True : $rowCurrent['new_account'];
     $locked = ( isset($_POST['locked']) )         ? True : $rowCurrent['locked'];
 
+    echo $rowCurrent['active'];
+    echo $rowCurrent['new_account'];
+    echo $rowCurrent['locked'];
+
     echo '<p>5</p>';
 
     // insert values into account table to create another user
