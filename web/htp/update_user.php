@@ -31,7 +31,7 @@
 
     echo '<p>2</p>';
 
-    $user_id = $_POST['id'];
+    $user_id = intval($_POST['id']);
 
     echo '<p>3</p>';
 
@@ -62,9 +62,9 @@
     $last_name  = ( isset($_POST['last_name']) )                        ? htmlspecialchars($_POST['last_name'])             : $rowCurrent['last_name'];
     $phone      = ( isset($_POST['phone']) )                            ? htmlspecialchars($_POST['phone'])                 : $rowCurrent['phone'];
 
-    $clinic_id             = ( isset($_POST['clinic_id']) )             ? htmlspecialchars($_POST['clinic_id'])             : $rowCurrent['assigned_clinic_id'];
-    $account_type_id       = ( isset($_POST['account_type_id']) )       ? htmlspecialchars($_POST['account_type_id'])       : $rowCurrent['account_type_id'];
-    $assigned_therapist_id = ( isset($_POST['assigned_therapist_id']) ) ? htmlspecialchars($_POST['assigned_therapist_id']) : $rowCurrent['assigned_therapist_id'];
+    $clinic_id             = intval(( isset($_POST['clinic_id']) )             ? htmlspecialchars($_POST['clinic_id'])             : $rowCurrent['assigned_clinic_id']);
+    $account_type_id       = intval(( isset($_POST['account_type_id']) )       ? htmlspecialchars($_POST['account_type_id'])       : $rowCurrent['account_type_id']);
+    $assigned_therapist_id = intval(( isset($_POST['assigned_therapist_id']) ) ? htmlspecialchars($_POST['assigned_therapist_id']) : $rowCurrent['assigned_therapist_id']);
 
     $active = ( isset($_POST['active']) )         ? 1 : $rowCurrent['active'];
     $new    = ( isset($_POST['new_account']) )    ? 1 : $rowCurrent['new_account'];
