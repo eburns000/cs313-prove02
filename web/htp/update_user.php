@@ -24,10 +24,16 @@
     die();
   }
 
+  echo '<p>1</p>';
+
   // Test to see that all fields are in post array and if so, add the record to the database
   if( isset($_POST['id']) ) {
 
+    echo '<p>2</p>';
+
     $user_id = $_POST['id'];
+
+    echo '<p>3</p>';
 
     // get current values from table to use as default values
     $stmtCurrent = $db->prepare('SELECT (username, email, first_name, last_name, phone, clinic_id, account_type_id, 
@@ -37,6 +43,8 @@
     $stmtCurrent->bindValue(':user_id', $user_id, PDO::PARAM_INT);
     $stmtCurrent->execute();
     $rowCurrent = $stmtCurrent->fetch(PDO::FETCH_ASSOC);
+
+    echo '<p>4</p>';
 
     // sanitize the input and set all variables
     $username   = ( isset($_POST['username']) )                         ? htmlspecialchars($_POST['username'])              : $rowCurrent['username'];
@@ -52,6 +60,8 @@
     $active = ( isset($_POST['active']) )         ? True : $rowCurrent['active'];
     $new    = ( isset($_POST['new_account']) )    ? True : $rowCurrent['new_account'];
     $locked = ( isset($_POST['locked']) )         ? True : $rowCurrent['locked'];
+
+    echo '<p>5</p>';
 
     // insert values into account table to create another user
     $stmtUpdate = $db->prepare('UPDATE account
@@ -81,11 +91,24 @@
     $stmtUpdate->bindValue(':user_id', $user_id, PDO::PARAM_INT);
     $stmtUpdate->execute();
 
+    echo '<p>6</p>';
+
   }
 
+  echo '<p>7</p>';
+
   // go to dashboard page after updating a new user
-  header('Location: dashboard.php');
-  die();
+  // header('Location: dashboard.php');
+  // die();
 
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTP Update User</title>
+</head>
+<body>
+
+</body>
+</html>
 
