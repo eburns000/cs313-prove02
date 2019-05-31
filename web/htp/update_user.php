@@ -49,9 +49,9 @@
     $account_type_id       = ( isset($_POST['account_type_id']) )       ? htmlspecialchars($_POST['account_type_id'])       : $rowCurrent['account_type_id'];
     $assigned_therapist_id = ( isset($_POST['assigned_therapist_id']) ) ? htmlspecialchars($_POST['assigned_therapist_id']) : $rowCurrent['assigned_therapist_id'];
 
-    $active = ( isset($_POST['active']) )         ? 1 : $rowCurrent['active'];
-    $new    = ( isset($_POST['new_account']) )    ? 1 : $rowCurrent['new_account'];
-    $locked = ( isset($_POST['locked']) )         ? 1 : $rowCurrent['locked'];
+    $active = ( isset($_POST['active']) )         ? True : $rowCurrent['active'];
+    $new    = ( isset($_POST['new_account']) )    ? True : $rowCurrent['new_account'];
+    $locked = ( isset($_POST['locked']) )         ? True : $rowCurrent['locked'];
 
     // insert values into account table to create another user
     $stmtUpdate = $db->prepare('UPDATE account
@@ -78,7 +78,7 @@
     $stmtUpdate->bindValue(':active', $active, PDO::PARAM_BOOL);
     $stmtUpdate->bindValue(':new_account', $new, PDO::PARAM_BOOL);
     $stmtUpdate->bindValue(':locked', $locked, PDO::PARAM_BOOL);
-    $stmtUpdate->bindValue(':user_id', $user_id, PDO::PARAM_BOOL);
+    $stmtUpdate->bindValue(':user_id', $user_id, PDO::PARAM_INT);
     $stmtUpdate->execute();
 
   }
