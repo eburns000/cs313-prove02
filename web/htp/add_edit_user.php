@@ -8,7 +8,7 @@
   $current_user_id = intval($current_user_id_str);
 
   // get an array of current user data
-  $statement = $db->query(" SELECT a.id as user_id, a.username as username, a.password as password,
+  $statement = $db->query(" SELECT a.id as user_id, a.username as username, a.email as email,
                                    a.assigned_clinic_id, a.account_type_id, a.assigned_therapist_id,
                                    c.clinic_name as clinic, at.account_type_name as account_type, 
                                    a.assigned_therapist_id, a2.first_name as assigned_first, 
@@ -62,8 +62,8 @@
     <label for="username">Username</label><br>    
     <input class="field-checkout" type="text" name="username" value="<?php echo $row['username']; ?>"><br>
 
-    <label for="password">Password</label><br>    
-    <input class="field-checkout" type="text" name="password" value="<?php echo $row['password']; ?>"><br>
+    <label for="email">Email Address</label><br>    
+    <input class="field-checkout" type="text" name="email" value="<?php echo $row['email']; ?>"><br>
 
     <label for="first_name">First Name</label><br>    
     <input class="field-checkout" type="text" name="first_name" value="<?php echo $row['first']; ?>"><br>
@@ -75,7 +75,7 @@
     <input class="field-checkout" type="text" name="phone" value="<?php echo $row['phone']; ?>"><br> 
 
     <label for="clinic">Assigned Clinic</label>    
-    <select name="clinic">
+    <select name="clinic_id">
       <?php
 
         // display options for drop down box from clinic table
@@ -94,7 +94,7 @@
     </select><br>
 
     <label for="account_type">Account Type</label>    
-    <select name="account_type">
+    <select name="account_type_id">
       <?php
 
         // display options for drop down box from clinic table
@@ -113,7 +113,7 @@
     </select><br>
 
     <label for="assigned_therapist">Assigned Therapist</label>    
-    <select name="assigned_therapist">
+    <select name="assigned_therapist_id">
       <?php
 
         // display options for drop down box from clinic table
@@ -141,11 +141,11 @@
        ?>
     </select><br>
 
-    <input class="field-checkout" type="checkbox" name="active" value="1" <?php echo($row['active'] == 1 ? "checked" : ""); ?> >Active?<br>
+    <input class="field-checkout" type="checkbox" name="active" value="1" <?php echo($row['active'] == 1 ? "checked" : ""); ?> > Active?<br>
 
-    <input class="field-checkout" type="checkbox" name="active" value="1" <?php echo($row['new'] == 1 ? "checked" : ""); ?> >New Account?<br>
+    <input class="field-checkout" type="checkbox" name="new_account" value="1" <?php echo($row['new'] == 1 ? "checked" : ""); ?> > New Account?<br>
 
-    <input class="field-checkout" type="checkbox" name="active" value="1" <?php echo($row['locked'] == 1 ? "checked" : ""); ?> >Locked?<br>
+    <input class="field-checkout" type="checkbox" name="locked" value="1" <?php echo($row['locked'] == 1 ? "checked" : ""); ?> > Locked?<br>
 
     <input class="add-button" type="submit" value="Update User">
 
