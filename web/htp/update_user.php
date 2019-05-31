@@ -62,7 +62,7 @@
     $last_name  = ( isset($_POST['last_name']) )                        ? htmlspecialchars($_POST['last_name'])             : $rowCurrent['last_name'];
     $phone      = ( isset($_POST['phone']) )                            ? htmlspecialchars($_POST['phone'])                 : $rowCurrent['phone'];
 
-    $clinic_id             = ( isset($_POST['clinic_id']) )             ? htmlspecialchars($_POST['clinic_id'])             : $rowCurrent['clinic_id'];
+    $clinic_id             = ( isset($_POST['clinic_id']) )             ? htmlspecialchars($_POST['clinic_id'])             : $rowCurrent['assigned_clinic_id'];
     $account_type_id       = ( isset($_POST['account_type_id']) )       ? htmlspecialchars($_POST['account_type_id'])       : $rowCurrent['account_type_id'];
     $assigned_therapist_id = ( isset($_POST['assigned_therapist_id']) ) ? htmlspecialchars($_POST['assigned_therapist_id']) : $rowCurrent['assigned_therapist_id'];
 
@@ -79,7 +79,7 @@
                                 SET first_name            = :first_name,
                                 SET last_name             = :last_name,
                                 SET phone                 = :phone,
-                                SET clinic_id             = :clinic_id,
+                                SET assigned_clinic_id    = :clinic_id,
                                 SET account_type_id       = :account_type_id,
                                 SET assigned_therapist_id = :assigned_therapist_id,
                                 SET active                = :active,
@@ -100,11 +100,11 @@
     $stmtUpdate->bindValue(':user_id', $user_id, PDO::PARAM_INT);
     $stmtUpdate->execute();
 
-    echo '<p>6</p>';
+    echo '<p>Update Successful</p>';
 
   }
 
-  echo '<p>7</p>';
+  echo '<p>return to dashboard</p>';
 
   // go to dashboard page after updating a new user
   // header('Location: dashboard.php');
