@@ -36,8 +36,8 @@
     echo '<p>3</p>';
 
     // get current values from table to use as default values
-    $stmtCurrent = $db->prepare('SELECT (username, email, first_name, last_name, phone, clinic_id, account_type_id, 
-                                         assigned_therapist_id, active, new_account, locked) 
+    $stmtCurrent = $db->prepare('SELECT username, email, first_name, last_name, phone, assigned_clinic_id, account_type_id, 
+                                         assigned_therapist_id, active, new_account, locked 
                                  FROM account
                                  WHERE id = :user_id');
 
