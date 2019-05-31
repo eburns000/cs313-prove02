@@ -66,9 +66,9 @@
     $account_type_id       = ( isset($_POST['account_type_id']) )       ? htmlspecialchars($_POST['account_type_id'])       : $rowCurrent['account_type_id'];
     $assigned_therapist_id = ( isset($_POST['assigned_therapist_id']) ) ? htmlspecialchars($_POST['assigned_therapist_id']) : $rowCurrent['assigned_therapist_id'];
 
-    $active = ( isset($_POST['active']) )         ? True : $rowCurrent['active'];
-    $new    = ( isset($_POST['new_account']) )    ? True : $rowCurrent['new_account'];
-    $locked = ( isset($_POST['locked']) )         ? True : $rowCurrent['locked'];
+    $active = ( isset($_POST['active']) )         ? 1 : $rowCurrent['active'];
+    $new    = ( isset($_POST['new_account']) )    ? 1 : $rowCurrent['new_account'];
+    $locked = ( isset($_POST['locked']) )         ? 1 : $rowCurrent['locked'];
 
     echo $rowCurrent['active'];
     echo $rowCurrent['new_account'];
@@ -98,9 +98,9 @@
     $stmtUpdate->bindValue(':clinic_id', $clinic_id, PDO::PARAM_INT);
     $stmtUpdate->bindValue(':account_type_id', $account_type_id, PDO::PARAM_INT);
     $stmtUpdate->bindValue(':assigned_therapist_id', $assigned_therapist_id, PDO::PARAM_INT);
-    $stmtUpdate->bindValue(':active', $active, PDO::PARAM_BOOL);
-    $stmtUpdate->bindValue(':new_account', $new, PDO::PARAM_BOOL);
-    $stmtUpdate->bindValue(':locked', $locked, PDO::PARAM_BOOL);
+    $stmtUpdate->bindValue(':active', $active);
+    $stmtUpdate->bindValue(':new_account', $new);
+    $stmtUpdate->bindValue(':locked', $locked);
     $stmtUpdate->bindValue(':user_id', $user_id, PDO::PARAM_INT);
     $stmtUpdate->execute();
 
