@@ -32,6 +32,14 @@
   $stmtClinic = $db->prepare('SELECT id as clinic_id, clinic_name FROM clinic');
   $stmtClinic->execute();
 
+  // get array for account type values for drop down select tag
+  $stmtAccountType = $db->prepare('SELECT id as account_type_id, account_type_name FROM account_type');
+  $stmtAccountType->execute();
+
+  // get array for assigned therapist values for drop down select tag
+  $stmtTherapist = $db->prepare('SELECT id as therapist_id, first_name, last_name, account_type_id FROM account WHERE account_type_id = 2');
+  $stmtTherapist->execute();    
+
 ?>
 
   <!-- Header -->
@@ -63,7 +71,7 @@
     <label for="last_name">Last Name</label><br>    
     <input class="field-checkout" type="text" name="last_name" value="<?php echo $row['last']; ?>"><br>
 
-    <label for="clinic">Assigned Clinic</label><br>    
+    <label for="clinic">Assigned Clinic</label>    
     <select name="clinic">
       <?php
 
@@ -80,10 +88,45 @@
         } 
 
        ?>
-    </select> 
+    </select><br>
 
-    <label for="account_type">Account Type</label><br>    
-    <input class="field-checkout" type="text" name="account_type" value="<?php echo $row['account_type']; ?>"><br>      
+    <label for="account_type">Account Type</label>    
+    <select name="account_type">
+      <?php
+
+        // display options for drop down box from clinic table
+        while ($rowAccountType = $stmtAccountType->fetch(PDO::FETCH_ASSOC)) {
+          echo "<option value='" . $rowAccountType['account_type_id'] . "' ";
+
+          // set the default selected item based on the assigned clinic
+          if ($rowAccountType['account_type_id'] == $row['account_type_id']) {
+            echo 'selected';
+          }
+
+          echo ">" . $rowAccountType['account_type_name'] . "</option>";
+        } 
+
+       ?>
+    </select><br>
+
+    <label for="assigned_therapist">Assigned Therapist</label>    
+    <select name="assigned_therapist">
+      <?php
+
+        // display options for drop down box from clinic table
+        while ($rowTherapist = $stmtTherapist->fetch(PDO::FETCH_ASSOC)) {
+          echo "<option value='" . $rowTherapist['therapist_id'] . "' ";
+
+          // set the default selected item based on the assigned clinic
+          if ($rowTherapist['therapist_id'] == $row['assigned_therapist_id']) {
+            echo 'selected';
+          }
+
+          echo ">" . $rowTherapist['first_name'] . " " . $rowTherapist['last_name'] . "</option>";
+        } 
+
+       ?>
+    </select><br>
 
     <label for="assigned_therapist">Assigned Therapist</label><br>    
     <input class="field-checkout" type="text" name="assigned_therapist" value="<?php echo $row['assigned_first']; ?>"><br>
