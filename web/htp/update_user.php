@@ -40,8 +40,17 @@
                                          assigned_therapist_id, active, new_account, locked) 
                                  FROM account
                                  WHERE id = :user_id');
+
+    echo '<p>3a</p>';
+
     $stmtCurrent->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+
+    echo '<p>3b</p>';
+
     $stmtCurrent->execute();
+
+    echo '<p>3c</p>';
+
     $rowCurrent = $stmtCurrent->fetch(PDO::FETCH_ASSOC);
 
     echo '<p>4</p>';
