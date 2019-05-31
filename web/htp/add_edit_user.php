@@ -9,6 +9,7 @@
 
   // get an array of current user data
   $statement = $db->query(" SELECT a.id as id, a.username as username, a.password as password,
+                                   a.assigned_clinic_id, a.account_type_id, a.assigned_therapist_id,
                                    c.clinic_name as clinic, at.account_type_name as account_type, 
                                    a.assigned_therapist_id, a2.first_name as assigned_first, 
                                    a2.last_name as assigned_last, a.first_name as first, a.last_name as last,
@@ -21,10 +22,15 @@
 
   $row = $statement->fetch(PDO::FETCH_ASSOC);
 
+  // if assigned therapist id is self, which is the value for admin and therapist users, then print n/a for assigned therapist
   if ($row['assigned_therapist_id'] == $current_user_id) {
     $row['assigned_first'] = 'n/a';
     $row['assigned_last'] = '';
   }
+
+  // get array for assigned clinic values for drop down select tag
+  $stmtClinic = $db->prepare('SELECT id as clinic_id, clinic_name FROM clinic');
+  $stmtClinic->execute();
 
 ?>
 
@@ -58,7 +64,23 @@
     <input class="field-checkout" type="text" name="last_name" value="<?php echo $row['last']; ?>"><br>
 
     <label for="clinic">Assigned Clinic</label><br>    
-    <input class="field-checkout" type="text" name="clinic" value="<?php echo $row['clinic']; ?>"><br>
+    <select name="clinic">
+      <?php
+
+        // display options for drop down box from clinic table
+        while ($rowClinic = $stmtClinic->fetch(PDO::FETCH_ASSOC)) {
+          echo "<option value='" . $rowClinic['clinic_id'] . "' ";
+
+          // set the default selected item based on the assigned clinic
+          if ($rowClinic['clinic_id'] == $row['assigned_clinic_id']) {
+            echo 'selected';
+          }
+
+          echo ">" . $rowClinic['clinic_name'] . "</option>";
+        } 
+
+       ?>
+    </select> 
 
     <label for="account_type">Account Type</label><br>    
     <input class="field-checkout" type="text" name="account_type" value="<?php echo $row['account_type']; ?>"><br>      

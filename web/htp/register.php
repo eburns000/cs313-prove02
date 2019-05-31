@@ -63,10 +63,10 @@
       <input class="field-checkout" type="text" name="username"><br>
 
       <label for="password">Password</label><br>    
-      <input class="field-checkout" type="text" name="password"><br>
+      <input class="field-checkout" type="password" name="password"><br>
 
       <label for="confirm_password">Confirm Password</label><br>    
-      <input class="field-checkout" type="text" name="confirm_password"><br>
+      <input class="field-checkout" type="password" name="confirm_password"><br>
 
       <label for="email">Email</label><br>    
       <input class="field-checkout" type="text" name="email"><br>
