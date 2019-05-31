@@ -55,7 +55,9 @@
     <!-- Clinic Data Entry -->  
     <h4>Register as a new user</h4>
     <br>
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form-checkout">
+    <form action="insert_new_user.php" method="post" class="form-checkout">
+
+      <!-- prior action statement <?php // echo htmlspecialchars($_SERVER['PHP_SELF']); ?> -->
 
       <label for="username">Username</label><br>
       <input class="field-checkout" type="text" name="username"><br>
