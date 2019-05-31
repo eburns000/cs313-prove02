@@ -71,6 +71,9 @@
     <label for="last_name">Last Name</label><br>    
     <input class="field-checkout" type="text" name="last_name" value="<?php echo $row['last']; ?>"><br>
 
+    <label for="phone">Phone</label><br>    
+    <input class="field-checkout" type="text" name="phone" value="<?php echo $row['phone']; ?>"><br> 
+
     <label for="clinic">Assigned Clinic</label>    
     <select name="clinic">
       <?php
@@ -138,20 +141,11 @@
        ?>
     </select><br>
 
-    <label for="assigned_therapist">Assigned Therapist</label><br>    
-    <input class="field-checkout" type="text" name="assigned_therapist" value="<?php echo $row['assigned_first']; ?>"><br>
+    <input class="field-checkout" type="checkbox" name="active" value="1" <?php echo($row['active'] == 1 ? "checked" : ""); ?> >Active?<br>
 
-    <label for="phone">Phone</label><br>    
-    <input class="field-checkout" type="text" name="phone" value="<?php echo $row['phone']; ?>"><br> 
+    <input class="field-checkout" type="checkbox" name="active" value="1" <?php echo($row['new'] == 1 ? "checked" : ""); ?> >New Account?<br>
 
-    <label for="active">Active</label><br>    
-    <input class="field-checkout" type="text" name="active" value="<?php echo $row['active']; ?>"><br>
-
-    <label for="new_account">New Account?</label><br>    
-    <input class="field-checkout" type="text" name="new_account" value="<?php echo $row['new']; ?>"><br>
-
-    <label for="locked">Locked</label><br>    
-    <input class="field-checkout" type="text" name="locked" value="<?php echo $row['locked']; ?>"><br>
+    <input class="field-checkout" type="checkbox" name="active" value="1" <?php echo($row['locked'] == 1 ? "checked" : ""); ?> >Locked?<br>
 
     <input class="add-button" type="submit" value="Update User">
 
