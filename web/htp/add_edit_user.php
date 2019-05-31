@@ -8,7 +8,7 @@
   $current_user_id = intval($current_user_id_str);
 
   // get an array of current user data
-  $statement = $db->query(" SELECT a.id as id, a.username as username, a.password as password,
+  $statement = $db->query(" SELECT a.id as user_id, a.username as username, a.password as password,
                                    a.assigned_clinic_id, a.account_type_id, a.assigned_therapist_id,
                                    c.clinic_name as clinic, at.account_type_name as account_type, 
                                    a.assigned_therapist_id, a2.first_name as assigned_first, 
@@ -57,7 +57,7 @@
 
   <form action="update_user.php" method="post" class="form-checkout">
 
-    <input type="hidden" name="id" value="<?php echo $row['id']; ?>"><br>
+    <input type="hidden" name="id" value="<?php echo $row['user_id']; ?>"><br>
 
     <label for="username">Username</label><br>    
     <input class="field-checkout" type="text" name="username" value="<?php echo $row['username']; ?>"><br>
@@ -114,16 +114,26 @@
       <?php
 
         // display options for drop down box from clinic table
-        while ($rowTherapist = $stmtTherapist->fetch(PDO::FETCH_ASSOC)) {
-          echo "<option value='" . $rowTherapist['therapist_id'] . "' ";
+        // to make this dynamic, need to add javascript so that as account type is changed, 
+        // this option will either gray out and become disabled or be enabled
+        if (!$row['account_type_id'] == 3) {
 
-          // set the default selected item based on the assigned clinic
-          if ($rowTherapist['therapist_id'] == $row['assigned_therapist_id']) {
-            echo 'selected';
-          }
+          echo "<option value='" . $row['user_id'] . "'>n/a</option>";
 
-          echo ">" . $rowTherapist['first_name'] . " " . $rowTherapist['last_name'] . "</option>";
-        } 
+        } else {
+
+          while ($rowTherapist = $stmtTherapist->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . $rowTherapist['therapist_id'] . "' ";
+
+            // set the default selected item based on the assigned clinic
+            if ($rowTherapist['therapist_id'] == $row['assigned_therapist_id']) {
+              echo 'selected';
+            }
+
+            echo ">" . $rowTherapist['first_name'] . " " . $rowTherapist['last_name'] . "</option>";
+          } 
+
+        }
 
        ?>
     </select><br>
