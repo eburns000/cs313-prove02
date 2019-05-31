@@ -8,7 +8,8 @@
   $current_user_id = intval($current_user_id_str);
 
   // get an array of current user data
-  $statement = $db->query(" SELECT a.id as user_id, c.clinic_name as clinic, at.account_type_name as account_type, 
+  $statement = $db->query(" SELECT a.id as id, a.username as username, a.password as password,
+                                   c.clinic_name as clinic, at.account_type_name as account_type, 
                                    a.assigned_therapist_id, a2.first_name as assigned_first, 
                                    a2.last_name as assigned_last, a.first_name as first, a.last_name as last,
                                    a.phone as phone, a.active as active, a.new_account as new, a.locked as locked
@@ -40,69 +41,46 @@
   <h2>User Account Details</h2>
   <br>
 
-  <table class="table-standard">
-    <tr>
-      <th>User ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Assigned Clinic</th>
-      <th>Account Type</th>
-      <th>Assigned Therapist</th>
-      <th>Phone</th>
-      <th>Active?</th>
-      <th>New Account?</th>
-      <th>Locked?</th>
-    </tr>
-  
-  <?php 
+  <form action="update_user.php" method="post" class="form-checkout">
 
-      echo '<tr>';
+    <input type="hidden" name="id" value="<?php echo $row['id']; ?>"><br>
 
-      echo '<td>';      
-      echo $row['user_id'];      
-      echo '</td>';
+    <label for="username">Username</label><br>    
+    <input class="field-checkout" type="text" name="username" value="<?php echo $row['username']; ?>"><br>
 
-      echo '<td>';
-      echo $row['first'];
-      echo '</td>'; 
+    <label for="password">Password</label><br>    
+    <input class="field-checkout" type="text" name="password" value="<?php echo $row['password']; ?>"><br>
 
-      echo '<td>';
-      echo $row['last'];
-      echo '</td>';
+    <label for="first_name">First Name</label><br>    
+    <input class="field-checkout" type="text" name="first_name" value="<?php echo $row['first']; ?>"><br>
 
-      echo '<td>';
-      echo $row['clinic'];
-      echo '</td>';
+    <label for="last_name">Last Name</label><br>    
+    <input class="field-checkout" type="text" name="last_name" value="<?php echo $row['last']; ?>"><br>
 
-      echo '<td>';
-      echo $row['account_type'];
-      echo '</td>'; 
+    <label for="clinic">Assigned Clinic</label><br>    
+    <input class="field-checkout" type="text" name="clinic" value="<?php echo $row['clinic']; ?>"><br>
 
-      echo '<td>';
-      echo $row['assigned_first'] . ' ' . $row['assigned_last'];
-      echo '</td>'; 
+    <label for="account_type">Account Type</label><br>    
+    <input class="field-checkout" type="text" name="account_type" value="<?php echo $row['account_type']; ?>"><br>      
 
-      echo '<td>';
-      echo $row['phone'];
-      echo '</td>'; 
+    <label for="assigned_therapist">Assigned Therapist</label><br>    
+    <input class="field-checkout" type="text" name="assigned_therapist" value="<?php echo $row['assigned_first']; ?>"><br>
 
-      echo '<td>';
-      echo ($row['active'] == '1' ? 'True' : 'False');
-      echo '</td>';              
+    <label for="phone">Phone</label><br>    
+    <input class="field-checkout" type="text" name="phone" value="<?php echo $row['phone']; ?>"><br> 
 
-      echo '<td>';
-      echo ($row['new'] == '1' ? 'True' : 'False');
-      echo '</td>'; 
+    <label for="active">Active</label><br>    
+    <input class="field-checkout" type="text" name="active" value="<?php echo $row['active']; ?>"><br>
 
-      echo '<td>';
-      echo ($row['locked'] == '1' ? 'True' : 'False');
-      echo '</td>';             
+    <label for="new_account">New Account?</label><br>    
+    <input class="field-checkout" type="text" name="new_account" value="<?php echo $row['new']; ?>"><br>
 
-      echo '</tr>'; 
+    <label for="locked">Locked</label><br>    
+    <input class="field-checkout" type="text" name="locked" value="<?php echo $row['locked']; ?>"><br>
 
-  ?>
-  
-  </table>
+    <input class="add-button" type="submit" value="Update User">
+
+  </form>
 
   <br>
 

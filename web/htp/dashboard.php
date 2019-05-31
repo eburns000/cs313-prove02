@@ -30,7 +30,11 @@
         include 'my_exercises.php';
         break;
       default:
-        echo 'Error Message';
+        echo 'Please wait for the administrator to complete your account setup';
+        echo 'Redirecting to login screen in 5 seconds';
+        sleep(5);
+        header('Location: team05.php');
+        die();
     }
 
   ?>
