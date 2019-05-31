@@ -54,22 +54,32 @@
     $locked = ( isset($_POST['locked']) )         ? 1 : $rowCurrent['locked'];
 
     // insert values into account table to create another user
-    $stmt = $db->prepare('INSERT INTO account (username, email, first_name, last_name, phone, clinic_id, account_type_id, 
-                                               assigned_therapist_id, active, new_account, locked) 
-                          VALUES (:username, :email, :first_name, :last_name, :phone, :clinic_id, :account_type_id, 
-                                  :assigned_therapist_id, :active, :new_account, :locked)');
-    $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-    $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
-    $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
-    $stmt->bindValue(':phone', $phone, PDO::PARAM_STR);
-    $stmt->bindValue(':clinic_id', $clinic_id, PDO::PARAM_INT);
-    $stmt->bindValue(':account_type_id', $account_type_id, PDO::PARAM_INT);
-    $stmt->bindValue(':assigned_therapist_id', $assigned_therapist_id, PDO::PARAM_INT);
-    $stmt->bindValue(':active', $active, PDO::PARAM_BOOL);
-    $stmt->bindValue(':new_account', $new, PDO::PARAM_BOOL);
-    $stmt->bindValue(':locked', $locked, PDO::PARAM_BOOL);
-    $stmt->execute();
+    $stmtUpdate = $db->prepare('UPDATE account
+                                SET username              = :username,
+                                SET email                 = :email,
+                                SET first_name            = :first_name,
+                                SET last_name             = :last_name,
+                                SET phone                 = :phone,
+                                SET clinic_id             = :clinic_id,
+                                SET account_type_id       = :account_type_id,
+                                SET assigned_therapist_id = :assigned_therapist_id,
+                                SET active                = :active,
+                                SET new_account           = :new_account,
+                                SET locked                = :locked 
+                                WHERE id = :user_id');
+    $stmtUpdate->bindValue(':username', $username, PDO::PARAM_STR);
+    $stmtUpdate->bindValue(':email', $email, PDO::PARAM_STR);
+    $stmtUpdate->bindValue(':first_name', $first_name, PDO::PARAM_STR);
+    $stmtUpdate->bindValue(':last_name', $last_name, PDO::PARAM_STR);
+    $stmtUpdate->bindValue(':phone', $phone, PDO::PARAM_STR);
+    $stmtUpdate->bindValue(':clinic_id', $clinic_id, PDO::PARAM_INT);
+    $stmtUpdate->bindValue(':account_type_id', $account_type_id, PDO::PARAM_INT);
+    $stmtUpdate->bindValue(':assigned_therapist_id', $assigned_therapist_id, PDO::PARAM_INT);
+    $stmtUpdate->bindValue(':active', $active, PDO::PARAM_BOOL);
+    $stmtUpdate->bindValue(':new_account', $new, PDO::PARAM_BOOL);
+    $stmtUpdate->bindValue(':locked', $locked, PDO::PARAM_BOOL);
+    $stmtUpdate->bindValue(':user_id', $user_id, PDO::PARAM_BOOL);
+    $stmtUpdate->execute();
 
   }
 
