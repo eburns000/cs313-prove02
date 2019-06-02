@@ -34,7 +34,7 @@
     // get current values from table to use as default values
     $stmtExercise = $db->prepare('SELECT exercise_name, discipline_id, modality_id, assignment, video_link, active
                                   FROM exercise
-                                  WHERE exercise_id = :exercise_id');
+                                  WHERE id = :exercise_id');
     $stmtExercise->bindValue(':exercise_id', $exercise_id, PDO::PARAM_INT);
     $stmtExercise->execute();
     $rowExercise = $stmtExercise->fetch(PDO::FETCH_ASSOC);
