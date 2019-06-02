@@ -7,7 +7,8 @@
   $login_user_id = $_SESSION['user_id'];
 
   // get array for user profile from account
-  $stmtProfile = $db->prepare('SELECT id, username, password, email, first_name, last_name, phone FROM account');
+  $stmtProfile = $db->prepare('SELECT id, username, password, email, first_name, last_name, phone FROM account WHERE id = :user_id');
+  $stmtCurrent->bindValue(':user_id', $login_user_id, PDO::PARAM_INT);
   $stmtProfile->execute();
   $rowProfile = $stmtProfile->fetch(PDO::FETCH_ASSOC);
 
