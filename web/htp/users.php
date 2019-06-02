@@ -11,7 +11,7 @@
   echo '<th>Email</th>';
   echo '</tr>';
 
-  foreach ($db->query("SELECT id, first_name, last_name, email FROM account") as $row)
+  foreach ($db->query("SELECT id, first_name, last_name, email FROM account ORDER BY last_name ASC, first_name ASC") as $row)
   {
     $id = $row['id'];
 
