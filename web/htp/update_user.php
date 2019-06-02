@@ -31,7 +31,7 @@
 
     echo '<p>2</p>';
 
-    $user_id = intval($_POST['id']);
+    $user_id = $_POST['id'];
 
     echo '<p>3</p>';
 
@@ -86,6 +86,9 @@
                                 SET assigned_clinic_id    = :clinic_id,
                                 SET account_type_id       = :account_type_id,
                                 SET assigned_therapist_id = :assigned_therapist_id,
+                                SET active                = :active,
+                                SET new_account           = :new_account,
+                                SET locked                = :locked 
                                 WHERE id = :user_id');
     $stmtUpdate->bindValue(':username', $username, PDO::PARAM_STR);
     $stmtUpdate->bindValue(':email', $email, PDO::PARAM_STR);
@@ -95,9 +98,9 @@
     $stmtUpdate->bindValue(':clinic_id', $clinic_id, PDO::PARAM_INT);
     $stmtUpdate->bindValue(':account_type_id', $account_type_id, PDO::PARAM_INT);
     $stmtUpdate->bindValue(':assigned_therapist_id', $assigned_therapist_id, PDO::PARAM_INT);
-    // $stmtUpdate->bindValue(':active', $active);
-    // $stmtUpdate->bindValue(':new_account', $new);
-    // $stmtUpdate->bindValue(':locked', $locked);
+    $stmtUpdate->bindValue(':active', $active, PDO::PARAM_BOOL);
+    $stmtUpdate->bindValue(':new_account', $new, PDO::PARAM_BOOL);
+    $stmtUpdate->bindValue(':locked', $locked, PDO::PARAM_BOOL);
     $stmtUpdate->bindValue(':user_id', $user_id, PDO::PARAM_INT);
     $stmtUpdate->execute();
 
@@ -112,9 +115,7 @@
   // die();
 
 
-                                  // SET active                = :active,
-                                // SET new_account           = :new_account,
-                                // SET locked                = :locked 
+
 
 ?>
 <!DOCTYPE html>
