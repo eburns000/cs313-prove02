@@ -66,9 +66,9 @@
     $account_type_id       = ( isset($_POST['account_type_id'])         ? htmlspecialchars($_POST['account_type_id'])       : $rowCurrent['account_type_id']);
     $assigned_therapist_id = ( isset($_POST['assigned_therapist_id'])   ? htmlspecialchars($_POST['assigned_therapist_id']) : $rowCurrent['assigned_therapist_id']);
 
-    $active = ( isset($_POST['active'])          ? 't' : ( $rowCurrent['active']      == 1 ? 't' : 'f') );
-    $new    = ( isset($_POST['new_account'])     ? 't' : ( $rowCurrent['new_account'] == 1 ? 't' : 'f') );
-    $locked = ( isset($_POST['locked'])          ? 't' : ( $rowCurrent['locked']      == 1 ? 't' : 'f') );
+    $active = ( isset($_POST['active'])          ? 't' : 'f' );
+    $new    = ( isset($_POST['new_account'])     ? 't' : 'f' );
+    $locked = ( isset($_POST['locked'])          ? 't' : 'f' );
 
     echo $username . '<br>';
     echo $email . '<br>';
