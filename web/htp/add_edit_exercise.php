@@ -8,8 +8,8 @@
   $current_exercise_id = intval($current_exercise_id_str);
 
   // get an array of library data
-  $statement = $db->query(" SELECT e.id as exercise_id, e.exercise_name as exercise, d.discipline_name as discipline, 
-                                   m.modality_name as modality,  e.assignment as assignment, e.video_link as link, e.active as active,
+  $statement = $db->query(" SELECT e.id as exercise_id, e.exercise_name as exercise_name, d.discipline_name as discipline, 
+                                   m.modality_name as modality_name,  e.assignment as assignment, e.video_link as link, e.active as active,
                                    e.discipline_id as discipline_id, e.modality_id as modality_id
                             FROM exercise as e
                             JOIN discipline as d on d.id = e.discipline_id
@@ -43,10 +43,10 @@
 
   <form action="update_exercise.php" method="post" class="form-checkout">
 
-    <input type="hidden" name="id" value="<?php echo $row['exercise_id']; ?>"><br>
+    <input type="hidden" name="exercise_id" value="<?php echo $row['exercise_id']; ?>"><br>
 
     <label for="exercise">Exercise Name</label><br>    
-    <input class="field-checkout" type="text" name="exercise" value="<?php echo $row['exercise']; ?>"><br>
+    <input class="field-checkout" type="text" name="exercise_name" value="<?php echo $row['exercise_name']; ?>"><br>
 
     <label for="discipline">Discipline</label>    
     <select name="discipline_id">
@@ -90,7 +90,7 @@
     <textarea class="field-checkout" name="assignment" rows="10" cols="30"><?php echo $row['assignment']; ?></textarea><br>  
 
     <label for="link">Video Link</label><br>    
-    <input class="field-checkout" type="text" name="link" value="<?php echo $row['link']; ?>"><br>
+    <input class="field-checkout" type="text" name="video_link" value="<?php echo $row['link']; ?>"><br>
 
     <input class="field-checkout" type="checkbox" name="active" value="1" <?php echo($row['active'] == 1 ? "checked" : ""); ?> > Active?<br>
 
