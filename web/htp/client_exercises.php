@@ -53,7 +53,8 @@
                                 JOIN exercise as e on e.id = ae.exercise_id 
                                 JOIN modality as m on m.id = e.modality_id 
                                 JOIN discipline as d on d.id = e.discipline_id 
-                                WHERE ae.account_id = '$current_client_id' ") as $row)
+                                WHERE ae.account_id = '$current_client_id' 
+                                ORDER BY d.discipline_name ASC, e.exercise_name ASC ") as $row)
     {
       $acct_id = $row['account_id'];
       $exer_id = $row['exercise_id'];

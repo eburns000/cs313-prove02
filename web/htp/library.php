@@ -34,7 +34,8 @@
                                    m.modality_name as modality,  e.assignment as assignment, e.video_link as link
                             FROM exercise as e
                             JOIN discipline as d on d.id = e.discipline_id
-                            JOIN modality as m on m.id = e.modality_id ");
+                            JOIN modality as m on m.id = e.modality_id 
+                            ORDER BY discipline ASC, exercise ASC ");
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {

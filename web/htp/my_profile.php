@@ -6,6 +6,11 @@
   $account_type_id = $_SESSION['account_type_id'];
   $login_user_id = $_SESSION['user_id'];
 
+  // get array for user profile from account
+  $stmtProfile = $db->prepare('SELECT id, username, password, email, first_name, last_name, phone FROM account');
+  $stmtProfile->execute();
+  $rowProfile = $stmtProfile->fetch(PDO::FETCH_ASSOC);
+
 ?>
 
   <!-- Header -->
@@ -17,65 +22,38 @@
   <!-- Main Content -->
   <div class="container-fluid main">
 
-  <?php 
 
-    echo '<!-- Individual User Profile Screen -->';
-    echo '<h2>My Profile</h2>';
-    echo '<br>';
+  <!-- Admin Dashboard: Show list of Users -->
+  <h2>My Profile</h2>
+  <br>
 
-    echo '<table class="table-standard">';
-    echo '<tr>';
-    echo '<th>First Name</th>';
-    echo '<th>Last Name</th>';
-    echo '<th>User Name</th>';
-    echo '<th>Email</th>';
-    echo '<th>Phone</th>';
-    echo '</tr>';
+  <form action="update_profile.php" method="post" class="form-checkout">
 
-    foreach ($db->query("SELECT first_name, last_name, username, email, phone FROM account WHERE id = '$login_user_id' ") as $row)
-    {
+    <input type="hidden" name="id" value="<?php echo $rowProfile['id']; ?>"><br>
 
-      echo '<tr>';
+    <label for="first_name">First Name</label><br>    
+    <input class="field-checkout" type="text" name="first_name" value="<?php echo $rowProfile['first_name']; ?>"><br>
 
-      echo '<td>';      
-      echo $row['first_name'];      
-      echo '</td>';
+    <label for="last_name">Last Name</label><br>    
+    <input class="field-checkout" type="text" name="last_name" value="<?php echo $rowProfile['last_name']; ?>"><br>
 
-      echo '<td>';
-      echo $row['last_name'];
-      echo '</td>';
+    <label for="username">Username</label><br>    
+    <input class="field-checkout" type="text" name="username" value="<?php echo $rowProfile['username']; ?>"><br>
 
-      echo '<td>';
-      echo $row['username'];
-      echo '</td>';
+    <label for="password">Password</label><br>    
+    <input class="field-checkout" type="password" name="password" value="<?php echo $rowProfile['password']; ?>"><br>    
 
-      echo '<td>';
-      echo $row['email'];
-      echo '</td>';
+    <label for="email">Email Address</label><br>    
+    <input class="field-checkout" type="text" name="email" value="<?php echo $rowProfile['email']; ?>"><br>
 
-      echo '<td>';
-      echo $row['phone'];
-      echo '</td>';        
+    <label for="phone">Phone</label><br>    
+    <input class="field-checkout" type="text" name="phone" value="<?php echo $rowProfile['phone']; ?>"><br> 
 
-      echo '</tr>';
+  </form>
 
-    }
+  <br>
 
-    echo '</table>';
-    echo '<br>';
-
-  ?>
-  </div>
+</div>
   
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
