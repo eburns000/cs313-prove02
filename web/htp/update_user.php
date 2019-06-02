@@ -90,7 +90,7 @@
                                     email                 = :email,
                                     first_name            = :first_name,
                                     last_name             = :last_name,
-                                    phone                 = :phone
+                                    phone                 = :phone,
                                     assigned_clinic_id    = :clinic_id,
                                     account_type_id       = :account_type_id,
                                     assigned_therapist_id = :assigned_therapist_id,
