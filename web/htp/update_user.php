@@ -79,7 +79,7 @@
     // insert values into account table to create another user
     $stmtUpdate = $db->prepare('UPDATE account
                                 SET username              = :username,
-                                SET email                 = :email,
+                                -- SET email                 = :email,
                                 SET first_name            = :first_name,
                                 SET last_name             = :last_name,
                                 SET phone                 = :phone,
@@ -91,7 +91,7 @@
                                 SET locked                = :locked 
                                 WHERE id = :user_id');
     $stmtUpdate->bindValue(':username', $username, PDO::PARAM_STR);
-    $stmtUpdate->bindValue(':email', $email, PDO::PARAM_STR);
+    // $stmtUpdate->bindValue(':email', $email, PDO::PARAM_STR);
     $stmtUpdate->bindValue(':first_name', $first_name, PDO::PARAM_STR);
     $stmtUpdate->bindValue(':last_name', $last_name, PDO::PARAM_STR);
     $stmtUpdate->bindValue(':phone', $phone, PDO::PARAM_STR);
