@@ -48,7 +48,9 @@
     <input class="field-checkout" type="text" name="email" value="<?php echo $rowProfile['email']; ?>"><br>
 
     <label for="phone">Phone</label><br>    
-    <input class="field-checkout" type="text" name="phone" value="<?php echo $rowProfile['phone']; ?>"><br> 
+    <input class="field-checkout" type="text" name="phone" value="<?php echo $rowProfile['phone']; ?>"><br>
+
+    <input class="add-button" type="submit" value="Update Profile"> 
 
   </form>
 
