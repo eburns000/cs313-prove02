@@ -66,9 +66,9 @@
     $account_type_id       = ( isset($_POST['account_type_id'])         ? htmlspecialchars($_POST['account_type_id'])       : $rowCurrent['account_type_id']);
     $assigned_therapist_id = ( isset($_POST['assigned_therapist_id'])   ? htmlspecialchars($_POST['assigned_therapist_id']) : $rowCurrent['assigned_therapist_id']);
 
-    $active = ( isset($_POST['active'])          ? TRUE : $rowCurrent['active']);
-    $new    = ( isset($_POST['new_account'])     ? TRUE : $rowCurrent['new_account']);
-    $locked = ( isset($_POST['locked'])          ? TRUE : $rowCurrent['locked']);
+    $active = ( isset($_POST['active'])          ? 't' : ( $rowCurrent['active']      == 1 ? 't' : 'f') );
+    $new    = ( isset($_POST['new_account'])     ? 't' : ( $rowCurrent['new_account'] == 1 ? 't' : 'f') );
+    $locked = ( isset($_POST['locked'])          ? 't' : ( $rowCurrent['locked']      == 1 ? 't' : 'f') );
 
     echo $username . '<br>';
     echo $email . '<br>';
@@ -93,10 +93,10 @@
                                     phone                 = :phone,
                                     assigned_clinic_id    = :clinic_id,
                                     account_type_id       = :account_type_id,
-                                    assigned_therapist_id = :assigned_therapist_id
-                                    -- active                = :active,
-                                    -- new_account           = :new_account,
-                                    -- locked                = :locked 
+                                    assigned_therapist_id = :assigned_therapist_id,
+                                    active                = :active,
+                                    new_account           = :new_account,
+                                    locked                = :locked 
                                 WHERE id = :user_id');
     $stmtUpdate->bindValue(':username', $username);
     $stmtUpdate->bindValue(':email', $email);
