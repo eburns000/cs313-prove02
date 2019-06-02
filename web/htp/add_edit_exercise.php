@@ -89,7 +89,7 @@
     <label for="assignment">Assignment</label><br>
     <textarea class="field-checkout" name="assignment" rows="10" cols="30"><?php echo $row['assignment']; ?></textarea><br>  
 
-    <label for="link">Video Link</label><br>    
+    <label for="video_link">Video Link</label><br>    
     <input class="field-checkout" type="text" name="video_link" value="<?php echo $row['link']; ?>"><br>
 
     <input class="field-checkout" type="checkbox" name="active" value="1" <?php echo($row['active'] == 1 ? "checked" : ""); ?> > Active?<br>

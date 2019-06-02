@@ -44,7 +44,7 @@
     $discipline_id = ( isset($_POST['discipline_id'])        ? htmlspecialchars($_POST['discipline_id'])    : $rowExercise['discipline_id']);
     $modality_id   = ( isset($_POST['modality_id'])          ? htmlspecialchars($_POST['modality_id'])      : $rowExercise['modality_id']);
     $assignment    = ( isset($_POST['assignment'])           ? htmlspecialchars($_POST['assignment'])       : $rowExercise['assignment']);
-    $link          = ( isset($_POST['video_link'])           ? htmlspecialchars($_POST['video_link'])       : $rowExercise['video_link']);
+    $video_link    = ( isset($_POST['video_link'])           ? htmlspecialchars($_POST['video_link'])       : $rowExercise['video_link']);
     $active = ( isset($_POST['active']) ? 't' : 'f' );
 
     // insert values into account table to create another user
