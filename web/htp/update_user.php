@@ -93,10 +93,10 @@
                                     phone                 = :phone,
                                     assigned_clinic_id    = :clinic_id,
                                     account_type_id       = :account_type_id,
-                                    assigned_therapist_id = :assigned_therapist_id,
-                                    active                = :active,
-                                    new_account           = :new_account,
-                                    locked                = :locked 
+                                    assigned_therapist_id = :assigned_therapist_id
+                                    -- active                = :active,
+                                    -- new_account           = :new_account,
+                                    -- locked                = :locked 
                                 WHERE id = :user_id');
     $stmtUpdate->bindValue(':username', $username);
     $stmtUpdate->bindValue(':email', $email);
@@ -106,9 +106,9 @@
     $stmtUpdate->bindValue(':clinic_id', $clinic_id);
     $stmtUpdate->bindValue(':account_type_id', $account_type_id);
     $stmtUpdate->bindValue(':assigned_therapist_id', $assigned_therapist_id);
-    $stmtUpdate->bindValue(':active', $active);
-    $stmtUpdate->bindValue(':new_account', $new);
-    $stmtUpdate->bindValue(':locked', $locked);
+    // $stmtUpdate->bindValue(':active', $active);
+    // $stmtUpdate->bindValue(':new_account', $new);
+    // $stmtUpdate->bindValue(':locked', $locked);
     $stmtUpdate->bindValue(':user_id', $user_id);
     $stmtUpdate->execute();
 
