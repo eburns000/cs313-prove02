@@ -56,19 +56,19 @@
     echo '<p>4</p>';
 
     // sanitize the input and set all variables
-    $username   = ( isset($_POST['username']) )                         ? htmlspecialchars($_POST['username'])              : $rowCurrent['username'];
-    $email      = ( isset($_POST['email']) )                            ? htmlspecialchars($_POST['email'])                 : $rowCurrent['email'];
-    $first_name = ( isset($_POST['first_name']) )                       ? htmlspecialchars($_POST['first_name'])            : $rowCurrent['first_name'];
-    $last_name  = ( isset($_POST['last_name']) )                        ? htmlspecialchars($_POST['last_name'])             : $rowCurrent['last_name'];
-    $phone      = ( isset($_POST['phone']) )                            ? htmlspecialchars($_POST['phone'])                 : $rowCurrent['phone'];
+    $username   = ( isset($_POST['username'])                           ? htmlspecialchars($_POST['username'])              : $rowCurrent['username']);
+    $email      = ( isset($_POST['email'])                              ? htmlspecialchars($_POST['email'])                 : $rowCurrent['email']);
+    $first_name = ( isset($_POST['first_name'])                         ? htmlspecialchars($_POST['first_name'])            : $rowCurrent['first_name']);
+    $last_name  = ( isset($_POST['last_name'])                          ? htmlspecialchars($_POST['last_name'])             : $rowCurrent['last_name']);
+    $phone      = ( isset($_POST['phone'])                              ? htmlspecialchars($_POST['phone'])                 : $rowCurrent['phone']);
 
-    $clinic_id             = intval(( isset($_POST['clinic_id']) )             ? htmlspecialchars($_POST['clinic_id'])             : $rowCurrent['assigned_clinic_id']);
-    $account_type_id       = intval(( isset($_POST['account_type_id']) )       ? htmlspecialchars($_POST['account_type_id'])       : $rowCurrent['account_type_id']);
-    $assigned_therapist_id = intval(( isset($_POST['assigned_therapist_id']) ) ? htmlspecialchars($_POST['assigned_therapist_id']) : $rowCurrent['assigned_therapist_id']);
+    $clinic_id             = ( isset($_POST['clinic_id'])               ? htmlspecialchars($_POST['clinic_id'])             : $rowCurrent['assigned_clinic_id']);
+    $account_type_id       = ( isset($_POST['account_type_id'])         ? htmlspecialchars($_POST['account_type_id'])       : $rowCurrent['account_type_id']);
+    $assigned_therapist_id = ( isset($_POST['assigned_therapist_id'])   ? htmlspecialchars($_POST['assigned_therapist_id']) : $rowCurrent['assigned_therapist_id']);
 
-    $active = ( isset($_POST['active']) )         ? 1 : $rowCurrent['active'];
-    $new    = ( isset($_POST['new_account']) )    ? 1 : $rowCurrent['new_account'];
-    $locked = ( isset($_POST['locked']) )         ? 1 : $rowCurrent['locked'];
+    $active = ( isset($_POST['active'])          ? 1 : $rowCurrent['active']);
+    $new    = ( isset($_POST['new_account'])     ? 1 : $rowCurrent['new_account']);
+    $locked = ( isset($_POST['locked'])          ? 1 : $rowCurrent['locked']);
 
     echo $rowCurrent['active'];
     echo $rowCurrent['new_account'];
@@ -78,29 +78,29 @@
 
     // insert values into account table to create another user
     $stmtUpdate = $db->prepare('UPDATE account
-                                -- SET username              = :username,
-                                -- SET email                 = :email,
-                                -- SET first_name            = :first_name,
-                                -- SET last_name             = :last_name,
-                                SET phone                 = :phone
-                                -- SET assigned_clinic_id    = :clinic_id,
-                                -- SET account_type_id       = :account_type_id,
-                                -- SET assigned_therapist_id = :assigned_therapist_id,
-                                -- SET active                = :active,
-                                -- SET new_account           = :new_account,
-                                -- SET locked                = :locked 
+                                SET username              = :username,
+                                    email                 = :email,
+                                    first_name            = :first_name,
+                                    last_name             = :last_name,
+                                    phone                 = :phone
+                                    assigned_clinic_id    = :clinic_id,
+                                    account_type_id       = :account_type_id,
+                                    assigned_therapist_id = :assigned_therapist_id,
+                                    active                = :active,
+                                    new_account           = :new_account,
+                                    locked                = :locked 
                                 WHERE id = :user_id');
-    // $stmtUpdate->bindValue(':username', $username, PDO::PARAM_STR);
-    // $stmtUpdate->bindValue(':email', $email, PDO::PARAM_STR);
-    // $stmtUpdate->bindValue(':first_name', $first_name, PDO::PARAM_STR);
-    // $stmtUpdate->bindValue(':last_name', $last_name, PDO::PARAM_STR);
+    $stmtUpdate->bindValue(':username', $username);
+    $stmtUpdate->bindValue(':email', $email);
+    $stmtUpdate->bindValue(':first_name', $first_name);
+    $stmtUpdate->bindValue(':last_name', $last_name);
     $stmtUpdate->bindValue(':phone', $phone);
-    // $stmtUpdate->bindValue(':clinic_id', $clinic_id, PDO::PARAM_INT);
-    // $stmtUpdate->bindValue(':account_type_id', $account_type_id, PDO::PARAM_INT);
-    // $stmtUpdate->bindValue(':assigned_therapist_id', $assigned_therapist_id, PDO::PARAM_INT);
-    // $stmtUpdate->bindValue(':active', $active, PDO::PARAM_BOOL);
-    // $stmtUpdate->bindValue(':new_account', $new, PDO::PARAM_BOOL);
-    // $stmtUpdate->bindValue(':locked', $locked, PDO::PARAM_BOOL);
+    $stmtUpdate->bindValue(':clinic_id', $clinic_id);
+    $stmtUpdate->bindValue(':account_type_id', $account_type_id);
+    $stmtUpdate->bindValue(':assigned_therapist_id', $assigned_therapist_id);
+    $stmtUpdate->bindValue(':active', $active);
+    $stmtUpdate->bindValue(':new_account', $new);
+    $stmtUpdate->bindValue(':locked', $locked);
     $stmtUpdate->bindValue(':user_id', $user_id);
     $stmtUpdate->execute();
 
