@@ -27,8 +27,6 @@
   // Test to see that all fields are in post array and if so, add the record to the database
   if( isset($_POST['exercise_id']) ) {
 
-    echo 'test1';
-
     $exercise_id = $_POST['exercise_id'];
 
     // get current values from table to use as default values
@@ -67,9 +65,9 @@
 
   }
 
-  // go to dashboard page after updating a new user
-  // header('Location: library.php');
-  // die();
+  // go to library after updating a exercise details
+  header('Location: library.php');
+  die();
 
 ?>
 <!DOCTYPE html>
