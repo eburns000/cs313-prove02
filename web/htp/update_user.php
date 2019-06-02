@@ -106,9 +106,9 @@
     $stmtUpdate->bindValue(':clinic_id', $clinic_id);
     $stmtUpdate->bindValue(':account_type_id', $account_type_id);
     $stmtUpdate->bindValue(':assigned_therapist_id', $assigned_therapist_id);
-    // $stmtUpdate->bindValue(':active', $active);
-    // $stmtUpdate->bindValue(':new_account', $new);
-    // $stmtUpdate->bindValue(':locked', $locked);
+    $stmtUpdate->bindValue(':active', $active);
+    $stmtUpdate->bindValue(':new_account', $new);
+    $stmtUpdate->bindValue(':locked', $locked);
     $stmtUpdate->bindValue(':user_id', $user_id);
     $stmtUpdate->execute();
 
