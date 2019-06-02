@@ -94,14 +94,14 @@
     // $stmtUpdate->bindValue(':email', $email, PDO::PARAM_STR);
     // $stmtUpdate->bindValue(':first_name', $first_name, PDO::PARAM_STR);
     // $stmtUpdate->bindValue(':last_name', $last_name, PDO::PARAM_STR);
-    $stmtUpdate->bindValue(':phone', $phone, PDO::PARAM_STR);
+    $stmtUpdate->bindValue(':phone', $phone);
     // $stmtUpdate->bindValue(':clinic_id', $clinic_id, PDO::PARAM_INT);
     // $stmtUpdate->bindValue(':account_type_id', $account_type_id, PDO::PARAM_INT);
     // $stmtUpdate->bindValue(':assigned_therapist_id', $assigned_therapist_id, PDO::PARAM_INT);
     // $stmtUpdate->bindValue(':active', $active, PDO::PARAM_BOOL);
     // $stmtUpdate->bindValue(':new_account', $new, PDO::PARAM_BOOL);
     // $stmtUpdate->bindValue(':locked', $locked, PDO::PARAM_BOOL);
-    // $stmtUpdate->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+    $stmtUpdate->bindValue(':user_id', $user_id);
     $stmtUpdate->execute();
 
     echo '<p>Update Successful</p>';
